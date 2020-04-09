@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--region Iconography-->
+    <!--https://material.io/design/iconography/system-icons.html#grid-keyline-shapes-->
+    <dimen name="ic_size_small">16dp</dimen>
+    <dimen name="ic_size">24dp</dimen>
+    <dimen name="ic_size_secondary">32dp</dimen>
+    <!--endregion-->
+
+    <!--region Typography-->
+    <!--https://material.io/design/typography/the-type-system.html#type-scale-->
+    <dimen name="headline_1">32sp</dimen>
+    <dimen name="headline_2">24sp</dimen>
+    <dimen name="headline_3">20sp</dimen>
+    <dimen name="headline_4">16sp</dimen>
+    <dimen name="headline_5">15sp</dimen>
+    <dimen name="body_1">16sp</dimen>
+    <dimen name="body_2">15sp</dimen>
+    <dimen name="caption_1">12sp</dimen>
+    <dimen name="caption_2">10sp</dimen>
+    <dimen name="small_text_1">12sp</dimen>
+    <dimen name="small_text_2">10sp</dimen>
+    <dimen name="button">15sp</dimen>
+    <!--endregion-->
+
+    <!--region Padding/Margin/Offset-->
+    <dimen name="offset_2">2dp</dimen>
+    <dimen name="offset_4">4dp</dimen>
+    <dimen name="offset_6">6dp</dimen>
+    <dimen name="offset_8">8dp</dimen>
+    <dimen name="offset_10">10dp</dimen>
+    <dimen name="offset_12">12dp</dimen>
+    <dimen name="offset_14">14dp</dimen>
+    <dimen name="offset_16">16dp</dimen>
+    <dimen name="offset_20">20dp</dimen>
+    <dimen name="offset_24">24dp</dimen>
+    <dimen name="offset_32">32dp</dimen>
+    <dimen name="offset_48">48dp</dimen>
+    <dimen name="offset_56">56dp</dimen>
+    <dimen name="offset_72">72dp</dimen>
+    <!--endregion-->
+
+    <!--region Corner-->
+    <dimen name="corner_2">2dp</dimen>
+    <dimen name="corner_4">4dp</dimen>
+    <dimen name="corner_8">8dp</dimen>
+    <dimen name="corner_12">12dp</dimen>
+    <dimen name="corner_16">16dp</dimen>
+    <dimen name="corner_20">20dp</dimen>
+    <dimen name="corner_24">24dp</dimen>
+    <!--endregion-->
+
+    <!--region Elevation-->
+    <dimen name="elevation_4">4dp</dimen>
+    <dimen name="elevation_8">8dp</dimen>
+    <dimen name="elevation_16">16dp</dimen>
+    <!--endregion-->
+
+    <dimen name="item_height">120dp</dimen>
+    <dimen name="child_item_height">40dp</dimen>
+
+</resources>

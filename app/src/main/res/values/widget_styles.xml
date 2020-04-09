@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="fontFamily">@font/bender</item>
+        <item name="android:fontFamily">@font/bender</item>
+        <item name="android:textSize">@dimen/body_1</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Widget.EditText" parent="Widget.AppCompat.EditText">
+        <item name="fontFamily">@font/bender</item>
+        <item name="android:fontFamily">@font/bender</item>
+    </style>
+
+</resources>

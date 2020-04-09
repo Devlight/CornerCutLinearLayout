@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Typography-->
+
+    <!--Material’s type system supports 13 categories that, when combined, form the typescale. -->
+    <!--This typescale is evident in the variety of text styles and sizes that appear on screen, -->
+    <!--ranging from body copy to buttons. Type appears across the UI, in places such as in -->
+    <!--components and on surfaces.-->
+
+    <!--These styles should be used throughout your app when creating text views so all your -->
+    <!--text is consistently styled and easily updated if design or product needs change. Each -->
+    <!--style in the type scale can be customized by defining a style and overriding that -->
+    <!--style's Material Theme attribute (?textAppearanceHeadline1, ?textAppearanceBody2, etc.) -->
+    <!--in your app's theme. In this project, type attributes have already been overridden in -->
+    <!--themes.xml and are set to the styles in this file, type.xml. These ?textAppearance* -->
+    <!--theme attributes should be used in your layouts to set a TextView’s appearance instead -->
+    <!--of fully qualified style references and in favor of manually setting text properties.-->
+
+    <!--Type on Android is themed by defining a custom TextAppearance for each type scale style. -->
+    <!--Use standard TextAppearance attributes such as textSize, textColor, fontFamily, -->
+    <!--letterSpacing, etc. to define a custom appearance for each and see how they are -->
+    <!--applied globally across your app.-->
+
+    <!--region Base Theme Components-->
+
+    <style name="TextAppearance.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/bender_bold</item>
+        <item name="android:fontFamily">@font/bender_bold</item>
+        <item name="android:textSize">@dimen/headline_1</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/bender_bold</item>
+        <item name="android:fontFamily">@font/bender_bold</item>
+        <item name="android:textSize">@dimen/headline_2</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/bender_regular</item>
+        <item name="android:fontFamily">@font/bender_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/headline_3</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Headline3.Bold">
+        <item name="fontFamily">@font/bender_bold</item>
+        <item name="android:fontFamily">@font/bender_bold</item>
+    </style>
+
+    <style name="TextAppearance.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/bender_regular</item>
+        <item name="android:fontFamily">@font/bender_regular</item>
+        <item name="android:textSize">@dimen/headline_4</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Headline4.Regular">
+        <item name="fontFamily">@font/bender_regular</item>
+        <item name="android:fontFamily">@font/bender_regular</item>
+    </style>
+
+    <style name="TextAppearance.Headline5" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/bender_regular</item>
+        <item name="android:fontFamily">@font/bender_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/headline_5</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/bender_regular</item>
+        <item name="android:fontFamily">@font/bender_regular</item>
+        <item name="android:textSize">@dimen/body_1</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.Body1.Medium">
+        <item name="fontFamily">@font/bender_regular</item>
+        <item name="android:fontFamily">@font/bender_regular</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/bender_regular</item>
+        <item name="android:fontFamily">@font/bender_regular</item>
+        <item name="android:textSize">@dimen/body_2</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Body2.Medium">
+        <item name="fontFamily">@font/bender_regular</item>
+        <item name="android:fontFamily">@font/bender_regular</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/bender_regular</item>
+        <item name="android:fontFamily">@font/bender_regular</item>
+        <item name="android:textSize">@dimen/caption_1</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/bender_regular</item>
+        <item name="android:fontFamily">@font/bender_regular</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/button</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.SmallText1" parent="TextAppearance.Body1">
+        <item name="android:textSize">@dimen/small_text_1</item>
+    </style>
+
+    <style name="TextAppearance.SmallText1.Medium">
+        <item name="fontFamily">@font/bender_regular</item>
+        <item name="android:fontFamily">@font/bender_regular</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.SmallText1.Bold">
+        <item name="fontFamily">@font/bender_bold</item>
+        <item name="android:fontFamily">@font/bender_bold</item>
+    </style>
+
+    <style name="TextAppearance.SmallText2" parent="TextAppearance.Body2">
+        <item name="android:textSize">@dimen/small_text_2</item>
+    </style>
+
+    <style name="TextAppearance.SmallText2.Medium">
+        <item name="fontFamily">@font/bender_regular</item>
+        <item name="android:fontFamily">@font/bender_regular</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!--endregion-->
+</resources>

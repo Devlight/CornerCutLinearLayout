@@ -1,0 +1,3 @@
+include ':cornercutlinearlayout'
+include ':app'
+rootProject.name = "CornerCutLinearLayout"

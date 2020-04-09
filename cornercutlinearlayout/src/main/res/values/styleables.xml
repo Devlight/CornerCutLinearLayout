@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CornerCutLinearLayout">
+
+        <!--region Corner Cut Type Attrs-->
+        <!--Priority from lower to higher (higher number - higher priority)-->
+        <!--1-->
+        <attr name="ccll_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+
+        <!--2-->
+        <attr name="ccll_start_corners_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="ccll_end_corners_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+
+        <!--3-->
+        <attr name="ccll_left_corners_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="ccll_right_corners_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+
+        <!--4-->
+        <attr name="ccll_top_corners_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="ccll_bottom_corners_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+
+        <!--5-->
+        <attr name="ccll_start_top_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="ccll_end_top_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="ccll_end_bottom_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="ccll_start_bottom_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+
+        <!--6-->
+        <attr name="ccll_left_top_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="ccll_right_top_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="ccll_right_bottom_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="ccll_left_bottom_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <!--endregion-->
+
+        <!--region Corner Cut Dimension (Depth, Length & Size) Attrs-->
+        <!--Priority from lower to higher (higher number - higher priority)-->
+        <!--1-->
+        <attr name="ccll_corner_cut_size" format="dimension|reference" />
+
+        <!--2-->
+        <attr name="ccll_start_corners_cut_size" format="dimension|reference" />
+        <attr name="ccll_end_corners_cut_size" format="dimension|reference" />
+
+        <!--3-->
+        <attr name="ccll_left_corners_cut_size" format="dimension|reference" />
+        <attr name="ccll_right_corners_cut_size" format="dimension|reference" />
+
+        <!--4-->
+        <attr name="ccll_top_corners_cut_size" format="dimension|reference" />
+        <attr name="ccll_bottom_corners_cut_size" format="dimension|reference" />
+
+        <!--5-->
+        <attr name="ccll_corner_cut_depth" format="dimension|reference" />
+        <attr name="ccll_corner_cut_length" format="dimension|reference" />
+
+        <!--6-->
+        <attr name="ccll_start_corners_cut_depth" format="dimension|reference" />
+        <attr name="ccll_start_corners_cut_length" format="dimension|reference" />
+        <attr name="ccll_end_corners_cut_depth" format="dimension|reference" />
+        <attr name="ccll_end_corners_cut_length" format="dimension|reference" />
+
+        <!--7-->
+        <attr name="ccll_left_corners_cut_depth" format="dimension|reference" />
+        <attr name="ccll_left_corners_cut_length" format="dimension|reference" />
+        <attr name="ccll_right_corners_cut_depth" format="dimension|reference" />
+        <attr name="ccll_right_corners_cut_length" format="dimension|reference" />
+
+        <!--8-->
+        <attr name="ccll_top_corners_cut_depth" format="dimension|reference" />
+        <attr name="ccll_top_corners_cut_length" format="dimension|reference" />
+        <attr name="ccll_bottom_corners_cut_depth" format="dimension|reference" />
+        <attr name="ccll_bottom_corners_cut_length" format="dimension|reference" />
+        
+        <!--9-->
+        <attr name="ccll_corner_cut_start_top_size" format="dimension|reference" />
+        <attr name="ccll_corner_cut_end_top_size" format="dimension|reference" />
+        <attr name="ccll_corner_cut_end_bottom_size" format="dimension|reference" />
+        <attr name="ccll_corner_cut_start_bottom_size" format="dimension|reference" />
+        
+        <!--10-->
+        <attr name="ccll_corner_cut_left_top_size" format="dimension|reference" />
+        <attr name="ccll_corner_cut_right_top_size" format="dimension|reference" />
+        <attr name="ccll_corner_cut_right_bottom_size" format="dimension|reference" />
+        <attr name="ccll_corner_cut_left_bottom_size" format="dimension|reference" />
+
+        <!--11-->
+        <attr name="ccll_corner_cut_start_top_depth" format="dimension|reference" />
+        <attr name="ccll_corner_cut_start_top_length" format="dimension|reference" />
+        <attr name="ccll_corner_cut_end_top_depth" format="dimension|reference" />
+        <attr name="ccll_corner_cut_end_top_length" format="dimension|reference" />
+        <attr name="ccll_corner_cut_end_bottom_depth" format="dimension|reference" />
+        <attr name="ccll_corner_cut_end_bottom_length" format="dimension|reference" />
+        <attr name="ccll_corner_cut_start_bottom_depth" format="dimension|reference" />
+        <attr name="ccll_corner_cut_start_bottom_length" format="dimension|reference" />
+
+        <!--12-->
+        <attr name="ccll_corner_cut_left_top_depth" format="dimension|reference" />
+        <attr name="ccll_corner_cut_left_top_length" format="dimension|reference" />
+        <attr name="ccll_corner_cut_right_top_depth" format="dimension|reference" />
+        <attr name="ccll_corner_cut_right_top_length" format="dimension|reference" />
+        <attr name="ccll_corner_cut_right_bottom_depth" format="dimension|reference" />
+        <attr name="ccll_corner_cut_right_bottom_length" format="dimension|reference" />
+        <attr name="ccll_corner_cut_left_bottom_depth" format="dimension|reference" />
+        <attr name="ccll_corner_cut_left_bottom_length" format="dimension|reference" />
+        <!--endregion-->
+
+        <attr name="ccll_rectangle_type_corner_cut_radius" format="dimension|reference" />
+        <attr name="ccll_rectangle_type_corner_cut_radius_depth" format="dimension|reference" />
+        <attr name="ccll_rectangle_type_corner_cut_radius_length" format="dimension|reference" />
+
+        <attr name="ccll_custom_divider_show_flag" format="flags">
+            <flag name="none" value="0" />
+            <flag name="beginning" value="1" /> <!--start-->
+            <flag name="middle" value="2" />
+            <flag name="end" value="4" />
+            <flag name="container_beginning" value="8" />
+            <flag name="container_end" value="16" />
+            <flag name="all" value="31" /> <!--container_beginning | beginning | middle | end | container_end = 8 | 1 | 2 | 4 | 16-->
+        </attr>
+        <attr name="ccll_custom_divider_line_cap" format="enum">
+            <enum name="butt" value="0" />
+            <enum name="round" value="1" />
+            <enum name="square" value="2" />
+        </attr>
+        <attr name="ccll_custom_divider_height" format="dimension|reference" />
+        <attr name="ccll_custom_divider_padding" format="dimension|reference" />
+        <attr name="ccll_custom_divider_padding_start" format="dimension|reference" />
+        <attr name="ccll_custom_divider_padding_end" format="dimension|reference" />
+        <attr name="ccll_custom_divider_color" format="color|reference" />
+        <attr name="ccll_custom_divider_dash_width" format="dimension|reference" />
+        <attr name="ccll_custom_divider_dash_gap" format="dimension|reference" />
+        <attr name="ccll_custom_divider_gravity" format="enum">
+            <enum name="center" value="0" />
+            <enum name="start" value="1" />
+            <enum name="end" value="2" />
+        </attr>
+
+        <attr name="ccll_child_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="ccll_child_start_side_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="ccll_child_end_side_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+
+        <attr name="ccll_corner_cut_flag" format="flags">
+            <flag name="none" value="0" />
+            <flag name="start_top" value="1" />
+            <flag name="end_top" value="2" />
+            <flag name="start_bottom" value="4" />
+            <flag name="end_bottom" value="8" />
+            <flag name="all" value="15" />  <!--start_top | end_top | start_bottom | end_bottom = 1 | 2 | 4 | 8-->
+        </attr>
+
+        <attr name="ccll_child_side_cut_flag" format="flags">
+            <flag name="none" value="0" />
+            <flag name="start" value="1" />
+            <flag name="end" value="2" />
+            <flag name="all" value="3" /> <!--start | end = 1 | 2-->
+        </attr>
+
+        <attr name="ccll_should_use_max_allowed_corner_cut_size" format="boolean|reference" />
+        <attr name="ccll_should_use_max_allowed_corner_cut_depth_or_length_to_be_equal" format="boolean|reference" />
+
+        <attr name="ccll_child_start_side_corner_cut_rotation_degree" format="float|reference" />
+        <attr name="ccll_child_end_side_corner_cut_rotation_degree" format="float|reference" />
+        <attr name="ccll_child_corner_cut_rotation_degree" format="float|reference" />
+        <attr name="ccll_is_child_corner_cut_end_rotation_mirrored_from_start_rotation" format="boolean|reference" />
+
+        <attr name="ccll_child_corner_cut_depth_offset" format="dimension|reference" />
+        <attr name="ccll_child_corner_cut_length_offset" format="dimension|reference" />
+
+        <attr name="ccll_child_start_side_corner_cut_depth_offset" format="dimension|reference" />
+        <attr name="ccll_child_start_side_corner_cut_length_offset" format="dimension|reference" />
+
+        <attr name="ccll_child_end_side_corner_cut_depth_offset" format="dimension|reference" />
+        <attr name="ccll_child_end_side_corner_cut_length_offset" format="dimension|reference" />
+
+        <attr name="ccll_child_corner_cut_size" format="dimension|reference" />
+        <attr name="ccll_child_corner_cut_depth" format="dimension|reference" />
+        <attr name="ccll_child_corner_cut_length" format="dimension|reference" />
+
+        <attr name="ccll_child_start_side_corner_cut_size" format="dimension|reference" />
+        <attr name="ccll_child_start_side_corner_cut_depth" format="dimension|reference" />
+        <attr name="ccll_child_start_side_corner_cut_length" format="dimension|reference" />
+
+        <attr name="ccll_child_end_side_corner_cut_size" format="dimension|reference" />
+        <attr name="ccll_child_end_side_corner_cut_depth" format="dimension|reference" />
+        <attr name="ccll_child_end_side_corner_cut_length" format="dimension|reference" />
+
+        <attr name="ccll_child_rectangle_type_corner_cut_radius" format="dimension|reference" />
+        <attr name="ccll_child_rectangle_type_corner_cut_radius_depth" format="dimension|reference" />
+        <attr name="ccll_child_rectangle_type_corner_cut_radius_length" format="dimension|reference" />
+
+        <attr name="ccll_custom_shadow_radius" format="dimension|reference" />
+        <attr name="ccll_custom_shadow_offset_dx" format="dimension|reference" />
+        <attr name="ccll_custom_shadow_offset_dy" format="dimension|reference" />
+        <attr name="ccll_custom_shadow_color" format="color|reference" />
+        <attr name="ccll_is_custom_shadow_auto_padding_enabled" format="boolean|reference" />
+        <attr name="ccll_could_draw_custom_shadow_over_user_defined_padding" format="boolean|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CornerCutLinearLayout_Layout">
+        <!--region Edge Child Attrs-->
+        <attr name="layout_ccll_edge_child_could_override_parent_corner_cut_type_if_edge_aligned" format="boolean|reference" />
+        <attr name="layout_ccll_edge_child_parent_contact_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        
+        <attr name="layout_ccll_edge_child_parent_start_top_contact_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="layout_ccll_edge_child_parent_end_top_contact_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="layout_ccll_edge_child_parent_end_bottom_contact_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="layout_ccll_edge_child_parent_start_bottom_contact_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+
+        <attr name="layout_ccll_edge_child_parent_left_top_contact_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="layout_ccll_edge_child_parent_right_top_contact_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="layout_ccll_edge_child_parent_right_bottom_contact_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="layout_ccll_edge_child_parent_left_bottom_contact_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <!--endregion-->
+
+        <!--region Override Corner Cut Type Attrs-->
+        <attr name="layout_ccll_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="layout_ccll_start_top_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="layout_ccll_end_top_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="layout_ccll_end_bottom_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="layout_ccll_start_bottom_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="layout_ccll_left_top_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="layout_ccll_right_top_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="layout_ccll_right_bottom_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <attr name="layout_ccll_left_bottom_corner_cut_type" format="enum">
+            <enum name="oval" value="0" />
+            <enum name="oval_inverse" value="1" />
+            <enum name="bevel" value="2" />
+            <enum name="rectangle" value="3" />
+            <enum name="rectangle_inverse" value="4" />
+        </attr>
+        <!--endregion-->
+    </declare-styleable>
+</resources>

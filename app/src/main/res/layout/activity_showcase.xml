@@ -1,0 +1,2381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- Corner Cut-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:visibility="gone">
+            <TextView
+                style="@style/TextAppearance.Headline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_marginTop="@dimen/offset_16"
+                android:layout_marginBottom="@dimen/offset_16"
+                android:text="Showcase" />
+
+            <TextView
+                style="@style/TextAppearance.Headline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_marginBottom="@dimen/offset_16"
+                android:text="Corner Cut Type" />
+
+            <LinearLayout
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Oval" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Oval Inverse" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="gone">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/item_height"
+                        android:background="@color/accent"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_corner_cut_type="oval"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16" />
+
+                    <View
+                        android:layout_width="@dimen/offset_24"
+                        android:layout_height="@dimen/offset_24"
+                        android:layout_marginStart="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/item_height"
+                        android:background="@color/accent"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_corner_cut_type="oval_inverse"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16" />
+
+                    <View
+                        android:layout_width="@dimen/offset_24"
+                        android:layout_height="@dimen/offset_24"
+                        android:layout_marginStart="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Rectangle" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Rectangle (Rounded)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="gone">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/item_height"
+                        android:background="@color/accent"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_corner_cut_type="rectangle" />
+
+                    <View
+                        android:layout_width="@dimen/offset_24"
+                        android:layout_height="@dimen/offset_24"
+                        android:layout_marginStart="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/item_height"
+                        android:background="@color/accent"
+                        android:orientation="vertical"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_corner_cut_type="rectangle"
+                        app:ccll_rectangle_type_corner_cut_radius="@dimen/offset_12" />
+
+                    <View
+                        android:layout_width="@dimen/offset_24"
+                        android:layout_height="@dimen/offset_24"
+                        android:layout_marginStart="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:background="@drawable/bg_outline" />
+
+                    <View
+                        android:layout_marginStart="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:layout_width="@dimen/offset_12"
+                        android:layout_height="@dimen/offset_12"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Rectangle Inverse" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Rectangle Inverse (Rounded)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/item_height"
+                        android:background="@color/accent"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_corner_cut_type="rectangle_inverse" />
+
+                    <View
+                        android:layout_width="@dimen/offset_24"
+                        android:layout_height="@dimen/offset_24"
+                        android:layout_marginStart="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/item_height"
+                        android:background="@color/accent"
+                        android:orientation="vertical"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_corner_cut_type="rectangle_inverse"
+                        app:ccll_rectangle_type_corner_cut_radius="@dimen/offset_12" />
+
+                    <View
+                        android:layout_width="@dimen/offset_24"
+                        android:layout_height="@dimen/offset_24"
+                        android:layout_marginStart="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:background="@drawable/bg_outline" />
+
+                    <View
+                        android:layout_width="@dimen/offset_12"
+                        android:layout_height="@dimen/offset_12"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="28dp"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Bevel" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Combined" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/item_height"
+                        android:background="@color/accent"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_corner_cut_type="bevel" />
+
+                    <View
+                        android:layout_width="@dimen/offset_24"
+                        android:layout_height="@dimen/offset_24"
+                        android:layout_marginStart="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/item_height"
+                        android:background="@color/accent"
+                        android:orientation="vertical"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_end_bottom_corner_cut_type="oval_inverse"
+                        app:ccll_end_top_corner_cut_type="bevel"
+                        app:ccll_rectangle_type_corner_cut_radius="@dimen/offset_12"
+                        app:ccll_start_top_corner_cut_type="rectangle_inverse" />
+
+                    <View
+                        android:layout_width="@dimen/offset_24"
+                        android:layout_height="@dimen/offset_24"
+                        android:layout_marginStart="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:background="@drawable/bg_outline" />
+
+                    <View
+                        android:layout_width="@dimen/offset_12"
+                        android:layout_height="@dimen/offset_12"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="28dp"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Custom\n(Custom Left Top)\n(Custom Right Bottom)\n(Bevel)" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Custom\n(Left Top)\n(Exceed Bounds)\n(Views With Bg Below)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:id="@+id/ccll_showcase_custom_lt_rb"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/item_height"
+                        android:background="@color/accent"
+                        android:orientation="vertical"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
+                        app:ccll_corner_cut_depth="60dp"
+                        app:ccll_corner_cut_length="40dp"
+                        app:ccll_corner_cut_type="bevel" />
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_gravity="center"
+                        android:paddingTop="@dimen/offset_16"
+                        android:paddingBottom="@dimen/offset_16"
+                        android:layout_height="@dimen/item_height"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/appointment_status_done" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/appointment_status_agreed" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/white_transparent" />
+                    </LinearLayout>
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:id="@+id/ccll_showcase_custom_lt_exceed_bounds"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/item_height"
+                        android:background="@color/accent"
+                        android:orientation="vertical"
+                        app:ccll_corner_cut_flag="start_top"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
+                        app:ccll_corner_cut_depth="60dp"
+                        app:ccll_corner_cut_length="40dp"
+                        app:ccll_corner_cut_type="bevel" />
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Child Corner Cut-->
+        <LinearLayout
+            android:layout_marginTop="@dimen/offset_32"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:visibility="gone">
+            <TextView
+                style="@style/TextAppearance.Headline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_marginBottom="@dimen/offset_16"
+                android:text="Child Corner Cut Type" />
+
+            <LinearLayout
+                android:layout_marginStart="@dimen/offset_32"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="gone">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Oval" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Oval Inverse" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="gone">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_child_corner_cut_type="oval"
+                        app:ccll_corner_cut_flag="none"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_32"
+                        android:layout_marginTop="@dimen/child_item_height"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_child_corner_cut_type="oval_inverse"
+                        app:ccll_corner_cut_flag="none"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_32"
+                        android:layout_marginTop="@dimen/child_item_height"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_32"
+                android:layout_marginEnd="@dimen/offset_16"
+                tools:visibility="gone">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Rectangle" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Rectangle (Rounded)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="gone">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_child_corner_cut_type="rectangle"
+                        app:ccll_corner_cut_flag="none"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_32"
+                        android:layout_marginTop="@dimen/child_item_height"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_child_corner_cut_type="rectangle"
+                        app:ccll_corner_cut_flag="none"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_rectangle_type_corner_cut_radius="@dimen/offset_8"
+                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_32"
+                        android:layout_marginTop="@dimen/child_item_height"
+                        android:background="@drawable/bg_outline" />
+
+                    <View
+                        android:layout_width="@dimen/offset_8"
+                        android:layout_height="@dimen/offset_8"
+                        android:layout_marginTop="48dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_32"
+                android:layout_marginEnd="@dimen/offset_16"
+                tools:visibility="gone">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Rectangle Inverse" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Rectangle Inverse (Rounded)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="gone">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_child_corner_cut_type="rectangle_inverse"
+                        app:ccll_corner_cut_flag="none"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_32"
+                        android:layout_marginTop="@dimen/child_item_height"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_child_corner_cut_type="rectangle_inverse"
+                        app:ccll_corner_cut_flag="none"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_rectangle_type_corner_cut_radius="@dimen/offset_8"
+                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_32"
+                        android:layout_marginTop="@dimen/child_item_height"
+                        android:background="@drawable/bg_outline" />
+
+                    <View
+                        android:layout_width="@dimen/offset_8"
+                        android:layout_height="@dimen/offset_8"
+                        android:layout_marginTop="@dimen/child_item_height"
+                        android:layout_marginStart="24dp"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_32"
+                android:layout_marginEnd="@dimen/offset_16">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Bevel" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Combined\n(Semi Transparent Bg)\n(Parent Height > Children Height)\n(Gravity Center)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_child_corner_cut_type="bevel"
+                        app:ccll_corner_cut_flag="none"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_32"
+                        android:layout_marginTop="@dimen/child_item_height"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:gravity="center"
+                        android:background="#4010A7E8"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_child_start_side_corner_cut_type="oval_inverse"
+                        app:ccll_child_end_side_corner_cut_type="bevel"
+                        app:ccll_corner_cut_flag="none"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_32"
+                        android:layout_marginTop="24dp"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_32"
+                android:layout_marginEnd="@dimen/offset_16">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Custom Child Cut Provider\n(Start Side Only)\n(Exceed Bounds)" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Combined\n(Custom Child Cut Provider: Stars)\n(Default Child Cut - Rectangle Inverse)\n(Matrix Transformations)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:id="@+id/ccll_showcase_custom_child_cut_provider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_child_corner_cut_type="bevel"
+                        app:ccll_corner_cut_flag="none"
+                        app:ccll_child_side_cut_flag="start"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_32"
+                        android:layout_marginTop="@dimen/child_item_height"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:id="@+id/ccll_showcase_custom_child_cut_provider_mixed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_child_corner_cut_type="rectangle_inverse"
+                        app:ccll_corner_cut_flag="none"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_32"
+                        android:layout_marginTop="@dimen/child_item_height"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Child Override Corner Cut-->
+        <LinearLayout
+            android:layout_marginTop="@dimen/offset_32"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:visibility="visible">
+            <TextView
+                style="@style/TextAppearance.Headline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_marginBottom="@dimen/offset_16"
+                android:text="Child Override Corner Cut" />
+
+            <LinearLayout
+                android:layout_marginStart="@dimen/offset_32"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="visible">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Each individual child can override each individual corner\n(Child Cut: Oval Inverse)\n(Middle Child Override: Oval)" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="(Child Cut: Oval Inverse)\n(Middle Child Override: Combined)\n(Depth Offset)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="visible">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_child_corner_cut_type="oval_inverse"
+                        app:ccll_corner_cut_flag="none"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            app:layout_ccll_corner_cut_type="oval"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_56"
+                        android:background="@drawable/bg_outline" />
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_16"
+                        android:layout_marginTop="80dp"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_child_corner_cut_type="oval_inverse"
+                        app:ccll_corner_cut_flag="none"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_depth_offset="@dimen/offset_24"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            app:layout_ccll_start_top_corner_cut_type="rectangle"
+                            app:layout_ccll_end_top_corner_cut_type="rectangle_inverse"
+                            app:layout_ccll_end_bottom_corner_cut_type="oval"
+                            app:layout_ccll_start_bottom_corner_cut_type="bevel"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_56"
+                        android:layout_marginStart="@dimen/offset_24"
+                        android:background="@drawable/bg_outline" />
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_16"
+                        android:layout_marginTop="80dp"
+                        android:layout_marginStart="@dimen/offset_24"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_32"
+                android:layout_marginEnd="@dimen/offset_16"
+                tools:visibility="visible">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Edge children: Override Contact - Bevel\n(Parent Height > Children Height)\n(Child Cut: None)" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Edge children can override parent cut if edge aligned\n(Edge Cut: Oval Inverse)\n(Override Parent Cut: Left Top - Oval, Right Bottom - Bevel)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="visible">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="188dp"
+                        android:background="#4010A7E8"
+                        app:ccll_child_corner_cut_type="rectangle"
+                        app:ccll_corner_cut_flag="none"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            app:layout_ccll_edge_child_parent_contact_corner_cut_type="bevel"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"
+                            app:layout_ccll_edge_child_parent_contact_corner_cut_type="bevel"
+                            />
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_16"
+                        android:layout_marginTop="18dp"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_corner_cut_type="oval_inverse"
+                        app:ccll_child_corner_cut_type="rectangle"
+                        app:ccll_corner_cut_flag="all"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_rectangle_type_corner_cut_radius="@dimen/offset_8"
+                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            app:layout_ccll_edge_child_could_override_parent_corner_cut_type_if_edge_aligned="true"
+                            app:layout_ccll_start_top_corner_cut_type="oval"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            app:layout_ccll_edge_child_could_override_parent_corner_cut_type_if_edge_aligned="true"
+                            app:layout_ccll_end_bottom_corner_cut_type="bevel"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/offset_24"
+                        android:layout_height="@dimen/offset_24"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Corner Cut Extra Properties-->
+        <LinearLayout
+            android:layout_marginTop="@dimen/offset_32"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:visibility="visible">
+            <TextView
+                style="@style/TextAppearance.Headline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_marginBottom="@dimen/offset_16"
+                android:text="Corner Cut Extra Properties" />
+
+            <LinearLayout
+                android:layout_marginStart="@dimen/offset_32"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="gone">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Different Cut Dimensions (Depth and Length) seperately for corners and children\n(Parent: Oval)\n(Child: Oval Inverse)" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Depth Offset\n(Rectangle Inverse)\n(Extra View Above)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="gone">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:id="@+id/ccll_showcase_depth_and_length"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_start_corners_cut_depth="@dimen/offset_56"
+                        app:ccll_end_corners_cut_depth="@dimen/offset_72"
+                        app:ccll_end_corners_cut_length="@dimen/offset_32"
+                        app:ccll_child_end_side_corner_cut_depth="120dp"
+                        app:ccll_child_end_side_corner_cut_length="@dimen/offset_24"
+                        app:ccll_child_corner_cut_type="oval_inverse"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/offset_56"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:layout_marginStart="@dimen/offset_16"
+                        android:background="@drawable/bg_outline" />
+
+                    <View
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_32"
+                        android:layout_marginTop="@dimen/child_item_height"
+                        android:background="@drawable/bg_outline" />
+
+                    <View
+                        android:layout_width="@dimen/offset_72"
+                        android:layout_height="@dimen/offset_32"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:background="@drawable/bg_outline" />
+
+                    <View
+                        android:id="@+id/v_showcase_bounds_depth_offset"
+                        tools:layout_marginStart="108dp"
+                        android:layout_width="240dp"
+                        android:layout_height="@dimen/offset_24"
+                        android:layout_marginEnd="@dimen/offset_16"
+                        android:layout_marginTop="84dp"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="194dp"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_child_corner_cut_type="rectangle_inverse"
+                        app:ccll_corner_cut_flag="none"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="#99000000"
+                        app:ccll_child_corner_cut_depth_offset="@dimen/offset_16"
+                        app:ccll_child_corner_cut_size="@dimen/offset_16"
+                        app:ccll_child_corner_cut_length="@dimen/offset_8"
+                        app:ccll_custom_shadow_color="#66000000"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        android:layout_marginStart="@dimen/offset_48"
+                        android:layout_marginEnd="@dimen/offset_48"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:layout_marginBottom="@dimen/offset_16"
+                        android:background="#80FFFFFF" />
+
+                    <View
+                        android:layout_width="@dimen/offset_16"
+                        android:layout_height="@dimen/offset_8"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginStart="@dimen/offset_24"
+                        android:background="@drawable/bg_outline" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginStart="@dimen/offset_32"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="gone">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Combined\nLength Offset (Start Side)\nDepth Offset (End Side)\n(Bevel)" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Child Cut Roration\n(Left Side: Oval, 45 deg)\n(Right Side: Oval Inverse,  Depth > Length, 60 deg)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="visible">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:id="@+id/ccll_showcase_depth_and_length_offset"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:background="#4010A7E8"
+                        app:ccll_corner_cut_size="@dimen/offset_8"
+                        android:orientation="vertical"
+                        app:ccll_corner_cut_type="bevel"
+                        app:ccll_child_corner_cut_type="bevel"
+                        app:ccll_child_corner_cut_size="40dp"
+                        app:ccll_child_start_side_corner_cut_length_offset="28dp"
+                        app:ccll_child_end_side_corner_cut_depth_offset="132dp"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_marginTop="@dimen/offset_8"
+                            android:layout_marginBottom="@dimen/offset_8"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"
+                            android:layout_marginTop="@dimen/offset_8"
+                            android:layout_marginBottom="@dimen/offset_8"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"
+                            android:layout_marginTop="@dimen/offset_8"
+                            android:layout_marginBottom="@dimen/offset_8"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_child_corner_cut_type="oval"
+                        app:ccll_child_end_side_corner_cut_type="oval_inverse"
+                        android:orientation="vertical"
+
+                        app:ccll_child_end_side_corner_cut_rotation_degree="60"
+                        app:ccll_child_start_side_corner_cut_rotation_degree="45"
+                        app:ccll_child_start_side_corner_cut_size="@dimen/offset_48"
+                        app:ccll_child_end_side_corner_cut_depth="@dimen/offset_48"
+                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginStart="@dimen/offset_32"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="visible">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Use max allowed depth or length for corner cut\n(Left Top: Oval)\n(End Bottom: Bevel)\n(Children: Oval)" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Use max allowed depth or length for corner cut + make depth &amp; length equal\n(Children: Rectangle)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="152dp"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:id="@+id/ccll_showcase_max_cut"
+                        android:layout_width="match_parent"
+                        android:visibility="visible"
+                        android:layout_centerInParent="true"
+                        android:layout_height="wrap_content"
+                        app:ccll_corner_cut_flag="start_top|end_bottom"
+                        app:ccll_should_use_max_allowed_corner_cut_size="true"
+                        app:ccll_custom_shadow_radius="@dimen/offset_16"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:background="#4010A7E8"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <TextView
+                            android:id="@+id/txt_showcase_max_cut"
+                            android:layout_width="match_parent"
+                            android:text="CLICK"
+                            android:gravity="center"
+                            android:layout_height="@dimen/child_item_height"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_alignStart="@+id/ccll_showcase_max_cut"
+                        android:layout_alignTop="@+id/ccll_showcase_max_cut"
+                        android:id="@+id/v_showcase_max_cut"
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_32"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:layout_marginStart="@dimen/offset_16"
+                        android:background="@drawable/bg_outline" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="152dp"
+                    android:layout_weight="1">
+
+                    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                        android:id="@+id/ccll_showcase_max_cut_equal"
+                        android:layout_width="match_parent"
+                        android:visibility="visible"
+                        android:layout_height="152dp"
+                        android:layout_centerInParent="true"
+                        app:ccll_child_corner_cut_type="rectangle"
+                        app:ccll_should_use_max_allowed_corner_cut_size="true"
+                        app:ccll_should_use_max_allowed_corner_cut_depth_or_length_to_be_equal="true"
+                        app:ccll_custom_shadow_radius="@dimen/offset_16"
+                        android:gravity="center"
+                        app:ccll_custom_divider_height="2dp"
+                        app:ccll_custom_divider_color="@color/error"
+                        app:ccll_custom_divider_show_flag="middle"
+                        app:ccll_child_corner_cut_size="@dimen/offset_56"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:id="@+id/txt_showcase_max_cut_equal"
+                            android:text="CLICK"
+                            android:background="@color/background"
+                            android:layout_marginStart="@dimen/offset_16"
+                            android:layout_marginEnd="@dimen/offset_16"
+                            tools:ignore="MissingPrefix" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"/>
+                    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                    <View
+                        android:layout_alignStart="@+id/ccll_showcase_max_cut_equal"
+                        android:layout_alignTop="@+id/ccll_showcase_max_cut_equal"
+                        android:id="@+id/v_showcase_max_cut_equal"
+                        android:layout_width="@dimen/offset_32"
+                        android:layout_height="@dimen/offset_32"
+                        android:layout_marginTop="@dimen/offset_16"
+                        android:layout_marginStart="@dimen/offset_16"
+                        android:background="@drawable/bg_outline" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Custom Shadow-->
+        <LinearLayout
+            android:layout_marginTop="@dimen/offset_32"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:visibility="gone">
+            <TextView
+                style="@style/TextAppearance.Headline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_marginBottom="@dimen/offset_16"
+                android:text="Custom Shadow" />
+
+            <LinearLayout
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="(No Background)\n(No Children)\n(Oval Inverse)" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="(Semi Transparent)\n(No Children)\n(Bevel)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_height="152dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    app:ccll_corner_cut_size="@dimen/offset_32"
+                    app:ccll_corner_cut_type="oval_inverse"
+                    android:orientation="vertical"
+                    app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16"/>
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_height="152dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:background="#4010A7E8"
+                    app:ccll_corner_cut_size="@dimen/offset_32"
+                    app:ccll_corner_cut_type="bevel"
+                    android:orientation="vertical"
+                    app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="(No Background)\n(3 Children No Bg)\n(Oval Inverse)" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="(No Background)\n(3 Children)\n(Middle Child With Bg)\n(Bevel)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    app:ccll_corner_cut_flag="none"
+                    app:ccll_child_corner_cut_type="oval_inverse"
+                    android:orientation="vertical"
+                    app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height" />
+                </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    app:ccll_corner_cut_flag="none"
+                    app:ccll_child_corner_cut_type="bevel"
+                    android:orientation="vertical"
+                    app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:background="@color/accent"
+                        android:layout_height="@dimen/child_item_height" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height" />
+                </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Custom Color\n(Middle Child No Bg)\n(Oval)\n(Rotation: 10 deg)\n(Rotation X: 35 deg)" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Shadow Offset\n(Parent 50% Bg)\n(Middle Child No Bg)\n(Oval Inverse)\n(End Side Cut Depth Offset)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    app:ccll_corner_cut_type="oval"
+                    app:ccll_child_corner_cut_type="oval"
+                    android:orientation="vertical"
+                    android:rotationX="35"
+                    android:rotation="10"
+                    app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_corner_cut_size="@dimen/offset_16"
+                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+                </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    app:ccll_corner_cut_type="oval_inverse"
+                    app:ccll_child_corner_cut_type="oval_inverse"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/offset_16"
+                    android:paddingTop="@dimen/offset_16"
+                    android:background="#80FEB545"
+                    app:ccll_child_end_side_corner_cut_depth_offset="@dimen/offset_24"
+                    app:ccll_custom_shadow_offset_dx="@dimen/offset_24"
+                    app:ccll_custom_shadow_offset_dy="@dimen/offset_24"
+                    app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_corner_cut_size="@dimen/offset_16"
+                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+                </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Custom Divider-->
+        <LinearLayout
+            android:layout_marginTop="@dimen/offset_32"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:visibility="gone">
+
+            <TextView
+                style="@style/TextAppearance.Headline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_marginBottom="@dimen/offset_16"
+                android:text="Custom Divider" />
+
+            <LinearLayout
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                tools:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Default Linear Layout Divider\n(Beginning, Middle, End)" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Custom Divider\n(Container Beginning, Beginning, Middle, End, Container End)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="gone">
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:showDividers="middle|beginning|end"
+                    android:divider="@drawable/divider_gradient"
+                    android:layout_height="wrap_content"
+                    app:ccll_corner_cut_size="@dimen/offset_24"
+                    app:ccll_child_corner_cut_type="oval"
+                    app:ccll_corner_cut_flag="none"
+                    android:orientation="vertical"
+                    app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/background"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+                </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    app:ccll_custom_divider_height="@dimen/offset_4"
+                    app:ccll_custom_divider_color="@color/error"
+                    app:ccll_custom_divider_show_flag="all"
+                    android:layout_height="180dp"
+                    android:gravity="center"
+                    app:ccll_corner_cut_size="@dimen/offset_24"
+                    app:ccll_child_corner_cut_type="oval"
+                    app:ccll_corner_cut_flag="none"
+                    android:orientation="vertical"
+                    app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/background"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+                </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="gone">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Combined Default &amp; Custom Divider\n(Divider Padding)" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Custom Divider Different Start &amp; End Padding\n(Round Cap)\n(Semi Opaque Color)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="gone">
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    app:ccll_custom_divider_height="@dimen/offset_2"
+                    app:ccll_custom_divider_color="@color/accent"
+                    app:ccll_custom_divider_show_flag="all"
+                    android:background="@color/background"
+                    android:divider="@drawable/divider_gradient_variant"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:dividerPadding="@dimen/offset_16"
+                    app:ccll_corner_cut_size="@dimen/offset_24"
+                    app:ccll_child_corner_cut_type="oval"
+                    app:ccll_corner_cut_flag="none"
+                    android:orientation="vertical"
+                    android:showDividers="beginning|middle|end"
+                    app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/background"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+                </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    app:ccll_custom_divider_padding_start="@dimen/offset_32"
+                    app:ccll_custom_divider_padding_end="@dimen/offset_56"
+                    app:ccll_custom_divider_show_flag="middle"
+                    app:ccll_custom_divider_line_cap="round"
+                    app:ccll_custom_divider_color="#80000000"
+                    app:ccll_custom_divider_height="@dimen/offset_16"
+                    app:ccll_corner_cut_size="@dimen/offset_24"
+                    app:ccll_child_corner_cut_type="oval"
+                    app:ccll_corner_cut_flag="none"
+                    android:orientation="vertical"
+                    app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/background"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/background"/>
+                </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Custom Dashed Divider\n(Round Cap)\n(Padding)\n(Divider Gravity - Center)" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Custom Dashed Divider\n(Round Cap)\n(Different Padding)\n(Divider Gravity - Center)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    app:ccll_custom_divider_show_flag="middle"
+                    app:ccll_custom_divider_height="@dimen/offset_2"
+                    app:ccll_custom_divider_color="@color/divider"
+                    app:ccll_custom_divider_dash_width="@dimen/offset_8"
+                    app:ccll_custom_divider_dash_gap="@dimen/offset_8"
+                    app:ccll_custom_divider_padding="@dimen/offset_16"
+                    android:layout_height="wrap_content"
+                    app:ccll_corner_cut_size="@dimen/offset_8"
+                    app:ccll_child_corner_cut_type="oval_inverse"
+                    app:ccll_corner_cut_flag="all"
+                    android:background="@color/background"
+                    app:ccll_custom_divider_line_cap="round"
+                    android:orientation="vertical"
+                    app:ccll_child_corner_cut_size="@dimen/offset_16"
+                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/offset_16"
+                        android:layout_height="wrap_content"
+                        android:text="Price A = 24\nPrice B = 32"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:text="Total Price = 56"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/offset_16"
+                        android:paddingEnd="@dimen/offset_16"
+                        android:layout_height="@dimen/child_item_height"/>
+                </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    app:ccll_custom_divider_show_flag="beginning|middle|end"
+                    app:ccll_custom_divider_height="@dimen/offset_4"
+                    app:ccll_custom_divider_color="@color/appointment_status_agreed"
+                    app:ccll_custom_divider_dash_width="@dimen/offset_8"
+                    app:ccll_custom_divider_dash_gap="@dimen/offset_8"
+                    app:ccll_custom_divider_padding_start="@dimen/offset_24"
+                    app:ccll_custom_divider_padding_end="@dimen/offset_56"
+                    android:layout_height="wrap_content"
+                    app:ccll_corner_cut_size="@dimen/offset_16"
+                    app:ccll_child_corner_cut_type="bevel"
+                    app:ccll_corner_cut_flag="all"
+                    app:ccll_corner_cut_type="bevel"
+                    app:ccll_custom_divider_line_cap="round"
+                    android:orientation="vertical"
+                    app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/background"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+                </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Custom Divider Provider\n(Each divider handled separately)\n(Global radial gradient for divider paint)" />
+
+                <TextView
+                    style="@style/TextAppearance.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_weight="1"
+                    android:text="Custom Divider Provider\n(Mixed with Custom Divider in the Middle)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:id="@+id/ccll_showcase_custom_divider_provider"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    app:ccll_custom_divider_show_flag="container_beginning|middle|container_end"
+                    android:layout_height="wrap_content"
+                    app:ccll_corner_cut_size="@dimen/offset_16"
+                    app:ccll_child_corner_cut_type="bevel"
+                    app:ccll_corner_cut_flag="all"
+                    app:ccll_child_side_cut_flag="none"
+                    app:ccll_corner_cut_type="oval"
+                    app:ccll_should_use_max_allowed_corner_cut_size="true"
+                    app:ccll_should_use_max_allowed_corner_cut_depth_or_length_to_be_equal="true"
+                    app:ccll_custom_divider_line_cap="round"
+                    android:orientation="vertical"
+                    app:ccll_custom_shadow_color="@color/error"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/background" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent"/>
+                </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:id="@+id/ccll_showcase_custom_divider_provider_mixed"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    app:ccll_custom_divider_show_flag="middle"
+                    app:ccll_custom_divider_height="@dimen/offset_2"
+                    app:ccll_custom_divider_color="@color/divider"
+                    app:ccll_custom_divider_dash_width="@dimen/offset_8"
+                    app:ccll_custom_divider_dash_gap="@dimen/offset_8"
+                    android:layout_height="wrap_content"
+                    app:ccll_corner_cut_size="@dimen/offset_8"
+                    app:ccll_child_corner_cut_type="oval_inverse"
+                    app:ccll_corner_cut_flag="all"
+                    android:background="@color/background"
+                    app:ccll_custom_divider_line_cap="round"
+                    android:orientation="vertical"
+                    app:ccll_child_corner_cut_size="@dimen/offset_16"
+                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height"/>
+                </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
