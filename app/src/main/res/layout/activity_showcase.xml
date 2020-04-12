@@ -16,13 +16,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             tools:visibility="gone">
+
             <TextView
                 style="@style/TextAppearance.Headline1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/offset_16"
-                android:layout_marginEnd="@dimen/offset_16"
                 android:layout_marginTop="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
                 android:layout_marginBottom="@dimen/offset_16"
                 android:text="Showcase" />
 
@@ -36,10 +37,10 @@
                 android:text="Corner Cut Type" />
 
             <LinearLayout
-                android:layout_marginStart="@dimen/offset_16"
-                android:layout_marginEnd="@dimen/offset_16"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16">
 
                 <TextView
                     style="@style/TextAppearance.Body1"
@@ -61,7 +62,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:visibility="gone">
+                tools:visibility="gone"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -132,7 +134,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:visibility="gone">
+                tools:visibility="gone"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -143,9 +146,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/item_height"
                         android:background="@color/accent"
-                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_corner_cut_type="rectangle" />
+                        app:ccll_corner_cut_type="rectangle"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16" />
 
                     <View
                         android:layout_width="@dimen/offset_24"
@@ -165,9 +168,9 @@
                         android:layout_height="@dimen/item_height"
                         android:background="@color/accent"
                         android:orientation="vertical"
-                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
                         app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_corner_cut_type="rectangle"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
                         app:ccll_rectangle_type_corner_cut_radius="@dimen/offset_12" />
 
                     <View
@@ -178,10 +181,10 @@
                         android:background="@drawable/bg_outline" />
 
                     <View
-                        android:layout_marginStart="@dimen/offset_16"
-                        android:layout_marginTop="@dimen/offset_16"
                         android:layout_width="@dimen/offset_12"
                         android:layout_height="@dimen/offset_12"
+                        android:layout_marginStart="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
                         android:background="@drawable/bg_outline" />
                 </FrameLayout>
             </LinearLayout>
@@ -211,7 +214,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -222,9 +226,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/item_height"
                         android:background="@color/accent"
-                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_corner_cut_type="rectangle_inverse" />
+                        app:ccll_corner_cut_type="rectangle_inverse"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16" />
 
                     <View
                         android:layout_width="@dimen/offset_24"
@@ -244,9 +248,9 @@
                         android:layout_height="@dimen/item_height"
                         android:background="@color/accent"
                         android:orientation="vertical"
-                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
                         app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_corner_cut_type="rectangle_inverse"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
                         app:ccll_rectangle_type_corner_cut_radius="@dimen/offset_12" />
 
                     <View
@@ -290,7 +294,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -301,9 +306,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/item_height"
                         android:background="@color/accent"
-                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_corner_cut_type="bevel" />
+                        app:ccll_corner_cut_type="bevel"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16" />
 
                     <View
                         android:layout_width="@dimen/offset_24"
@@ -323,8 +328,8 @@
                         android:layout_height="@dimen/item_height"
                         android:background="@color/accent"
                         android:orientation="vertical"
-                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
                         app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
                         app:ccll_end_bottom_corner_cut_type="oval_inverse"
                         app:ccll_end_top_corner_cut_type="bevel"
                         app:ccll_rectangle_type_corner_cut_radius="@dimen/offset_12"
@@ -371,7 +376,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -384,10 +390,10 @@
                         android:layout_height="@dimen/item_height"
                         android:background="@color/accent"
                         android:orientation="vertical"
-                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
                         app:ccll_corner_cut_depth="60dp"
                         app:ccll_corner_cut_length="40dp"
-                        app:ccll_corner_cut_type="bevel" />
+                        app:ccll_corner_cut_type="bevel"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16" />
 
                     <View
                         android:layout_width="60dp"
@@ -404,11 +410,11 @@
 
                     <LinearLayout
                         android:layout_width="80dp"
-                        android:layout_gravity="center"
-                        android:paddingTop="@dimen/offset_16"
-                        android:paddingBottom="@dimen/offset_16"
                         android:layout_height="@dimen/item_height"
-                        android:orientation="vertical">
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/offset_16"
+                        android:paddingBottom="@dimen/offset_16">
 
                         <View
                             android:layout_width="match_parent"
@@ -435,11 +441,11 @@
                         android:layout_height="@dimen/item_height"
                         android:background="@color/accent"
                         android:orientation="vertical"
-                        app:ccll_corner_cut_flag="start_top"
-                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
                         app:ccll_corner_cut_depth="60dp"
+                        app:ccll_corner_cut_flag="start_top"
                         app:ccll_corner_cut_length="40dp"
-                        app:ccll_corner_cut_type="bevel" />
+                        app:ccll_corner_cut_type="bevel"
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16" />
 
                     <View
                         android:layout_width="60dp"
@@ -453,11 +459,12 @@
 
         <!-- Child Corner Cut-->
         <LinearLayout
-            android:layout_marginTop="@dimen/offset_32"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_32"
             android:orientation="vertical"
             tools:visibility="gone">
+
             <TextView
                 style="@style/TextAppearance.Headline3"
                 android:layout_width="wrap_content"
@@ -468,10 +475,10 @@
                 android:text="Child Corner Cut Type" />
 
             <LinearLayout
-                android:layout_marginStart="@dimen/offset_32"
-                android:layout_marginEnd="@dimen/offset_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_32"
+                android:layout_marginEnd="@dimen/offset_16"
                 tools:visibility="gone">
 
                 <TextView
@@ -494,7 +501,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:visibility="gone">
+                tools:visibility="gone"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -505,28 +513,28 @@
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_child_corner_cut_type="oval"
-                        app:ccll_corner_cut_flag="none"
                         android:orientation="vertical"
                         app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_corner_cut_type="oval"
+                        app:ccll_corner_cut_flag="none"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
+                            android:background="@color/background" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
@@ -544,35 +552,36 @@
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_child_corner_cut_type="oval_inverse"
-                        app:ccll_corner_cut_flag="none"
                         android:orientation="vertical"
                         app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_corner_cut_type="oval_inverse"
+                        app:ccll_corner_cut_flag="none"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
+                            android:background="@color/background" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
                         android:layout_width="@dimen/offset_32"
                         android:layout_height="@dimen/offset_32"
                         android:layout_marginTop="@dimen/child_item_height"
-                        android:background="@drawable/bg_outline" />
+                        android:background="@drawable/bg_outline"
+                        tools:ignore="TooManyViews" />
                 </FrameLayout>
             </LinearLayout>
 
@@ -603,7 +612,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:visibility="gone">
+                tools:visibility="gone"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -614,28 +624,28 @@
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_child_corner_cut_type="rectangle"
-                        app:ccll_corner_cut_flag="none"
                         android:orientation="vertical"
                         app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_corner_cut_type="rectangle"
+                        app:ccll_corner_cut_flag="none"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
+                            android:background="@color/background" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
@@ -653,29 +663,29 @@
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_child_corner_cut_type="rectangle"
-                        app:ccll_corner_cut_flag="none"
                         android:orientation="vertical"
                         app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_corner_cut_type="rectangle"
                         app:ccll_child_rectangle_type_corner_cut_radius="@dimen/offset_8"
+                        app:ccll_corner_cut_flag="none"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
+                            android:background="@color/background" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
@@ -687,8 +697,8 @@
                     <View
                         android:layout_width="@dimen/offset_8"
                         android:layout_height="@dimen/offset_8"
-                        android:layout_marginTop="48dp"
                         android:layout_marginStart="16dp"
+                        android:layout_marginTop="48dp"
                         android:background="@drawable/bg_outline" />
                 </FrameLayout>
             </LinearLayout>
@@ -720,7 +730,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:visibility="gone">
+                tools:visibility="gone"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -731,28 +742,28 @@
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_child_corner_cut_type="rectangle_inverse"
-                        app:ccll_corner_cut_flag="none"
                         android:orientation="vertical"
                         app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_corner_cut_type="rectangle_inverse"
+                        app:ccll_corner_cut_flag="none"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
+                            android:background="@color/background" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
@@ -770,29 +781,29 @@
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_child_corner_cut_type="rectangle_inverse"
-                        app:ccll_corner_cut_flag="none"
                         android:orientation="vertical"
                         app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_corner_cut_type="rectangle_inverse"
                         app:ccll_child_rectangle_type_corner_cut_radius="@dimen/offset_8"
+                        app:ccll_corner_cut_flag="none"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
+                            android:background="@color/background" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
@@ -804,8 +815,8 @@
                     <View
                         android:layout_width="@dimen/offset_8"
                         android:layout_height="@dimen/offset_8"
-                        android:layout_marginTop="@dimen/child_item_height"
                         android:layout_marginStart="24dp"
+                        android:layout_marginTop="@dimen/child_item_height"
                         android:background="@drawable/bg_outline" />
                 </FrameLayout>
             </LinearLayout>
@@ -835,7 +846,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -846,28 +858,28 @@
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_child_corner_cut_type="bevel"
-                        app:ccll_corner_cut_flag="none"
                         android:orientation="vertical"
                         app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_corner_cut_type="bevel"
+                        app:ccll_corner_cut_flag="none"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
+                            android:background="@color/background" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
@@ -885,31 +897,31 @@
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:gravity="center"
                         android:background="#4010A7E8"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_child_start_side_corner_cut_type="oval_inverse"
-                        app:ccll_child_end_side_corner_cut_type="bevel"
-                        app:ccll_corner_cut_flag="none"
+                        android:gravity="center"
                         android:orientation="vertical"
                         app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_end_side_corner_cut_type="bevel"
+                        app:ccll_child_start_side_corner_cut_type="oval_inverse"
+                        app:ccll_corner_cut_flag="none"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
+                            android:background="@color/background" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
@@ -945,7 +957,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -957,29 +970,29 @@
                         android:id="@+id/ccll_showcase_custom_child_cut_provider"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_child_corner_cut_type="bevel"
-                        app:ccll_corner_cut_flag="none"
-                        app:ccll_child_side_cut_flag="start"
                         android:orientation="vertical"
                         app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_corner_cut_type="bevel"
+                        app:ccll_child_side_cut_flag="start"
+                        app:ccll_corner_cut_flag="none"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
+                            android:background="@color/background" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
@@ -998,28 +1011,28 @@
                         android:id="@+id/ccll_showcase_custom_child_cut_provider_mixed"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_child_corner_cut_type="rectangle_inverse"
-                        app:ccll_corner_cut_flag="none"
                         android:orientation="vertical"
                         app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_corner_cut_type="rectangle_inverse"
+                        app:ccll_corner_cut_flag="none"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
+                            android:background="@color/background" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
@@ -1033,11 +1046,12 @@
 
         <!-- Child Override Corner Cut-->
         <LinearLayout
-            android:layout_marginTop="@dimen/offset_32"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_32"
             android:orientation="vertical"
             tools:visibility="visible">
+
             <TextView
                 style="@style/TextAppearance.Headline3"
                 android:layout_width="wrap_content"
@@ -1048,10 +1062,10 @@
                 android:text="Child Override Corner Cut" />
 
             <LinearLayout
-                android:layout_marginStart="@dimen/offset_32"
-                android:layout_marginEnd="@dimen/offset_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_32"
+                android:layout_marginEnd="@dimen/offset_16"
                 tools:visibility="visible">
 
                 <TextView
@@ -1074,7 +1088,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:visibility="visible">
+                tools:visibility="visible"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -1085,29 +1100,29 @@
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_child_corner_cut_type="oval_inverse"
-                        app:ccll_corner_cut_flag="none"
                         android:orientation="vertical"
                         app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_corner_cut_type="oval_inverse"
+                        app:ccll_corner_cut_flag="none"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
-
-                        <View
-                            android:layout_width="match_parent"
-                            app:layout_ccll_corner_cut_type="oval"
-                            android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
+                            android:background="@color/accent" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/background"
+                            app:layout_ccll_corner_cut_type="bevel" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
@@ -1131,47 +1146,47 @@
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_child_corner_cut_type="oval_inverse"
-                        app:ccll_corner_cut_flag="none"
                         android:orientation="vertical"
                         app:ccll_child_corner_cut_depth_offset="@dimen/offset_24"
                         app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_corner_cut_type="oval_inverse"
+                        app:ccll_corner_cut_flag="none"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <View
                             android:layout_width="match_parent"
-                            app:layout_ccll_start_top_corner_cut_type="rectangle"
-                            app:layout_ccll_end_top_corner_cut_type="rectangle_inverse"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background"
                             app:layout_ccll_end_bottom_corner_cut_type="oval"
+                            app:layout_ccll_end_top_corner_cut_type="rectangle_inverse"
                             app:layout_ccll_start_bottom_corner_cut_type="bevel"
-                            android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
+                            app:layout_ccll_start_top_corner_cut_type="rectangle" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
                         android:layout_width="@dimen/offset_32"
                         android:layout_height="@dimen/offset_16"
-                        android:layout_marginTop="@dimen/offset_56"
                         android:layout_marginStart="@dimen/offset_24"
+                        android:layout_marginTop="@dimen/offset_56"
                         android:background="@drawable/bg_outline" />
 
                     <View
                         android:layout_width="@dimen/offset_32"
                         android:layout_height="@dimen/offset_16"
-                        android:layout_marginTop="80dp"
                         android:layout_marginStart="@dimen/offset_24"
+                        android:layout_marginTop="80dp"
                         android:background="@drawable/bg_outline" />
                 </FrameLayout>
             </LinearLayout>
@@ -1203,7 +1218,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:visibility="visible">
+                tools:visibility="visible"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -1215,30 +1231,29 @@
                         android:layout_width="match_parent"
                         android:layout_height="188dp"
                         android:background="#4010A7E8"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_size="@dimen/offset_32"
                         app:ccll_child_corner_cut_type="rectangle"
                         app:ccll_corner_cut_flag="none"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        app:ccll_child_corner_cut_size="@dimen/offset_32"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
-
-                        <View
-                            app:layout_ccll_edge_child_parent_contact_corner_cut_type="bevel"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
                             android:background="@color/accent"
-                            app:layout_ccll_edge_child_parent_contact_corner_cut_type="bevel"
-                            />
+                            app:layout_ccll_edge_child_parent_contact_corner_cut_type="bevel" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/background" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
+                            android:background="@color/accent"
+                            app:layout_ccll_edge_child_parent_contact_corner_cut_type="bevel" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
@@ -1256,41 +1271,41 @@
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_corner_cut_type="oval_inverse"
-                        app:ccll_child_corner_cut_type="rectangle"
-                        app:ccll_corner_cut_flag="all"
                         android:orientation="vertical"
                         app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_corner_cut_type="rectangle"
                         app:ccll_child_rectangle_type_corner_cut_radius="@dimen/offset_8"
+                        app:ccll_corner_cut_flag="all"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        app:ccll_corner_cut_type="oval_inverse"
                         app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
-                            app:layout_ccll_edge_child_could_override_parent_corner_cut_type_if_edge_aligned="true"
-                            app:layout_ccll_start_top_corner_cut_type="oval"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent"
+                            app:layout_ccll_edge_child_could_override_parent_corner_cut_type_if_edge_aligned="true"
+                            app:layout_ccll_start_top_corner_cut_type="oval" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
+                            android:background="@color/background" />
 
                         <View
-                            app:layout_ccll_edge_child_could_override_parent_corner_cut_type_if_edge_aligned="true"
-                            app:layout_ccll_end_bottom_corner_cut_type="bevel"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent"
+                            app:layout_ccll_edge_child_could_override_parent_corner_cut_type_if_edge_aligned="true"
+                            app:layout_ccll_end_bottom_corner_cut_type="bevel" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
                         android:layout_width="@dimen/offset_24"
                         android:layout_height="@dimen/offset_24"
-                        android:layout_marginTop="@dimen/offset_16"
                         android:layout_marginStart="16dp"
+                        android:layout_marginTop="@dimen/offset_16"
                         android:background="@drawable/bg_outline" />
                 </FrameLayout>
             </LinearLayout>
@@ -1299,11 +1314,12 @@
 
         <!-- Corner Cut Extra Properties-->
         <LinearLayout
-            android:layout_marginTop="@dimen/offset_32"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_32"
             android:orientation="vertical"
             tools:visibility="visible">
+
             <TextView
                 style="@style/TextAppearance.Headline3"
                 android:layout_width="wrap_content"
@@ -1314,10 +1330,10 @@
                 android:text="Corner Cut Extra Properties" />
 
             <LinearLayout
-                android:layout_marginStart="@dimen/offset_32"
-                android:layout_marginEnd="@dimen/offset_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_32"
+                android:layout_marginEnd="@dimen/offset_16"
                 tools:visibility="gone">
 
                 <TextView
@@ -1326,7 +1342,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/offset_16"
                     android:layout_weight="1"
-                    android:text="Different Cut Dimensions (Depth and Length) seperately for corners and children\n(Parent: Oval)\n(Child: Oval Inverse)" />
+                    android:text="Different Cut Dimensions (Depth and Length) separately for corners and children\n(Parent: Oval)\n(Child: Oval Inverse)" />
 
                 <TextView
                     style="@style/TextAppearance.Body1"
@@ -1340,7 +1356,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:visibility="gone">
+                tools:visibility="gone"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -1352,39 +1369,39 @@
                         android:id="@+id/ccll_showcase_depth_and_length"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_start_corners_cut_depth="@dimen/offset_56"
-                        app:ccll_end_corners_cut_depth="@dimen/offset_72"
-                        app:ccll_end_corners_cut_length="@dimen/offset_32"
-                        app:ccll_child_end_side_corner_cut_depth="120dp"
-                        app:ccll_child_end_side_corner_cut_length="@dimen/offset_24"
-                        app:ccll_child_corner_cut_type="oval_inverse"
                         android:orientation="vertical"
                         app:ccll_child_corner_cut_size="@dimen/offset_32"
+                        app:ccll_child_corner_cut_type="oval_inverse"
+                        app:ccll_child_end_side_corner_cut_depth="120dp"
+                        app:ccll_child_end_side_corner_cut_length="@dimen/offset_24"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_custom_shadow_color="@color/appointment_status_agreed"
-                        app:ccll_custom_shadow_radius="@dimen/elevation_16">
+                        app:ccll_custom_shadow_radius="@dimen/elevation_16"
+                        app:ccll_end_corners_cut_depth="@dimen/offset_72"
+                        app:ccll_end_corners_cut_length="@dimen/offset_32"
+                        app:ccll_start_corners_cut_depth="@dimen/offset_56">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
+                            android:background="@color/background" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
                         android:layout_width="@dimen/offset_56"
                         android:layout_height="20dp"
-                        android:layout_marginTop="@dimen/offset_16"
                         android:layout_marginStart="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
                         android:background="@drawable/bg_outline" />
 
                     <View
@@ -1397,18 +1414,18 @@
                         android:layout_width="@dimen/offset_72"
                         android:layout_height="@dimen/offset_32"
                         android:layout_gravity="end"
-                        android:layout_marginEnd="@dimen/offset_16"
                         android:layout_marginTop="@dimen/offset_16"
+                        android:layout_marginEnd="@dimen/offset_16"
                         android:background="@drawable/bg_outline" />
 
                     <View
                         android:id="@+id/v_showcase_bounds_depth_offset"
-                        tools:layout_marginStart="108dp"
                         android:layout_width="240dp"
                         android:layout_height="@dimen/offset_24"
-                        android:layout_marginEnd="@dimen/offset_16"
                         android:layout_marginTop="84dp"
-                        android:background="@drawable/bg_outline" />
+                        android:layout_marginEnd="@dimen/offset_16"
+                        android:background="@drawable/bg_outline"
+                        tools:layout_marginStart="108dp" />
                 </FrameLayout>
 
                 <FrameLayout
@@ -1419,15 +1436,15 @@
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="194dp"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
+                        android:background="#99000000"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:ccll_child_corner_cut_depth_offset="@dimen/offset_16"
+                        app:ccll_child_corner_cut_length="@dimen/offset_8"
+                        app:ccll_child_corner_cut_size="@dimen/offset_16"
                         app:ccll_child_corner_cut_type="rectangle_inverse"
                         app:ccll_corner_cut_flag="none"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:background="#99000000"
-                        app:ccll_child_corner_cut_depth_offset="@dimen/offset_16"
-                        app:ccll_child_corner_cut_size="@dimen/offset_16"
-                        app:ccll_child_corner_cut_length="@dimen/offset_8"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_custom_shadow_color="#66000000"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
@@ -1438,27 +1455,35 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="20dp" />
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="20dp" />
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="20dp" />
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="20dp" />
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="20dp" />
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="20dp" />
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="20dp" />
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="20dp" />
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="20dp" />
@@ -1468,27 +1493,27 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:visibility="visible"
                         android:layout_marginStart="@dimen/offset_48"
-                        android:layout_marginEnd="@dimen/offset_48"
                         android:layout_marginTop="@dimen/offset_16"
+                        android:layout_marginEnd="@dimen/offset_48"
                         android:layout_marginBottom="@dimen/offset_16"
-                        android:background="#80FFFFFF" />
+                        android:background="#80FFFFFF"
+                        android:visibility="visible" />
 
                     <View
                         android:layout_width="@dimen/offset_16"
                         android:layout_height="@dimen/offset_8"
-                        android:layout_marginTop="13dp"
                         android:layout_marginStart="@dimen/offset_24"
+                        android:layout_marginTop="13dp"
                         android:background="@drawable/bg_outline" />
                 </FrameLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginStart="@dimen/offset_32"
-                android:layout_marginEnd="@dimen/offset_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_32"
+                android:layout_marginEnd="@dimen/offset_16"
                 tools:visibility="gone">
 
                 <TextView
@@ -1505,13 +1530,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/offset_16"
                     android:layout_weight="1"
-                    android:text="Child Cut Roration\n(Left Side: Oval, 45 deg)\n(Right Side: Oval Inverse,  Depth > Length, 60 deg)" />
+                    android:text="Child Cut Rotation\n(Left Side: Oval, 45 deg)\n(Right Side: Oval Inverse,  Depth > Length, 60 deg)" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:visibility="visible">
+                tools:visibility="visible"
+                android:baselineAligned="false">
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -1523,38 +1549,38 @@
                         android:id="@+id/ccll_showcase_depth_and_length_offset"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="visible"
                         android:background="#4010A7E8"
-                        app:ccll_corner_cut_size="@dimen/offset_8"
                         android:orientation="vertical"
-                        app:ccll_corner_cut_type="bevel"
-                        app:ccll_child_corner_cut_type="bevel"
+                        android:visibility="visible"
                         app:ccll_child_corner_cut_size="40dp"
-                        app:ccll_child_start_side_corner_cut_length_offset="28dp"
+                        app:ccll_child_corner_cut_type="bevel"
                         app:ccll_child_end_side_corner_cut_depth_offset="132dp"
+                        app:ccll_child_start_side_corner_cut_length_offset="28dp"
+                        app:ccll_corner_cut_size="@dimen/offset_8"
+                        app:ccll_corner_cut_type="bevel"
                         app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/child_item_height"
                             android:layout_marginTop="@dimen/offset_8"
                             android:layout_marginBottom="@dimen/offset_8"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"
                             android:layout_marginTop="@dimen/offset_8"
-                            android:layout_marginBottom="@dimen/offset_8"/>
+                            android:layout_marginBottom="@dimen/offset_8"
+                            android:background="@color/background" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"
                             android:layout_marginTop="@dimen/offset_8"
-                            android:layout_marginBottom="@dimen/offset_8"/>
+                            android:layout_marginBottom="@dimen/offset_8"
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
                 </FrameLayout>
 
@@ -1566,41 +1592,41 @@
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_child_corner_cut_type="oval"
-                        app:ccll_child_end_side_corner_cut_type="oval_inverse"
                         android:orientation="vertical"
-
+                        app:ccll_child_corner_cut_type="oval"
+                        app:ccll_child_end_side_corner_cut_depth="@dimen/offset_48"
                         app:ccll_child_end_side_corner_cut_rotation_degree="60"
+
+                        app:ccll_child_end_side_corner_cut_type="oval_inverse"
                         app:ccll_child_start_side_corner_cut_rotation_degree="45"
                         app:ccll_child_start_side_corner_cut_size="@dimen/offset_48"
-                        app:ccll_child_end_side_corner_cut_depth="@dimen/offset_48"
+                        app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/background"/>
+                            android:background="@color/background" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
                 </FrameLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginStart="@dimen/offset_32"
-                android:layout_marginEnd="@dimen/offset_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_32"
+                android:layout_marginEnd="@dimen/offset_16"
                 tools:visibility="visible">
 
                 <TextView
@@ -1623,7 +1649,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:visibility="visible">
+                tools:visibility="visible"
+                android:baselineAligned="false">
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -1634,43 +1661,43 @@
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                         android:id="@+id/ccll_showcase_max_cut"
                         android:layout_width="match_parent"
-                        android:visibility="visible"
-                        android:layout_centerInParent="true"
                         android:layout_height="wrap_content"
-                        app:ccll_corner_cut_flag="start_top|end_bottom"
-                        app:ccll_should_use_max_allowed_corner_cut_size="true"
-                        app:ccll_custom_shadow_radius="@dimen/offset_16"
-                        android:gravity="center"
+                        android:layout_centerInParent="true"
                         android:layout_gravity="center"
                         android:background="#4010A7E8"
-                        android:orientation="vertical">
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="visible"
+                        app:ccll_corner_cut_flag="start_top|end_bottom"
+                        app:ccll_custom_shadow_radius="@dimen/offset_16"
+                        app:ccll_should_use_max_allowed_corner_cut_size="true">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <TextView
                             android:id="@+id/txt_showcase_max_cut"
                             android:layout_width="match_parent"
-                            android:text="CLICK"
+                            android:layout_height="@dimen/child_item_height"
                             android:gravity="center"
-                            android:layout_height="@dimen/child_item_height"/>
+                            android:text="CLICK" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
-                        android:layout_alignStart="@+id/ccll_showcase_max_cut"
-                        android:layout_alignTop="@+id/ccll_showcase_max_cut"
                         android:id="@+id/v_showcase_max_cut"
                         android:layout_width="@dimen/offset_32"
                         android:layout_height="@dimen/offset_32"
-                        android:layout_marginTop="@dimen/offset_16"
+                        android:layout_alignStart="@+id/ccll_showcase_max_cut"
+                        android:layout_alignTop="@+id/ccll_showcase_max_cut"
                         android:layout_marginStart="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
                         android:background="@drawable/bg_outline" />
                 </RelativeLayout>
 
@@ -1682,64 +1709,178 @@
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                         android:id="@+id/ccll_showcase_max_cut_equal"
                         android:layout_width="match_parent"
-                        android:visibility="visible"
                         android:layout_height="152dp"
                         android:layout_centerInParent="true"
-                        app:ccll_child_corner_cut_type="rectangle"
-                        app:ccll_should_use_max_allowed_corner_cut_size="true"
-                        app:ccll_should_use_max_allowed_corner_cut_depth_or_length_to_be_equal="true"
-                        app:ccll_custom_shadow_radius="@dimen/offset_16"
-                        android:gravity="center"
-                        app:ccll_custom_divider_height="2dp"
-                        app:ccll_custom_divider_color="@color/error"
-                        app:ccll_custom_divider_show_flag="middle"
-                        app:ccll_child_corner_cut_size="@dimen/offset_56"
                         android:layout_gravity="center"
-                        android:orientation="vertical">
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="visible"
+                        app:ccll_child_corner_cut_size="@dimen/offset_56"
+                        app:ccll_child_corner_cut_type="rectangle"
+                        app:ccll_custom_divider_color="@color/error"
+                        app:ccll_custom_divider_height="2dp"
+                        app:ccll_custom_divider_show_flag="middle"
+                        app:ccll_custom_shadow_radius="@dimen/offset_16"
+                        app:ccll_should_use_max_allowed_corner_cut_depth_or_length_to_be_equal="true"
+                        app:ccll_should_use_max_allowed_corner_cut_size="true">
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
 
                         <TextView
+                            android:id="@+id/txt_showcase_max_cut_equal"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:id="@+id/txt_showcase_max_cut_equal"
-                            android:text="CLICK"
-                            android:background="@color/background"
                             android:layout_marginStart="@dimen/offset_16"
                             android:layout_marginEnd="@dimen/offset_16"
+                            android:layout_weight="1"
+                            android:background="@color/background"
+                            android:gravity="center"
+                            android:text="CLICK"
                             tools:ignore="MissingPrefix" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/child_item_height"
-                            android:background="@color/accent"/>
+                            android:background="@color/accent" />
                     </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                     <View
-                        android:layout_alignStart="@+id/ccll_showcase_max_cut_equal"
-                        android:layout_alignTop="@+id/ccll_showcase_max_cut_equal"
                         android:id="@+id/v_showcase_max_cut_equal"
                         android:layout_width="@dimen/offset_32"
                         android:layout_height="@dimen/offset_32"
-                        android:layout_marginTop="@dimen/offset_16"
+                        android:layout_alignStart="@+id/ccll_showcase_max_cut_equal"
+                        android:layout_alignTop="@+id/ccll_showcase_max_cut_equal"
                         android:layout_marginStart="@dimen/offset_16"
+                        android:layout_marginTop="@dimen/offset_16"
                         android:background="@drawable/bg_outline" />
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Custom Shadow-->
+        <!-- Custom View Area Provider-->
         <LinearLayout
-            android:layout_marginTop="@dimen/offset_32"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_32"
+            android:orientation="vertical"
+            tools:visibility="visible">
+
+            <TextView
+                style="@style/TextAppearance.Headline3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:text="Custom View Area Provider" />
+
+            <TextView
+                style="@style/TextAppearance.Body1"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/offset_12"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:text="Custom Shape\n(Single Child: TextView)\n(No default cuts)" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="152dp">
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:id="@+id/ccll_showcase_custom_view_area_provider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/background"
+                    app:ccll_child_side_cut_flag="none"
+                    app:ccll_corner_cut_flag="none"
+                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
+                    <TextView
+                        android:id="@+id/txt_showcase_custom_view_area_provider"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/offset_48"
+                        android:ellipsize="end"
+                        android:maxLines="5"
+                        android:padding="@dimen/offset_16"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
+                </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+            </FrameLayout>
+
+            <TextView
+                style="@style/TextAppearance.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
+                android:text="Custom Shape\nMake joint (united) transformation aware shadow for children\n(Nested CCLL: 1st &amp; 2nd child)\n(2nd child: Nested Custom Cutout - Star)\n(Parent CCLL: Custom Cutout)\n(3rd child: View. Note virtual corner cuts that will NOT work when children intersects.)" />
+
+            <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                android:id="@+id/ccll_showcase_custom_view_area_provider_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="@dimen/offset_16"
+                app:ccll_child_side_cut_flag="none"
+                app:ccll_corner_cut_flag="none"
+                app:ccll_could_draw_custom_shadow_over_user_defined_padding="true"
+                app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                app:ccll_custom_shadow_radius="@dimen/elevation_16"
+                app:ccll_is_custom_shadow_auto_padding_enabled="false">
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_width="50dp"
+                    android:layout_height="100dp"
+                    android:background="@color/accent"
+                    android:gravity="center"
+                    android:rotation="10"
+                    android:rotationX="35"
+                    android:translationX="24dp"
+                    app:ccll_child_side_cut_flag="none"
+                    app:ccll_corner_cut_type="oval_inverse"
+                    app:ccll_corner_cut_size="@dimen/offset_16">
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="#000000" />
+                </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+                <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:id="@+id/ccll_showcase_custom_view_area_provider_2_child_1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:ccll_corner_cut_size="@dimen/offset_24"
+                    android:layout_marginStart="@dimen/offset_16"
+                    android:layout_marginEnd="@dimen/offset_48"
+                    android:background="@color/background" />
+
+                <View
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:background="#8010A7E8" />
+            </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+        </LinearLayout>
+
+        <!-- Custom Shadow-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_32"
             android:orientation="vertical"
             tools:visibility="gone">
+
             <TextView
                 style="@style/TextAppearance.Headline3"
                 android:layout_width="wrap_content"
@@ -1750,10 +1891,10 @@
                 android:text="Custom Shadow" />
 
             <LinearLayout
-                android:layout_marginStart="@dimen/offset_16"
-                android:layout_marginEnd="@dimen/offset_16"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16">
 
                 <TextView
                     style="@style/TextAppearance.Body1"
@@ -1774,35 +1915,36 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
 
                 <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="152dp"
                     android:layout_weight="1"
-                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    app:ccll_child_corner_cut_size="@dimen/offset_32"
                     app:ccll_corner_cut_size="@dimen/offset_32"
                     app:ccll_corner_cut_type="oval_inverse"
-                    android:orientation="vertical"
-                    app:ccll_child_corner_cut_size="@dimen/offset_32"
-                    app:ccll_custom_shadow_radius="@dimen/elevation_16"/>
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16" />
 
                 <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="152dp"
                     android:layout_weight="1"
-                    android:layout_width="0dp"
                     android:background="#4010A7E8"
-                    app:ccll_corner_cut_size="@dimen/offset_32"
-                    app:ccll_corner_cut_type="bevel"
                     android:orientation="vertical"
                     app:ccll_child_corner_cut_size="@dimen/offset_32"
-                    app:ccll_custom_shadow_radius="@dimen/elevation_16"/>
+                    app:ccll_corner_cut_size="@dimen/offset_32"
+                    app:ccll_corner_cut_type="bevel"
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginStart="@dimen/offset_16"
-                android:layout_marginEnd="@dimen/offset_16"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16">
 
                 <TextView
                     style="@style/TextAppearance.Body1"
@@ -1823,17 +1965,19 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
 
                 <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_width="0dp"
-                    app:ccll_corner_cut_flag="none"
-                    app:ccll_child_corner_cut_type="oval_inverse"
                     android:orientation="vertical"
                     app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_child_corner_cut_type="oval_inverse"
+                    app:ccll_corner_cut_flag="none"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height" />
@@ -1848,22 +1992,23 @@
                 </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                 <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_width="0dp"
-                    app:ccll_corner_cut_flag="none"
-                    app:ccll_child_corner_cut_type="bevel"
                     android:orientation="vertical"
                     app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_child_corner_cut_type="bevel"
+                    app:ccll_corner_cut_flag="none"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height" />
 
                     <View
                         android:layout_width="match_parent"
-                        android:background="@color/accent"
-                        android:layout_height="@dimen/child_item_height" />
+                        android:layout_height="@dimen/child_item_height"
+                        android:background="@color/accent" />
 
                     <View
                         android:layout_width="match_parent"
@@ -1872,10 +2017,10 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginStart="@dimen/offset_16"
-                android:layout_marginEnd="@dimen/offset_16"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16">
 
                 <TextView
                     style="@style/TextAppearance.Body1"
@@ -1896,26 +2041,27 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
 
                 <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    app:ccll_corner_cut_type="oval"
-                    app:ccll_child_corner_cut_type="oval"
+                    android:layout_weight="1"
                     android:orientation="vertical"
-                    android:rotationX="35"
                     android:rotation="10"
+                    android:rotationX="35"
                     app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_child_corner_cut_type="oval"
                     app:ccll_corner_cut_size="@dimen/offset_16"
+                    app:ccll_corner_cut_type="oval"
                     app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
 
                     <View
                         android:layout_width="match_parent"
@@ -1924,49 +2070,50 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
                 </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                 <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    app:ccll_corner_cut_type="oval_inverse"
-                    app:ccll_child_corner_cut_type="oval_inverse"
+                    android:layout_weight="1"
+                    android:background="#80FEB545"
                     android:orientation="vertical"
                     android:paddingStart="@dimen/offset_16"
                     android:paddingTop="@dimen/offset_16"
-                    android:background="#80FEB545"
+                    app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_child_corner_cut_type="oval_inverse"
                     app:ccll_child_end_side_corner_cut_depth_offset="@dimen/offset_24"
+                    app:ccll_corner_cut_size="@dimen/offset_16"
+                    app:ccll_corner_cut_type="oval_inverse"
+                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                     app:ccll_custom_shadow_offset_dx="@dimen/offset_24"
                     app:ccll_custom_shadow_offset_dy="@dimen/offset_24"
-                    app:ccll_child_corner_cut_size="@dimen/offset_32"
-                    app:ccll_corner_cut_size="@dimen/offset_16"
-                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
-                    app:ccll_custom_shadow_radius="@dimen/elevation_16">
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16"
+                    tools:ignore="RtlSymmetry">
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/child_item_height"/>
+                        android:layout_height="@dimen/child_item_height" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
                 </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
             </LinearLayout>
         </LinearLayout>
 
         <!-- Custom Divider-->
         <LinearLayout
-            android:layout_marginTop="@dimen/offset_32"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_32"
             android:orientation="vertical"
             tools:visibility="gone">
 
@@ -1980,11 +2127,11 @@
                 android:text="Custom Divider" />
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/offset_16"
                 android:layout_marginEnd="@dimen/offset_16"
-                tools:visibility="gone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                tools:visibility="gone">
 
                 <TextView
                     style="@style/TextAppearance.Body1"
@@ -2006,76 +2153,77 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:visibility="gone">
+                tools:visibility="gone"
+                android:baselineAligned="false">
 
                 <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:showDividers="middle|beginning|end"
-                    android:divider="@drawable/divider_gradient"
                     android:layout_height="wrap_content"
-                    app:ccll_corner_cut_size="@dimen/offset_24"
+                    android:layout_weight="1"
+                    android:divider="@drawable/divider_gradient"
+                    android:orientation="vertical"
+                    android:showDividers="middle|beginning|end"
+                    app:ccll_child_corner_cut_size="@dimen/offset_32"
                     app:ccll_child_corner_cut_type="oval"
                     app:ccll_corner_cut_flag="none"
-                    android:orientation="vertical"
-                    app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_corner_cut_size="@dimen/offset_24"
                     app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/background"/>
+                        android:background="@color/background" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
                 </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                 <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                    app:ccll_custom_divider_height="@dimen/offset_4"
-                    app:ccll_custom_divider_color="@color/error"
-                    app:ccll_custom_divider_show_flag="all"
                     android:layout_height="180dp"
+                    android:layout_weight="1"
                     android:gravity="center"
-                    app:ccll_corner_cut_size="@dimen/offset_24"
-                    app:ccll_child_corner_cut_type="oval"
-                    app:ccll_corner_cut_flag="none"
                     android:orientation="vertical"
                     app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_child_corner_cut_type="oval"
+                    app:ccll_corner_cut_flag="none"
+                    app:ccll_corner_cut_size="@dimen/offset_24"
+                    app:ccll_custom_divider_color="@color/error"
+                    app:ccll_custom_divider_height="@dimen/offset_4"
+                    app:ccll_custom_divider_show_flag="all"
                     app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/background"/>
+                        android:background="@color/background" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
                 </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginStart="@dimen/offset_16"
-                android:layout_marginEnd="@dimen/offset_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16"
                 tools:visibility="gone">
 
                 <TextView
@@ -2098,89 +2246,90 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:visibility="gone">
+                tools:visibility="gone"
+                android:baselineAligned="false">
 
                 <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                     android:layout_width="0dp"
+                    android:layout_height="200dp"
                     android:layout_weight="1"
-                    app:ccll_custom_divider_height="@dimen/offset_2"
-                    app:ccll_custom_divider_color="@color/accent"
-                    app:ccll_custom_divider_show_flag="all"
                     android:background="@color/background"
                     android:divider="@drawable/divider_gradient_variant"
-                    android:layout_height="200dp"
-                    android:gravity="center"
                     android:dividerPadding="@dimen/offset_16"
-                    app:ccll_corner_cut_size="@dimen/offset_24"
-                    app:ccll_child_corner_cut_type="oval"
-                    app:ccll_corner_cut_flag="none"
+                    android:gravity="center"
                     android:orientation="vertical"
                     android:showDividers="beginning|middle|end"
                     app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_child_corner_cut_type="oval"
+                    app:ccll_corner_cut_flag="none"
+                    app:ccll_corner_cut_size="@dimen/offset_24"
+                    app:ccll_custom_divider_color="@color/accent"
+                    app:ccll_custom_divider_height="@dimen/offset_2"
+                    app:ccll_custom_divider_show_flag="all"
                     app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/background"/>
+                        android:background="@color/background" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
                 </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                 <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    app:ccll_custom_divider_padding_start="@dimen/offset_32"
-                    app:ccll_custom_divider_padding_end="@dimen/offset_56"
-                    app:ccll_custom_divider_show_flag="middle"
-                    app:ccll_custom_divider_line_cap="round"
-                    app:ccll_custom_divider_color="#80000000"
-                    app:ccll_custom_divider_height="@dimen/offset_16"
-                    app:ccll_corner_cut_size="@dimen/offset_24"
-                    app:ccll_child_corner_cut_type="oval"
-                    app:ccll_corner_cut_flag="none"
+                    android:layout_weight="1"
                     android:orientation="vertical"
                     app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_child_corner_cut_type="oval"
+                    app:ccll_corner_cut_flag="none"
+                    app:ccll_corner_cut_size="@dimen/offset_24"
+                    app:ccll_custom_divider_color="#80000000"
+                    app:ccll_custom_divider_height="@dimen/offset_16"
+                    app:ccll_custom_divider_line_cap="round"
+                    app:ccll_custom_divider_padding_end="@dimen/offset_56"
+                    app:ccll_custom_divider_padding_start="@dimen/offset_32"
+                    app:ccll_custom_divider_show_flag="middle"
                     app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/background"/>
+                        android:background="@color/background" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/background"/>
+                        android:background="@color/background" />
                 </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginStart="@dimen/offset_16"
-                android:layout_marginEnd="@dimen/offset_16"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16">
 
 
                 <TextView
@@ -2202,87 +2351,87 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
 
                 <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                    app:ccll_custom_divider_show_flag="middle"
-                    app:ccll_custom_divider_height="@dimen/offset_2"
-                    app:ccll_custom_divider_color="@color/divider"
-                    app:ccll_custom_divider_dash_width="@dimen/offset_8"
-                    app:ccll_custom_divider_dash_gap="@dimen/offset_8"
-                    app:ccll_custom_divider_padding="@dimen/offset_16"
                     android:layout_height="wrap_content"
-                    app:ccll_corner_cut_size="@dimen/offset_8"
-                    app:ccll_child_corner_cut_type="oval_inverse"
-                    app:ccll_corner_cut_flag="all"
+                    android:layout_weight="1"
                     android:background="@color/background"
-                    app:ccll_custom_divider_line_cap="round"
                     android:orientation="vertical"
                     app:ccll_child_corner_cut_size="@dimen/offset_16"
+                    app:ccll_child_corner_cut_type="oval_inverse"
+                    app:ccll_corner_cut_flag="all"
+                    app:ccll_corner_cut_size="@dimen/offset_8"
+                    app:ccll_custom_divider_color="@color/divider"
+                    app:ccll_custom_divider_dash_gap="@dimen/offset_8"
+                    app:ccll_custom_divider_dash_width="@dimen/offset_8"
+                    app:ccll_custom_divider_height="@dimen/offset_2"
+                    app:ccll_custom_divider_line_cap="round"
+                    app:ccll_custom_divider_padding="@dimen/offset_16"
+                    app:ccll_custom_divider_show_flag="middle"
                     app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:padding="@dimen/offset_16"
                         android:layout_height="wrap_content"
-                        android:text="Price A = 24\nPrice B = 32"
-                        />
+                        android:padding="@dimen/offset_16"
+                        android:text="Price A = 24\nPrice B = 32" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:text="Total Price = 56"
+                        android:layout_height="@dimen/child_item_height"
                         android:gravity="center_vertical"
                         android:paddingStart="@dimen/offset_16"
                         android:paddingEnd="@dimen/offset_16"
-                        android:layout_height="@dimen/child_item_height"/>
+                        android:text="Total Price = 56" />
                 </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                 <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                    app:ccll_custom_divider_show_flag="beginning|middle|end"
-                    app:ccll_custom_divider_height="@dimen/offset_4"
-                    app:ccll_custom_divider_color="@color/appointment_status_agreed"
-                    app:ccll_custom_divider_dash_width="@dimen/offset_8"
-                    app:ccll_custom_divider_dash_gap="@dimen/offset_8"
-                    app:ccll_custom_divider_padding_start="@dimen/offset_24"
-                    app:ccll_custom_divider_padding_end="@dimen/offset_56"
                     android:layout_height="wrap_content"
-                    app:ccll_corner_cut_size="@dimen/offset_16"
-                    app:ccll_child_corner_cut_type="bevel"
-                    app:ccll_corner_cut_flag="all"
-                    app:ccll_corner_cut_type="bevel"
-                    app:ccll_custom_divider_line_cap="round"
+                    android:layout_weight="1"
                     android:orientation="vertical"
                     app:ccll_child_corner_cut_size="@dimen/offset_32"
+                    app:ccll_child_corner_cut_type="bevel"
+                    app:ccll_corner_cut_flag="all"
+                    app:ccll_corner_cut_size="@dimen/offset_16"
+                    app:ccll_corner_cut_type="bevel"
+                    app:ccll_custom_divider_color="@color/appointment_status_agreed"
+                    app:ccll_custom_divider_dash_gap="@dimen/offset_8"
+                    app:ccll_custom_divider_dash_width="@dimen/offset_8"
+                    app:ccll_custom_divider_height="@dimen/offset_4"
+                    app:ccll_custom_divider_line_cap="round"
+                    app:ccll_custom_divider_padding_end="@dimen/offset_56"
+                    app:ccll_custom_divider_padding_start="@dimen/offset_24"
+                    app:ccll_custom_divider_show_flag="beginning|middle|end"
                     app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/background"/>
+                        android:background="@color/background" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
                 </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginStart="@dimen/offset_16"
-                android:layout_marginEnd="@dimen/offset_16"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/offset_16"
+                android:layout_marginEnd="@dimen/offset_16">
 
                 <TextView
                     style="@style/TextAppearance.Body1"
@@ -2303,30 +2452,31 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
 
                 <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                     android:id="@+id/ccll_showcase_custom_divider_provider"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                    app:ccll_custom_divider_show_flag="container_beginning|middle|container_end"
                     android:layout_height="wrap_content"
-                    app:ccll_corner_cut_size="@dimen/offset_16"
-                    app:ccll_child_corner_cut_type="bevel"
-                    app:ccll_corner_cut_flag="all"
-                    app:ccll_child_side_cut_flag="none"
-                    app:ccll_corner_cut_type="oval"
-                    app:ccll_should_use_max_allowed_corner_cut_size="true"
-                    app:ccll_should_use_max_allowed_corner_cut_depth_or_length_to_be_equal="true"
-                    app:ccll_custom_divider_line_cap="round"
+                    android:layout_weight="1"
                     android:orientation="vertical"
+                    app:ccll_child_corner_cut_type="bevel"
+                    app:ccll_child_side_cut_flag="none"
+                    app:ccll_corner_cut_flag="all"
+                    app:ccll_corner_cut_size="@dimen/offset_16"
+                    app:ccll_corner_cut_type="oval"
+                    app:ccll_custom_divider_line_cap="round"
+                    app:ccll_custom_divider_show_flag="container_beginning|middle|container_end"
                     app:ccll_custom_shadow_color="@color/error"
-                    app:ccll_custom_shadow_radius="@dimen/elevation_16">
+                    app:ccll_custom_shadow_radius="@dimen/elevation_16"
+                    app:ccll_should_use_max_allowed_corner_cut_depth_or_length_to_be_equal="true"
+                    app:ccll_should_use_max_allowed_corner_cut_size="true">
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
 
                     <View
                         android:layout_width="match_parent"
@@ -2336,43 +2486,44 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/child_item_height"
-                        android:background="@color/accent"/>
+                        android:background="@color/accent" />
                 </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
 
                 <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
                     android:id="@+id/ccll_showcase_custom_divider_provider_mixed"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                    app:ccll_custom_divider_show_flag="middle"
-                    app:ccll_custom_divider_height="@dimen/offset_2"
-                    app:ccll_custom_divider_color="@color/divider"
-                    app:ccll_custom_divider_dash_width="@dimen/offset_8"
-                    app:ccll_custom_divider_dash_gap="@dimen/offset_8"
                     android:layout_height="wrap_content"
-                    app:ccll_corner_cut_size="@dimen/offset_8"
-                    app:ccll_child_corner_cut_type="oval_inverse"
-                    app:ccll_corner_cut_flag="all"
+                    android:layout_weight="1"
                     android:background="@color/background"
-                    app:ccll_custom_divider_line_cap="round"
                     android:orientation="vertical"
                     app:ccll_child_corner_cut_size="@dimen/offset_16"
+                    app:ccll_child_corner_cut_type="oval_inverse"
+                    app:ccll_corner_cut_flag="all"
+                    app:ccll_corner_cut_size="@dimen/offset_8"
+                    app:ccll_custom_divider_color="@color/divider"
+                    app:ccll_custom_divider_dash_gap="@dimen/offset_8"
+                    app:ccll_custom_divider_dash_width="@dimen/offset_8"
+                    app:ccll_custom_divider_height="@dimen/offset_2"
+                    app:ccll_custom_divider_line_cap="round"
+                    app:ccll_custom_divider_show_flag="middle"
                     app:ccll_custom_shadow_color="@color/appointment_status_agreed"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/child_item_height"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/child_item_height"/>
+                        android:layout_height="@dimen/child_item_height" />
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/child_item_height"/>
+                        android:layout_height="@dimen/child_item_height" />
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/child_item_height"/>
+                        android:layout_height="@dimen/child_item_height" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/child_item_height" />
                 </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
             </LinearLayout>
         </LinearLayout>

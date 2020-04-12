@@ -31,21 +31,22 @@ class CornerCutLinearLayout : LinearLayout {
     private val defaultChildCornerCutSize by lazy { context.resources.displayMetrics.density * 16.0F }
 
     private val paddedBoundsF = RectF()
-    val paddedBounds get() = RectF(paddedBoundsF)
+    private val tempPaddedBoundsF = RectF()
+    val paddedBounds get() = tempPaddedBoundsF.apply { set(paddedBoundsF) }
 
     /**
-     * Resulting path with cutouts (if any).
+     * Resulting path with cutouts (if any). In other words visible (not clipped) view area.
      * [viewCornerCutPath] & [childCornerCutPath] & [customCutoutsPath] are merged into this path,
      * before this [CornerCutLinearLayout] being "masked" (clipped) by the [childCornerCutPath].
      */
-    private val composedCornerCutPath = Path()
+    private val innerViewAreaPath = Path()
 
     /**
      * Copy of current visible area path.
      * Custom shadow are build upon this original path.
      * This path modification does not change neither clip area nor shadow.
      */
-    val composedCutoutPath get() = Path(composedCornerCutPath)
+    val viewAreaPath get() = Path(innerViewAreaPath)
 
     /**
      * Contains this [LinearLayout] corner cutouts.
@@ -807,7 +808,7 @@ class CornerCutLinearLayout : LinearLayout {
      * that requires itself [View.LAYER_TYPE_SOFTWARE] layer type during drawing.
      */
     private var customShadowPaint: Paint = object : Paint(
-        combineFlags(Paint.DITHER_FLAG, Paint.ANTI_ALIAS_FLAG, Paint.FILTER_BITMAP_FLAG)
+        combineFlags(DITHER_FLAG, ANTI_ALIAS_FLAG, FILTER_BITMAP_FLAG)
     ) {
         init {
             color = Color.TRANSPARENT
@@ -964,7 +965,7 @@ class CornerCutLinearLayout : LinearLayout {
      * Paint responsible for custom divider's color, width, dash/gap, line cap, etc.
      */
     val customDividerPaint = object : Paint(
-        combineFlags(Paint.DITHER_FLAG, Paint.ANTI_ALIAS_FLAG, Paint.FILTER_BITMAP_FLAG)
+        combineFlags(DITHER_FLAG, ANTI_ALIAS_FLAG, FILTER_BITMAP_FLAG)
     ) {
         init {
             isDither = true
@@ -1151,6 +1152,7 @@ class CornerCutLinearLayout : LinearLayout {
 
     var cornerCutProvider: CornerCutProvider? by NullableDelegate(null)
     var childCornerCutProvider: ChildCornerCutProvider? by NullableDelegate(null)
+    var customViewAreaProvider: CustomViewAreaProvider? by NullableDelegate(null)
     private val customCutoutProviders = mutableSetOf<CustomCutoutProvider>()
 
     var customDividerProvider: CustomDividerProvider? by NullableDelegate(null)
@@ -1173,6 +1175,7 @@ class CornerCutLinearLayout : LinearLayout {
 
     private fun init(attrs: AttributeSet? = null) {
         setWillNotDraw(false)
+        super.setLayerType(View.LAYER_TYPE_HARDWARE, null)
 
         try {
             //region Attributes
@@ -3053,6 +3056,19 @@ class CornerCutLinearLayout : LinearLayout {
     }
     //endregion
 
+    /**
+     * @see [CustomViewAreaProvider]
+     */
+    inline fun setCustomViewAreaProvider(
+        crossinline getVisibleViewArea: (view: CornerCutLinearLayout, path: Path, rectF: RectF) -> Unit
+    ) {
+        customViewAreaProvider = object : CustomViewAreaProvider {
+            override fun getVisibleViewArea(view: CornerCutLinearLayout, path: Path, rectF: RectF) {
+                getVisibleViewArea(view, path, rectF)
+            }
+        }
+    }
+
     //region Cutout Providers Functions
     /**
      * @see [CornerCutProvider]
@@ -3157,7 +3173,6 @@ class CornerCutLinearLayout : LinearLayout {
 
     /**
      * Add specified provider if not found in collection.
-     * @param provider - [CustomCutoutProvider] to add to collection
      * @see [CustomCutoutProvider]
      */
     fun addCustomCutoutProvider(
@@ -3285,12 +3300,8 @@ class CornerCutLinearLayout : LinearLayout {
         }
     }
 
-//    var shouldBuildCustomShadowUponPaddedBounds: Boolean by Delegate(true)
-//    var shouldBuildCustomShadowUponOnlyPaddedChildren: Boolean by Delegate(true)
-//    val customShadowChildTempPath = Path()
-
     /**
-     * Function to rebuild [composedCornerCutPath] for whole view and force redraw
+     * Function to rebuild [innerViewAreaPath] for whole view and force redraw
      */
     fun invalidateCornerCutPath() {
         if (!isAttachedToWindow) return
@@ -3354,8 +3365,14 @@ class CornerCutLinearLayout : LinearLayout {
         val rectangleTypeCornerCutRoundCornerRadiusY: Float
 
         //begin from left top
-        composedCornerCutPath.rewind()
-        composedCornerCutPath.addRect(paddedBoundsF, Path.Direction.CW)
+        innerViewAreaPath.rewind()
+        customViewAreaProvider?.apply {
+            getVisibleViewArea(
+                this@CornerCutLinearLayout,
+                innerViewAreaPath,
+                this@CornerCutLinearLayout.paddedBounds
+            )
+        } ?: innerViewAreaPath.addRect(paddedBoundsF, Path.Direction.CW)
 
         childCornerCutPath.rewind()
         viewCornerCutPath.rewind()
@@ -3393,19 +3410,12 @@ class CornerCutLinearLayout : LinearLayout {
                 ?: this.leftBottomCornerCutType
 
             if (customDividerShowFlag containsFlag CustomDividerShowFlag.CONTAINER_BEGINNING) {
-                customDividerPoints.add(paddedBoundsF.top + customDividerHeight/2.0F)
+                customDividerPoints.add(paddedBoundsF.top + customDividerHeight / 2.0F)
                 customDividerTypes.add(CustomDividerShowFlag.CONTAINER_BEGINNING)
                 customDividerTypedIndexes.add(0)
             }
 
             forEachIndexed { index, view ->
-
-//                customShadowChildTempPath.rewind()
-//                customShadowChildTempPath.addRect(view.left.toFloat(), view.top.toFloat(), view.right.toFloat(), view.bottom.toFloat(), Path.Direction.CW)
-//                customShadowChildTempPath.transform(view.matrix)
-//                composedCornerCutPath.addPath(customShadowChildTempPath)
-
-
                 if (index < lastChildIndex) {
                     if (index == 0 && !isTopAligned) {
                         childContactCutCenters.add(firstChildTop!!)
@@ -3472,7 +3482,7 @@ class CornerCutLinearLayout : LinearLayout {
             }
 
             if (customDividerShowFlag containsFlag CustomDividerShowFlag.CONTAINER_END) {
-                customDividerPoints.add(paddedBoundsF.bottom - customDividerHeight/2.0F)
+                customDividerPoints.add(paddedBoundsF.bottom - customDividerHeight / 2.0F)
                 customDividerTypes.add(CustomDividerShowFlag.CONTAINER_END)
                 customDividerTypedIndexes.add(0)
             }
@@ -4303,7 +4313,7 @@ class CornerCutLinearLayout : LinearLayout {
                 ?: this.leftBottomCornerCutType
 
             if (customDividerShowFlag containsFlag CustomDividerShowFlag.CONTAINER_BEGINNING) {
-                customDividerPoints.add(paddedViewStart + (customDividerHeight/2.0F).let { if (isLtr) it else -it })
+                customDividerPoints.add(paddedViewStart + (customDividerHeight / 2.0F).let { if (isLtr) it else -it })
                 customDividerTypes.add(CustomDividerShowFlag.CONTAINER_BEGINNING)
                 customDividerTypedIndexes.add(0)
             }
@@ -4424,7 +4434,7 @@ class CornerCutLinearLayout : LinearLayout {
             }
 
             if (customDividerShowFlag containsFlag CustomDividerShowFlag.CONTAINER_END) {
-                customDividerPoints.add(paddedViewEnd + (customDividerHeight/2.0F).let { if (isLtr) -it else it })
+                customDividerPoints.add(paddedViewEnd + (customDividerHeight / 2.0F).let { if (isLtr) -it else it })
                 customDividerTypes.add(CustomDividerShowFlag.CONTAINER_END)
                 customDividerTypedIndexes.add(0)
             }
@@ -6238,13 +6248,13 @@ class CornerCutLinearLayout : LinearLayout {
 
         //region Compose All Cutouts
         viewCornerCutPath.close()
-        composedCornerCutPath.op(viewCornerCutPath, Path.Op.DIFFERENCE)
+        innerViewAreaPath.op(viewCornerCutPath, Path.Op.DIFFERENCE)
         childCornerCutPath.close()
-        composedCornerCutPath.op(childCornerCutPath, Path.Op.DIFFERENCE)
+        innerViewAreaPath.op(childCornerCutPath, Path.Op.DIFFERENCE)
         customCutoutsPath.close()
-        composedCornerCutPath.op(customCutoutsPath, Path.Op.DIFFERENCE)
+        innerViewAreaPath.op(customCutoutsPath, Path.Op.DIFFERENCE)
 
-        composedCornerCutPath.close()
+        innerViewAreaPath.close()
         //endregion
 
         //region Custom Shadow Bitmap
@@ -6256,9 +6266,9 @@ class CornerCutLinearLayout : LinearLayout {
                 Bitmap.Config.ARGB_8888
             )
             customShadowCanvas.setBitmap(customShadowBitmap)
-            setLayerType(View.LAYER_TYPE_SOFTWARE, customShadowPaint)
-            customShadowCanvas.drawPath(composedCornerCutPath, customShadowPaint)
-            setLayerType(View.LAYER_TYPE_HARDWARE, null)
+            super.setLayerType(View.LAYER_TYPE_SOFTWARE, customShadowPaint)
+            customShadowCanvas.drawPath(innerViewAreaPath, customShadowPaint)
+            super.setLayerType(View.LAYER_TYPE_HARDWARE, null)
         }
         //endregion
 
@@ -6293,6 +6303,18 @@ class CornerCutLinearLayout : LinearLayout {
         )
     }
 
+    /**
+     * Layer Type is be handled internally and could not be overridden.
+     * There is 2 reasons:
+     * 1. Custom shadow drawing which requires to switch to [View.LAYER_TYPE_SOFTWARE]
+     * during shadow bitmap drawing (see [draw] function).
+     * 2. Correct view matrix transformation (scale, rotation, translation, etc.) control which
+     * requires [View.LAYER_TYPE_HARDWARE].
+     */
+    override fun setLayerType(layerType: Int, paint: Paint?) {
+        //stub
+    }
+
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
         paddedBoundsF.set(
@@ -6320,212 +6342,216 @@ class CornerCutLinearLayout : LinearLayout {
         //region Custom Divider
         val isLtr = isLtr
 
-            var dividerDrawStartX: Float = -1.0F
-            var dividerDrawEndX: Float = -1.0F
-            var dividerCenterX = 0.0F
-            var isDashedCenterGravity = false
-            var centerGravityDashedLineStartPartStartX = 0.0F
-            var centerGravityDashedLineEndPartStartX = 0.0F
+        var dividerDrawStartX: Float = -1.0F
+        var dividerDrawEndX: Float = -1.0F
+        var dividerCenterX = 0.0F
+        var isDashedCenterGravity = false
+        var centerGravityDashedLineStartPartStartX = 0.0F
+        var centerGravityDashedLineEndPartStartX = 0.0F
 
-            if (orientation == VERTICAL) {
-                val dividerStart = if (isLtr) paddedBoundsF.left else paddedBoundsF.right
-                val dividerEnd = if (isLtr) paddedBoundsF.right else paddedBoundsF.left
-                val customDividerPaddingStart =
-                    if (isLtr) customDividerPaddingStart else -customDividerPaddingStart
-                val customDividerPaddingEnd =
-                    if (isLtr) -customDividerPaddingEnd else customDividerPaddingEnd
+        if (orientation == VERTICAL) {
+            val dividerStart = if (isLtr) paddedBoundsF.left else paddedBoundsF.right
+            val dividerEnd = if (isLtr) paddedBoundsF.right else paddedBoundsF.left
+            val customDividerPaddingStart =
+                if (isLtr) customDividerPaddingStart else -customDividerPaddingStart
+            val customDividerPaddingEnd =
+                if (isLtr) -customDividerPaddingEnd else customDividerPaddingEnd
 
-                when (customCustomDividerGravity) {
-                    CustomDividerGravity.CENTER -> {
-                        dividerDrawStartX = dividerStart + customDividerPaddingStart
-                        dividerDrawEndX = dividerEnd + customDividerPaddingEnd
-                        val customDividerDashOffset =
-                            (customDividerDashWidth / 2.0F + customDividerDashGap).let { if (isLtr) -it else it }
+            when (customCustomDividerGravity) {
+                CustomDividerGravity.CENTER -> {
+                    dividerDrawStartX = dividerStart + customDividerPaddingStart
+                    dividerDrawEndX = dividerEnd + customDividerPaddingEnd
+                    val customDividerDashOffset =
+                        (customDividerDashWidth / 2.0F + customDividerDashGap).let { if (isLtr) -it else it }
 
-                        if (customDividerDashGap > 0.0F && customDividerDashWidth > 0.0F) {
-                            isDashedCenterGravity = true
-                            dividerCenterX = dividerDrawStartX + (dividerDrawEndX - dividerDrawStartX) / 2.0F
-                            centerGravityDashedLineStartPartStartX = when {
-                                isLtr -> (dividerCenterX + customDividerDashOffset).coerceAtLeast(
-                                    dividerDrawStartX
-                                )
-                                else -> (dividerCenterX + customDividerDashOffset).coerceAtMost(
-                                    dividerDrawStartX
-                                )
-                            }
-                            centerGravityDashedLineEndPartStartX = when {
-                                isLtr -> (dividerCenterX - customDividerDashOffset).coerceAtMost(
-                                    dividerDrawEndX
-                                )
-                                else -> (dividerCenterX - customDividerDashOffset).coerceAtLeast(
-                                    dividerDrawEndX
-                                )
-                            }
+                    if (customDividerDashGap > 0.0F && customDividerDashWidth > 0.0F) {
+                        isDashedCenterGravity = true
+                        dividerCenterX =
+                            dividerDrawStartX + (dividerDrawEndX - dividerDrawStartX) / 2.0F
+                        centerGravityDashedLineStartPartStartX = when {
+                            isLtr -> (dividerCenterX + customDividerDashOffset).coerceAtLeast(
+                                dividerDrawStartX
+                            )
+                            else -> (dividerCenterX + customDividerDashOffset).coerceAtMost(
+                                dividerDrawStartX
+                            )
                         }
-                    }
-
-                    CustomDividerGravity.START -> {
-                        dividerDrawStartX = dividerStart + customDividerPaddingStart
-                        dividerDrawEndX = dividerEnd + customDividerPaddingEnd
-                    }
-
-                    CustomDividerGravity.END -> {
-                        dividerDrawStartX = dividerEnd + customDividerPaddingEnd
-                        dividerDrawEndX = dividerStart + customDividerPaddingStart
+                        centerGravityDashedLineEndPartStartX = when {
+                            isLtr -> (dividerCenterX - customDividerDashOffset).coerceAtMost(
+                                dividerDrawEndX
+                            )
+                            else -> (dividerCenterX - customDividerDashOffset).coerceAtLeast(
+                                dividerDrawEndX
+                            )
+                        }
                     }
                 }
 
-                customDividerPoints.forEachIndexed { index, centerY ->
+                CustomDividerGravity.START -> {
+                    dividerDrawStartX = dividerStart + customDividerPaddingStart
+                    dividerDrawEndX = dividerEnd + customDividerPaddingEnd
+                }
 
-                    customDividerProviderPath.rewind()
-                    tempRectF.set(
-                        min(dividerDrawStartX, dividerDrawEndX),
-                        centerY,
-                        max(dividerDrawStartX, dividerDrawEndX),
-                        centerY
-                    )
-                    if (customDividerProvider?.getDivider(
+                CustomDividerGravity.END -> {
+                    dividerDrawStartX = dividerEnd + customDividerPaddingEnd
+                    dividerDrawEndX = dividerStart + customDividerPaddingStart
+                }
+            }
+
+            customDividerPoints.forEachIndexed { index, centerY ->
+
+                customDividerProviderPath.rewind()
+                tempRectF.set(
+                    min(dividerDrawStartX, dividerDrawEndX),
+                    centerY,
+                    max(dividerDrawStartX, dividerDrawEndX),
+                    centerY
+                )
+                if (customDividerProvider?.getDivider(
                         this@CornerCutLinearLayout,
                         customDividerProviderPath,
-                            customDividerProviderPaint,
+                        customDividerProviderPaint,
                         customDividerTypes[index],
                         customDividerTypedIndexes[index],
                         tempRectF
-                    ) == true) {
-                        canvas?.drawPath(customDividerProviderPath, customDividerProviderPaint)
-                    } else if (customDividerHeight > 0.0F) {
-                        if (isDashedCenterGravity) {
-                            customDividerPath.rewind()
-                            //center dash line
-                            customDividerPath.moveTo(
-                                dividerCenterX - customDividerDashWidth / 2.0F,
-                                centerY
-                            )
-                            customDividerPath.lineTo(
-                                dividerCenterX + customDividerDashWidth / 2.0F,
-                                centerY
-                            )
-                            canvas?.drawPath(customDividerPath, customDividerPaint)
+                    ) == true
+                ) {
+                    canvas?.drawPath(customDividerProviderPath, customDividerProviderPaint)
+                } else if (customDividerHeight > 0.0F) {
+                    if (isDashedCenterGravity) {
+                        customDividerPath.rewind()
+                        //center dash line
+                        customDividerPath.moveTo(
+                            dividerCenterX - customDividerDashWidth / 2.0F,
+                            centerY
+                        )
+                        customDividerPath.lineTo(
+                            dividerCenterX + customDividerDashWidth / 2.0F,
+                            centerY
+                        )
+                        canvas?.drawPath(customDividerPath, customDividerPaint)
 
-                            //left dashed line
-                            customDividerPath.moveTo(
-                                centerGravityDashedLineStartPartStartX,
-                                centerY
-                            )
-                            customDividerPath.lineTo(dividerDrawStartX, centerY)
-                            canvas?.drawPath(customDividerPath, customDividerPaint)
+                        //left dashed line
+                        customDividerPath.moveTo(
+                            centerGravityDashedLineStartPartStartX,
+                            centerY
+                        )
+                        customDividerPath.lineTo(dividerDrawStartX, centerY)
+                        canvas?.drawPath(customDividerPath, customDividerPaint)
 
-                            //right dashed line
-                            customDividerPath.moveTo(centerGravityDashedLineEndPartStartX, centerY)
-                            customDividerPath.lineTo(dividerDrawEndX, centerY)
-                            canvas?.drawPath(customDividerPath, customDividerPaint)
-                        } else {
-                            customDividerPath.rewind()
-                            customDividerPath.moveTo(dividerDrawStartX, centerY)
-                            customDividerPath.lineTo(dividerDrawEndX, centerY)
-                            canvas?.drawPath(customDividerPath, customDividerPaint)
-                        }
-                    }
-                }
-            } else {
-                // Horizontal
-
-                val dividerStart = if (isLtr) paddedBoundsF.bottom else paddedBoundsF.top
-                val dividerEnd = if (isLtr) paddedBoundsF.top else paddedBoundsF.bottom
-                val customDividerPaddingStart =
-                    if (isLtr) -customDividerPaddingStart else customDividerPaddingStart
-                val customDividerPaddingEnd =
-                    if (isLtr) customDividerPaddingEnd else -customDividerPaddingEnd
-
-                when (customCustomDividerGravity) {
-                    CustomDividerGravity.CENTER -> {
-                        dividerDrawStartX = dividerStart + customDividerPaddingStart
-                        dividerDrawEndX = dividerEnd + customDividerPaddingEnd
-                        val customDividerDashOffset =
-                            (customDividerDashWidth / 2.0F + customDividerDashGap).let { if (isLtr) it else -it }
-
-                        if (customDividerDashGap > 0.0F && customDividerDashWidth > 0.0F) {
-                            isDashedCenterGravity = true
-                            dividerCenterX = dividerDrawStartX + (dividerDrawEndX - dividerDrawStartX) / 2.0F
-                            centerGravityDashedLineStartPartStartX = when {
-                                isLtr -> (dividerCenterX + customDividerDashOffset).coerceAtMost(
-                                    dividerDrawStartX
-                                )
-                                else -> (dividerCenterX + customDividerDashOffset).coerceAtLeast(
-                                    dividerDrawStartX
-                                )
-                            }
-                            centerGravityDashedLineEndPartStartX = when {
-                                isLtr -> (dividerCenterX - customDividerDashOffset).coerceAtLeast(
-                                    dividerDrawEndX
-                                )
-                                else -> (dividerCenterX - customDividerDashOffset).coerceAtMost(
-                                    dividerDrawEndX
-                                )
-                            }
-                        }
-                    }
-
-                    CustomDividerGravity.START -> {
-                        dividerDrawStartX = dividerStart + customDividerPaddingStart
-                        dividerDrawEndX = dividerEnd + customDividerPaddingEnd
-                    }
-
-                    CustomDividerGravity.END -> {
-                        dividerDrawStartX = dividerEnd + customDividerPaddingEnd
-                        dividerDrawEndX = dividerStart + customDividerPaddingStart
-                    }
-                }
-
-                customDividerPoints.forEachIndexed { index, centerX ->
-                    customDividerProviderPath.rewind()
-                    tempRectF.set(
-                        centerX,
-                        min(dividerDrawStartX, dividerDrawEndX),
-                        centerX,
-                        max(dividerDrawStartX, dividerDrawEndX)
-                    )
-                    if (customDividerProvider?.getDivider(
-                            this@CornerCutLinearLayout,
-                            customDividerProviderPath,
-                            customDividerProviderPaint,
-                            customDividerTypes[index],
-                            customDividerTypedIndexes[index],
-                            tempRectF
-                        ) == true) {
-                        canvas?.drawPath(customDividerProviderPath, customDividerProviderPaint)
-                    } else if (customDividerHeight > 0.0F) {
-                        if (isDashedCenterGravity) {
-                            customDividerPath.rewind()
-                            //center dash line
-                            customDividerPath.moveTo(
-                                centerX,
-                                dividerCenterX + customDividerDashWidth / 2.0F
-                            )
-                            customDividerPath.lineTo(
-                                centerX,
-                                dividerCenterX - customDividerDashWidth / 2.0F
-                            )
-                            canvas?.drawPath(customDividerPath, customDividerPaint)
-
-                            //left dashed line
-                            customDividerPath.moveTo(centerX, centerGravityDashedLineStartPartStartX)
-                            customDividerPath.lineTo(centerX, dividerDrawStartX)
-                            canvas?.drawPath(customDividerPath, customDividerPaint)
-
-                            //right dashed line
-                            customDividerPath.moveTo(centerX, centerGravityDashedLineEndPartStartX)
-                            customDividerPath.lineTo(centerX, dividerDrawEndX)
-                            canvas?.drawPath(customDividerPath, customDividerPaint)
-                        } else {
-                            customDividerPath.rewind()
-                            customDividerPath.moveTo(centerX, dividerDrawStartX)
-                            customDividerPath.lineTo(centerX, dividerDrawEndX)
-                            canvas?.drawPath(customDividerPath, customDividerPaint)
-                        }
+                        //right dashed line
+                        customDividerPath.moveTo(centerGravityDashedLineEndPartStartX, centerY)
+                        customDividerPath.lineTo(dividerDrawEndX, centerY)
+                        canvas?.drawPath(customDividerPath, customDividerPaint)
+                    } else {
+                        customDividerPath.rewind()
+                        customDividerPath.moveTo(dividerDrawStartX, centerY)
+                        customDividerPath.lineTo(dividerDrawEndX, centerY)
+                        canvas?.drawPath(customDividerPath, customDividerPaint)
                     }
                 }
             }
+        } else {
+            // Horizontal
+
+            val dividerStart = if (isLtr) paddedBoundsF.bottom else paddedBoundsF.top
+            val dividerEnd = if (isLtr) paddedBoundsF.top else paddedBoundsF.bottom
+            val customDividerPaddingStart =
+                if (isLtr) -customDividerPaddingStart else customDividerPaddingStart
+            val customDividerPaddingEnd =
+                if (isLtr) customDividerPaddingEnd else -customDividerPaddingEnd
+
+            when (customCustomDividerGravity) {
+                CustomDividerGravity.CENTER -> {
+                    dividerDrawStartX = dividerStart + customDividerPaddingStart
+                    dividerDrawEndX = dividerEnd + customDividerPaddingEnd
+                    val customDividerDashOffset =
+                        (customDividerDashWidth / 2.0F + customDividerDashGap).let { if (isLtr) it else -it }
+
+                    if (customDividerDashGap > 0.0F && customDividerDashWidth > 0.0F) {
+                        isDashedCenterGravity = true
+                        dividerCenterX =
+                            dividerDrawStartX + (dividerDrawEndX - dividerDrawStartX) / 2.0F
+                        centerGravityDashedLineStartPartStartX = when {
+                            isLtr -> (dividerCenterX + customDividerDashOffset).coerceAtMost(
+                                dividerDrawStartX
+                            )
+                            else -> (dividerCenterX + customDividerDashOffset).coerceAtLeast(
+                                dividerDrawStartX
+                            )
+                        }
+                        centerGravityDashedLineEndPartStartX = when {
+                            isLtr -> (dividerCenterX - customDividerDashOffset).coerceAtLeast(
+                                dividerDrawEndX
+                            )
+                            else -> (dividerCenterX - customDividerDashOffset).coerceAtMost(
+                                dividerDrawEndX
+                            )
+                        }
+                    }
+                }
+
+                CustomDividerGravity.START -> {
+                    dividerDrawStartX = dividerStart + customDividerPaddingStart
+                    dividerDrawEndX = dividerEnd + customDividerPaddingEnd
+                }
+
+                CustomDividerGravity.END -> {
+                    dividerDrawStartX = dividerEnd + customDividerPaddingEnd
+                    dividerDrawEndX = dividerStart + customDividerPaddingStart
+                }
+            }
+
+            customDividerPoints.forEachIndexed { index, centerX ->
+                customDividerProviderPath.rewind()
+                tempRectF.set(
+                    centerX,
+                    min(dividerDrawStartX, dividerDrawEndX),
+                    centerX,
+                    max(dividerDrawStartX, dividerDrawEndX)
+                )
+                if (customDividerProvider?.getDivider(
+                        this@CornerCutLinearLayout,
+                        customDividerProviderPath,
+                        customDividerProviderPaint,
+                        customDividerTypes[index],
+                        customDividerTypedIndexes[index],
+                        tempRectF
+                    ) == true
+                ) {
+                    canvas?.drawPath(customDividerProviderPath, customDividerProviderPaint)
+                } else if (customDividerHeight > 0.0F) {
+                    if (isDashedCenterGravity) {
+                        customDividerPath.rewind()
+                        //center dash line
+                        customDividerPath.moveTo(
+                            centerX,
+                            dividerCenterX + customDividerDashWidth / 2.0F
+                        )
+                        customDividerPath.lineTo(
+                            centerX,
+                            dividerCenterX - customDividerDashWidth / 2.0F
+                        )
+                        canvas?.drawPath(customDividerPath, customDividerPaint)
+
+                        //left dashed line
+                        customDividerPath.moveTo(centerX, centerGravityDashedLineStartPartStartX)
+                        customDividerPath.lineTo(centerX, dividerDrawStartX)
+                        canvas?.drawPath(customDividerPath, customDividerPaint)
+
+                        //right dashed line
+                        customDividerPath.moveTo(centerX, centerGravityDashedLineEndPartStartX)
+                        customDividerPath.lineTo(centerX, dividerDrawEndX)
+                        canvas?.drawPath(customDividerPath, customDividerPaint)
+                    } else {
+                        customDividerPath.rewind()
+                        customDividerPath.moveTo(centerX, dividerDrawStartX)
+                        customDividerPath.lineTo(centerX, dividerDrawEndX)
+                        canvas?.drawPath(customDividerPath, customDividerPaint)
+                    }
+                }
+            }
+        }
         //endregion
     }
 
@@ -6535,7 +6561,7 @@ class CornerCutLinearLayout : LinearLayout {
         }
 
         @Suppress("DEPRECATION")
-        canvas.clipPath(composedCornerCutPath, Region.Op.INTERSECT)
+        canvas.clipPath(innerViewAreaPath, Region.Op.INTERSECT)
         super.draw(canvas)
     }
 
@@ -7344,7 +7370,26 @@ class CornerCutLinearLayout : LinearLayout {
     }
     //endregion
 
-    //region Cutout Provider Interfaces
+    /**
+     * Provider that override base visible area.
+     * Keep in mind, though, that another cutouts would be applied over path provided.
+     *
+     */
+    interface CustomViewAreaProvider {
+        /**
+         * @param view - [CornerCutLinearLayout] owner of this provider.
+         * @param path - path that holds custom visible part of view.
+         * Note that path will be closed automatically afterwards.
+         * @param rectF - padded bounds of this [CornerCutLinearLayout].
+         */
+        fun getVisibleViewArea(
+            view: CornerCutLinearLayout,
+            path: Path,
+            rectF: RectF
+        )
+    }
+
+    //region Custom Cutout Provider Interfaces
     /**
      * Provider that allow custom corner cut.
      */
@@ -7509,7 +7554,7 @@ class CornerCutLinearLayout : LinearLayout {
          * @see [CustomDividerShowFlag].
          * @param dividerTypeIndex - index of this divider in relation to its type ([CustomDividerShowFlag]).
          * So, when [showDividerFlag] != [CustomDividerShowFlag.MIDDLE], then [dividerTypeIndex] always = 0.
-         * For instance, in [CornerCutLinearLayout.VERTICAL] with [showDividerFlag] = [CustomDividerShowFlag.MIDDLE] with 3 child views
+         * For instance, in [LinearLayout.VERTICAL] with [showDividerFlag] = [CustomDividerShowFlag.MIDDLE] with 3 child views
          * [dividerTypeIndex] would be equal to:
          * - 0 between 1st and 2nd child
          * - 1 between 2nd and 3rd child.

@@ -1,5 +1,6 @@
 package io.devlight.xtreeivi.sample
 
+import android.annotation.SuppressLint
 import android.graphics.*
 import android.os.Bundle
 import android.os.Handler
@@ -9,7 +10,7 @@ import android.view.animation.CycleInterpolator
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.updateLayoutParams
+import androidx.core.view.*
 import com.google.android.material.math.MathUtils
 import io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
 import io.devlight.xtreeivi.sample.extensions.*
@@ -23,6 +24,17 @@ class MainActivity : AppCompatActivity() {
 
     private val handler = Handler()
     private lateinit var runnable: Runnable
+    private val lineCountRunnable = object : Runnable {
+        override fun run() {
+            with(txt_showcase_custom_view_area_provider ?: return) {
+                maxLines = maxLines.let {
+                    if ((it + 1) <= 5) it + 1
+                    else 1
+                }
+            }
+            handler.postDelayed(this, 2000L)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +43,9 @@ class MainActivity : AppCompatActivity() {
         //region Custom Corner Cut
         val inset = resources.displayMetrics.density * 8
         val eyeRadius = resources.displayMetrics.density * 3
-        var halfOpenMouthAngle = 35.0F
+        val halfOpenMouthAngle = 35.0F
         val pacmanMouthPath = Path()
-        ccll_showcase_custom_lt_rb.setCornerCutProvider { view, cutout, cutEdge, rectF ->
+        ccll_showcase_custom_lt_rb.setCornerCutProvider { _, cutout, cutEdge, rectF ->
             when (cutEdge) {
                 CornerCutLinearLayout.CornerCutFlag.START_TOP -> {
                     rectF.inset(inset, inset)
@@ -88,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         var isClockwise = true
         val rotationDuration = 2000L
         ccll_showcase_custom_lt_exceed_bounds.setCornerCutProvider(
-            { view: CornerCutLinearLayout, cutout: Path, cutEdge: Int, rectF: RectF ->
+            { _: CornerCutLinearLayout, _: Path, _: Int, _: RectF ->
                 val matrix = Matrix()
                 val pb = ccll_showcase_custom_lt_exceed_bounds.paddedBounds
                 matrix.postRotate(currentRotationAngle, pb.centerX(), pb.centerY())
@@ -135,9 +147,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        handler.removeCallbacks(runnable)
-        handler.post(runnable)
-
         ccll_showcase_custom_divider_provider.doOnNonNullSizeLayout {
             val pb = ccll_showcase_custom_divider_provider.paddedBounds
             ccll_showcase_custom_divider_provider.customDividerProviderPaint.shader =
@@ -153,7 +162,7 @@ class MainActivity : AppCompatActivity() {
         //endregion
 
         //region Custom Child Corner Cut
-        ccll_showcase_custom_child_cut_provider.setChildCornerCutProvider { view, cutout, cutSide, rectF, relativeCutTopChild, relativeCutBottomChild ->
+        ccll_showcase_custom_child_cut_provider.setChildCornerCutProvider { view, cutout, _, rectF, _, _ ->
             //rectF.inset(-40.0F, 0.0F)
             cutout.moveTo(rectF.centerX(), rectF.top)
             cutout.arcTo(
@@ -177,11 +186,10 @@ class MainActivity : AppCompatActivity() {
             )
             cutout.lineTo(rectF.centerX(), rectF.top)
             val halfChordWidth = rectF.height() / 2.0F
-            val circleRadius = halfChordWidth
             cutout.addCircle(
                 rectF.centerX() + rectF.width(),
                 rectF.centerY(),
-                circleRadius,
+                halfChordWidth,
                 Path.Direction.CW
             )
             cutout.moveTo(rectF.centerX() + rectF.width(), rectF.top)
@@ -192,7 +200,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         ccll_showcase_custom_child_cut_provider_mixed.setChildCornerCutProvider(
-            { view: CornerCutLinearLayout, cutout: Path, cutSide: Int, rectF: RectF, relativeCutTopChild: View?, relativeCutBottomChild: View? ->
+            { _: CornerCutLinearLayout, _: Path, cutSide: Int, rectF: RectF, _: View?, _: View? ->
                 val matrix = Matrix()
                 when (cutSide) {
                     CornerCutLinearLayout.ChildSideCutFlag.START -> {
@@ -207,7 +215,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 matrix
             },
-            { view, cutout, cutSide, rectF, relativeCutTopChild, relativeCutBottomChild ->
+            { view, cutout, cutSide, rectF, relativeCutTopChild, _ ->
                 when (cutSide) {
                     CornerCutLinearLayout.ChildSideCutFlag.START -> {
                         if (view.indexOfChild(
@@ -254,11 +262,210 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         )
+
+        ccll_showcase_custom_view_area_provider.setCustomViewAreaProvider { view, path, rectF ->
+            val offset = view[0].marginEnd
+            val cornerRadius = rectF.height() / 4.0F
+            val tailCircleRadius = cornerRadius / 2.0F
+            val innerTailCircleRadius = tailCircleRadius / 2.0F
+            val smallCornerRadius = cornerRadius / 4.0F
+            path.addRoundRect(
+                rectF.left,
+                rectF.top,
+                rectF.right - offset,
+                rectF.bottom,
+                cornerRadius,
+                cornerRadius,
+                Path.Direction.CW
+            )
+
+            path.moveTo(rectF.right - offset, rectF.top + cornerRadius)
+            path.arcTo(
+                rectF.right - offset,
+                rectF.top + cornerRadius - smallCornerRadius,
+                rectF.right - offset + smallCornerRadius * 2,
+                rectF.top + cornerRadius + smallCornerRadius,
+                180.0F,
+                -50.0F,
+                false
+            )
+            path.lineTo(rectF.right - tailCircleRadius, rectF.centerY() - innerTailCircleRadius)
+            path.lineTo(
+                rectF.right - offset + innerTailCircleRadius,
+                rectF.centerY() - innerTailCircleRadius
+            )
+            path.arcTo(
+                rectF.right - offset,
+                rectF.centerY() - innerTailCircleRadius,
+                rectF.right - offset + innerTailCircleRadius * 2,
+                rectF.centerY() + innerTailCircleRadius,
+                270.0F,
+                -180.0F,
+                false
+            )
+            path.lineTo(rectF.right - tailCircleRadius, rectF.centerY() + innerTailCircleRadius)
+            path.arcTo(
+                rectF.right - offset,
+                rectF.bottom - cornerRadius - smallCornerRadius,
+                rectF.right - offset + smallCornerRadius * 2,
+                rectF.bottom - cornerRadius + smallCornerRadius,
+                230.0F,
+                -50.0F,
+                false
+            )
+            path.lineTo(rectF.right - offset, rectF.top + cornerRadius)
+
+            // circle
+            path.addCircle(
+                rectF.right - tailCircleRadius,
+                rectF.centerY(),
+                tailCircleRadius,
+                Path.Direction.CW
+            )
+            path.addCircle(
+                rectF.right - tailCircleRadius,
+                rectF.centerY(),
+                innerTailCircleRadius,
+                Path.Direction.CCW
+            )
+        }
+
+        val tempPath = Path()
+        val tempRectF = RectF()
+
+        ccll_showcase_custom_view_area_provider_2.setCustomViewAreaProvider { view, path, _ ->
+            view.forEach {
+                tempPath.rewind()
+                if (it is CornerCutLinearLayout) {
+                    tempPath.offset(-it.left.toFloat(), -it.top.toFloat())
+                    tempPath.addPath(it.viewAreaPath)
+                    tempPath.transform(it.matrix)
+                    tempPath.offset(it.left.toFloat(), it.top.toFloat())
+                } else {
+                    tempRectF.set(
+                        it.left.toFloat(),
+                        it.top.toFloat(),
+                        it.right.toFloat(),
+                        it.bottom.toFloat()
+                    )
+                    val childCornerRadius = min(tempRectF.width(), tempRectF.height()) / 6.0F
+
+                    tempPath.addRoundRect(
+                        tempRectF,
+                        childCornerRadius,
+                        childCornerRadius,
+                        Path.Direction.CW
+                    )
+                    tempPath.offset(-it.left.toFloat(), -it.top.toFloat())
+                    tempPath.transform(it.matrix)
+                    tempPath.offset(it.left.toFloat(), it.top.toFloat())
+                }
+                path.op(tempPath, Path.Op.UNION)
+            }
+        }
+
+        ccll_showcase_custom_view_area_provider_2_child_1.addCustomCutoutProvider { _, cutout, rectF ->
+            val width = rectF.width()
+            val height = rectF.height()
+            cutout.moveTo(rectF.centerX(), rectF.top)
+            cutout.lineTo(rectF.centerX() + 0.125F * width, rectF.top + 0.38F * height)
+            cutout.lineTo(rectF.centerX() + 0.522F * width, rectF.top + 0.38F * height)
+            cutout.lineTo(rectF.centerX() + 0.2F * width, rectF.top + 0.612F * height)
+            cutout.lineTo(rectF.centerX() + 0.325F * width, rectF.top + 1.0F * height)
+            cutout.lineTo(rectF.centerX(), rectF.top + 0.76F * height)
+            cutout.lineTo(rectF.centerX() - 0.325F * width, rectF.top + 1.0F * height)
+            cutout.lineTo(rectF.centerX() - 0.2F * width, rectF.top + 0.612F * height)
+            cutout.lineTo(rectF.centerX() - 0.522F * width, rectF.top + 0.38F * height)
+            cutout.lineTo(rectF.centerX() - 0.125F * width, rectF.top + 0.38F * height)
+        }
+
+        val waveLineCutWidth = resources.getDimension(R.dimen.offset_12)
+        val waveLineHeight = resources.getDimension(R.dimen.offset_48)
+        val halfWaveLineHeight = waveLineHeight/2.0F
+        val halfWaveLineCutWidth = waveLineCutWidth/2.0F
+        ccll_showcase_custom_view_area_provider_2.addCustomCutoutProvider { _, cutout, rectF ->
+            cutout.moveTo(rectF.left, rectF.centerY() - halfWaveLineCutWidth)
+            cutout.lineTo(
+                rectF.left + rectF.width()/4.0F,
+                rectF.centerY() - halfWaveLineCutWidth - halfWaveLineHeight
+            )
+            cutout.lineTo(
+                rectF.right - rectF.width()/4.0F,
+                rectF.centerY() - halfWaveLineCutWidth + halfWaveLineHeight
+            )
+            cutout.lineTo(rectF.right, rectF.centerY() - halfWaveLineCutWidth)
+            cutout.lineTo(rectF.right, rectF.centerY() + halfWaveLineCutWidth)
+            cutout.lineTo(
+                rectF.right - rectF.width()/4.0F,
+                rectF.centerY() + halfWaveLineCutWidth + halfWaveLineHeight
+            )
+            cutout.lineTo(
+                rectF.left + rectF.width()/4.0F,
+                rectF.centerY() + halfWaveLineCutWidth - halfWaveLineHeight
+            )
+            cutout.lineTo(rectF.left, rectF.centerY() + halfWaveLineCutWidth)
+            cutout.lineTo(rectF.left, rectF.centerY() - halfWaveLineCutWidth)
+        }
+
+
+        ccll_showcase_custom_view_area_provider_2.doOnNonNullSizeLayout {
+            val firstChild = it[0]
+            val lastChild = it[2]
+            val middleChild = it[1]
+            val lastChildTravelX = it.width.toFloat() - lastChild.width.toFloat()
+            val middleChildTravelY = it.height.toFloat()
+            middleChild.translationY = -(middleChild.top.toFloat() + middleChild.height/2.0F)
+            lastChild.translationX = -lastChild.left.toFloat()
+            fun animateFirstChild() {
+                firstChild
+                    .animate()
+                    .rotationBy(360.0F)
+                    .setDuration(4000L)
+                    .withEndAction {
+                        firstChild
+                            .animate()
+                            .rotationXBy(360.0F)
+                            .setDuration(2000L)
+                            .withEndAction {
+                                firstChild
+                                    .animate()
+                                    .rotationYBy(360.0F)
+                                    .setDuration(2000L)
+                                    .withEndAction {
+                                        animateFirstChild()
+                                    }
+                            }
+                    }
+            }
+            fun animateMiddleChild() {
+                middleChild
+                    .animate()
+                    .translationYBy(middleChildTravelY)
+                    .setDuration((2500L..5000L).random())
+                    .setInterpolator(CycleInterpolator(0.5F))
+                    .withEndAction { animateMiddleChild() }
+            }
+            fun animateLastChild() {
+                lastChild
+                    .animate()
+                    .translationXBy(lastChildTravelX)
+                    .setInterpolator(CycleInterpolator(0.5F))
+                    .setDuration(4000L)
+                    .setUpdateListener {
+                        ccll_showcase_custom_view_area_provider_2.invalidateCornerCutPath()
+                    }
+                    .withEndAction {
+                        animateLastChild()
+                    }
+            }
+            animateFirstChild()
+            animateMiddleChild()
+            animateLastChild()
+        }
+
         //endregion
 
         //region Cut Properties
-
-
         ccll_showcase_depth_and_length.doOnNonNullSizeLayout {
             val depth =
                 (ccll_showcase_depth_and_length.width - ccll_showcase_depth_and_length.paddingEnd - ccll_showcase_depth_and_length.childEndSideCornerCutDepth / 2.0F).roundToInt()
@@ -299,6 +506,7 @@ class MainActivity : AppCompatActivity() {
             val minWidth = pureRawSize + ccll.horizontalPadding
             val minHeight = pureRawSize + ccll.verticalPadding
 
+            @SuppressLint("SetTextI18n")
             fun playAnimation() {
                 if (isAnimationRunning) return
                 isAnimationRunning = true
@@ -351,7 +559,7 @@ class MainActivity : AppCompatActivity() {
         diamondDotDividerPath.close()
         diamondDotDividerPath.offset(-triangleBaseWidth / 2.0F, 0.0F)
 
-        ccll_showcase_custom_divider_provider.setCustomDividerProvider { view, dividerPath, dividerPaint, showDividerFlag, dividerTypeIndex, rectF ->
+        ccll_showcase_custom_divider_provider.setCustomDividerProvider { _, dividerPath, dividerPaint, showDividerFlag, dividerTypeIndex, rectF ->
             when (showDividerFlag) {
                 CornerCutLinearLayout.CustomDividerShowFlag.CONTAINER_BEGINNING -> {
                     dividerPaint.style = Paint.Style.STROKE
@@ -410,7 +618,6 @@ class MainActivity : AppCompatActivity() {
         val wavePath = Path()
         val halfWaveWidth = resources.getDimension(R.dimen.offset_16)
         val halfWaveHeight = resources.getDimension(R.dimen.offset_8)
-        val waveWidth = resources.getDimension(R.dimen.offset_4)
         wavePath.moveTo(0.0F, 0.0F)
         wavePath.arcTo(0.0F, -halfWaveHeight, halfWaveWidth, halfWaveHeight, 180.0F, 180.0F, true)
         wavePath.arcTo(
@@ -423,7 +630,7 @@ class MainActivity : AppCompatActivity() {
             true
         )
 
-        ccll_showcase_custom_divider_provider_mixed.setCustomDividerProvider { view, dividerPath, dividerPaint, showDividerFlag, dividerTypeIndex, rectF ->
+        ccll_showcase_custom_divider_provider_mixed.setCustomDividerProvider { _, dividerPath, dividerPaint, showDividerFlag, dividerTypeIndex, rectF ->
             when (showDividerFlag) {
                 CornerCutLinearLayout.CustomDividerShowFlag.MIDDLE -> {
                     dividerPaint.style = Paint.Style.STROKE
@@ -479,8 +686,8 @@ class MainActivity : AppCompatActivity() {
         }
         //endregion
     }
-    
-    fun cycleViewWidth(view: View, minWidth: Float, maxWidth: Float, onEnd: () -> Unit) {
+
+    private fun cycleViewWidth(view: View, minWidth: Float, maxWidth: Float, onEnd: () -> Unit) {
         view
             .animate()
             .translationX(0.5F)
@@ -495,7 +702,7 @@ class MainActivity : AppCompatActivity() {
             .withEndAction { onEnd() }
     }
 
-    fun cycleViewHeight(view: View, minHeight: Float, maxHeight: Float, onEnd: () -> Unit) {
+    private fun cycleViewHeight(view: View, minHeight: Float, maxHeight: Float, onEnd: () -> Unit) {
         view
             .animate()
             .translationX(0.5F)
@@ -510,7 +717,14 @@ class MainActivity : AppCompatActivity() {
             .withEndAction { onEnd() }
     }
 
-    fun cycleViewWidthAndHeight(view: View, minWidth: Float, maxWidth: Float, minHeight: Float, maxHeight: Float, onEnd: () -> Unit) {
+    private fun cycleViewWidthAndHeight(
+        view: View,
+        minWidth: Float,
+        maxWidth: Float,
+        minHeight: Float,
+        maxHeight: Float,
+        onEnd: () -> Unit
+    ) {
         view
             .animate()
             .translationX(0.5F)
@@ -524,6 +738,15 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             .withEndAction { onEnd() }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (::runnable.isInitialized) {
+            handler.removeCallbacks(runnable)
+            handler.post(runnable)
+        }
+        handler.post(lineCountRunnable)
     }
 
     override fun onPause() {
@@ -531,5 +754,6 @@ class MainActivity : AppCompatActivity() {
         if (::runnable.isInitialized) {
             handler.removeCallbacks(runnable)
         }
+        handler.removeCallbacks(lineCountRunnable)
     }
 }
