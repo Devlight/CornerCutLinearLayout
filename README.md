@@ -114,39 +114,25 @@ There are 5 default corner cut types for parent and children corners\*.
 
 1) Oval.
 
-<img src="/assets/images/oval.jpg" width="150" height="150">
-
-<img src="/assets/images/child_oval.jpg" width="300" height="150">
+<img src="/assets/images/oval.jpg" width="150" height="150"><img src="/assets/images/child_oval.jpg" width="300" height="150">
 
 2) Oval Inverse.
 
-<img src="/assets/images/oval_inverse.jpg" width="150" height="150">
-
-<img src="/assets/images/child_oval_inverse.jpg" width="300" height="150">
+<img src="/assets/images/oval_inverse.jpg" width="150" height="150"><img src="/assets/images/child_oval_inverse.jpg" width="300" height="150">
 
 3) Rectangle.\*\*
 
-<img src="/assets/images/rectangle.jpg" width="150" height="150">
-
-<img src="/assets/images/child_rectangle.jpg" width="300" height="150">
-
-<img src="/assets/images/child_rectangle_corners.jpg" width="300" height="150">
+<img src="/assets/images/rectangle.jpg" width="300" height="150"><img src="/assets/images/child_rectangle.jpg" width="300" height="150"><img src="/assets/images/child_rectangle_corners.jpg" width="300" height="150">
 
 >This corner cut type supports an inner corner radius. 
 
 4) Rectangle Inverse.\*\*
 
-<img src="/assets/images/rectangle_inverse.jpg" width="150" height="150">
-
-<img src="/assets/images/child_rectangle_inverse.jpg" width="300" height="150">
-
-<img src="/assets/images/child_rectangle_inverse_corners.jpg" width="300" height="150">
+<img src="/assets/images/rectangle_inverse.jpg" width="300" height="150"><img src="/assets/images/child_rectangle_inverse.jpg" width="300" height="150"><img src="/assets/images/child_rectangle_inverse_corners.jpg" width="300" height="150">
 
 5) Bevel.
 
-<img src="/assets/images/bevel.jpg" width="150" height="150">
-
-<img src="/assets/images/child_bevel.jpg" width="300" height="150">
+<img src="/assets/images/bevel.jpg" width="150" height="150"><img src="/assets/images/child_bevel.jpg" width="300" height="150">
 
 >\* - Each child corner type, in fact, is mirrored and combined into a path from the respective corner cut types of contact children.\
 \*\* - Rectangle types support internal corner radius. There are respective attributes and view properties for both parent and child cuts.
