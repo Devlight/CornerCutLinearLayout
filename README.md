@@ -137,6 +137,74 @@ There are 5 default corner cut types for parent and children corners\*.
 >\* - Each child corner type, in fact, is mirrored and combined into a path from the respective corner cut types of contact children.\
 \*\* - Rectangle types support internal corner radius. There are respective attributes and view properties for both parent and child cuts.
 
+### Layout Parameters
+
+Each child can override parent defined properties and attributes related to the corner cuts.
+
+In the examples below, parent `CornerCutLinearLayout` has `ccll_child_corner_cut_type` = `oval_inverse` and the middle children override each corner (different types) 
+
+```xml
+<io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+    ...
+    app:ccll_child_corner_cut_type="oval_inverse">
+    ...
+    <View
+        ...
+        app:layout_ccll_start_top_corner_cut_type="oval"
+        app:layout_ccll_end_top_corner_cut_type="bevel"
+        app:layout_ccll_end_bottom_corner_cut_type="rectangle"
+        app:layout_ccll_start_bottom_corner_cut_type="rectangle_inverse"/>
+    ...
+</io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+```
+
+<img src="/assets/images/child_override_corner_cut_type.jpg" width="300" height="150">
+
+#### Edge Child.
+There also special layout params for the first and last child. For example in a vertical orientation, when the top and bottom children are not aligned to parent top and bottom respectively they can override **contact cut\*** with the parent.
+
+```xml
+<io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+    ...
+    android:gravity="center"
+    app:ccll_child_corner_cut_type="oval_inverse">
+    <View
+        ...
+        app:layout_ccll_edge_child_parent_contact_corner_cut_type="oval"/>
+        ...
+    <View
+        ...
+        app:layout_ccll_edge_child_parent_contact_corner_cut_type="rectangle_inverse"/>
+</io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+```
+
+<img src="/assets/images/edge_child_override_contact.jpg" width="300" height="150">
+
+
+In case edge child is aligned to the respective side, they could optionally override parent corner cut type\*\*.
+
+```xml
+<io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+    ...
+    app:ccll_corner_cut_type="bevel">
+    <View
+        ...
+        app:layout_ccll_start_top_corner_cut_type="oval"
+        app:layout_ccll_end_top_corner_cut_type="rectangle"
+        app:layout_ccll_edge_child_could_override_parent_corner_cut_type_if_edge_aligned="true"/>
+        ...
+    <View
+        ...
+        app:layout_ccll_start_bottom_corner_cut_type="rectangle_inverse"
+        app:layout_ccll_edge_child_could_override_parent_corner_cut_type_if_edge_aligned="true"/>
+</io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+```
+
+<img src="/assets/images/edge_child_aligned_override_parent_corners.jpg" width="150" height="150">
+
+
+>\* - By default specified `ccll_child_corner_cut_type` is used for child-parent contact if not overridden by edge child.\
+\*\* - Note that only type of parent corner type is overridden, while parent properties (depth, length, etc.) are stay preserved.
 
 ## Advanced
 
