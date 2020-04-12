@@ -479,7 +479,6 @@ class MainActivity : AppCompatActivity() {
                 it.paddedBounds.width() - it.childStartSideCornerCutDepth
         }
 
-
         v_showcase_max_cut.duplicateViewSizeContinuously(
             ccll_showcase_max_cut,
             transformWidth = { (ccll_showcase_max_cut.paddedBounds.width() / 2).roundToInt() },
