@@ -124,8 +124,6 @@ There are 5 default corner cut types for parent and children corners\*.
 
 <img src="/assets/images/rectangle.jpg" width="300" height="150"><img src="/assets/images/child_rectangle.jpg" width="300" height="150"><img src="/assets/images/child_rectangle_corners.jpg" width="300" height="150">
 
->This corner cut type supports an inner corner radius. 
-
 4) Rectangle Inverse.\*\*
 
 <img src="/assets/images/rectangle_inverse.jpg" width="300" height="150"><img src="/assets/images/child_rectangle_inverse.jpg" width="300" height="150"><img src="/assets/images/child_rectangle_inverse_corners.jpg" width="300" height="150">
