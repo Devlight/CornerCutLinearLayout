@@ -106,8 +106,7 @@ with(ccll_kotlin_synthetic_view) {
 ```
 Visual result would be follow:
 
-![CornerCutLinearLayout](/assets/images/first_usage.jpg){:height="200px" width="200px"}
-
+<img src="/assets/images/first_usage.jpg" width="150" height="150">
 
 ## Advanced
 
