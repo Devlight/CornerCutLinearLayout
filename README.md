@@ -7,10 +7,12 @@ Additionally, using available properties and custom providers, those cuts may be
 Widget's sole purpose is to use with children with no transformations (like rotation, scale, matrix transformations).
 
 Amongst additional features:
-- child layout parameters that allow overriding default parent parameters.
+- RTL support
+- child layout parameters that allow overriding default parent parameters
 - custom shadow
 - custom dividers & providers
 - custom cutouts & providers
+- custom view visible area provider
 
 # Installation
 
@@ -110,11 +112,19 @@ Visual result would be follow:
 
 ### Corner Cut Anatomy
 
-By default `CornerCutType.OVAL` is used for both parent corner and child cuts. Corner cut are bounded to its personal dimensions - **depth** and **length**.\
+By default `CornerCutType.OVAL` is used for both parent corner and child cuts. Corner cut are bounded to its personal dimensions - **depth** and **length**.
+
+**Depth** - relative to orientation width of the cutout bounds.\
+**Length** - relative to orientation height of the cutout bounds.
+
 Each of 4 parent corner cuts dimensions could be specified individually.\
 Children's corner cuts could have separate dimensions for `ChildSideCutFlag.START` and `ChildSideCutFlag.END` sides. Children's corner cuts could also be rotated. The rotation angle could optionally be mirrored.
 
-<img src="/assets/images/anatomy.png" width="450" height="150">
+<img src="/assets/images/anatomy.png" width="420" height="150">
+
+As you may notice, parent corner cuts are purely bounded to corners, but child corner cut bounds are "mirrored". Indeed, each child corner cut forms a mirrored path. This strategy was chosen in order for children could separately override the contact part of the corner cut.  
+
+Also, note that **depth** and **length** depends on widget's layout direction (`LinearLayout.LAYOUT_DIRECTION_LTR` or `LinearLayout.LAYOUT_DIRECTION_RTL`) and orientation (`LinearLayout.VERTICAL` or `LinearLayout.HORIZONTAL`).
 
 ### Corner Cut Types
 
@@ -141,7 +151,7 @@ There are 5 default corner cut types for parent and children corners\*.
 <img src="/assets/images/bevel.jpg" width="150" height="150"><img src="/assets/images/child_bevel.jpg" width="300" height="150">
 
 >\* - Each child corner type, in fact, is mirrored and combined into a path from the respective corner cut types of contact children.\
-\*\* - Rectangle types support internal corner radius. There are respective attributes and view properties for both parent and child cuts.
+\*\* - Rectangle types support an internal corner radius. There are respective attributes and view properties for both parent and child cuts.
 
 ### Layout Parameters
 
