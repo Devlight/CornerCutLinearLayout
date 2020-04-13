@@ -108,6 +108,14 @@ Visual result would be follow:
 
 <img src="/assets/images/first_usage.jpg" width="150" height="150">
 
+### Corner Cut Anatomy
+
+By default `CornerCutType.OVAL` is used for both parent corner and child cuts. Corner cut are bounded to its personal dimensions - **depth** and **length**.\
+Each of 4 parent corner cuts dimensions could be specified individually.\
+Children's corner cuts could have separate dimensions for `ChildSideCutFlag.START` and `ChildSideCutFlag.END` sides. Children's corner cuts could also be rotated. The rotation angle could optionally be mirrored.
+
+<img src="/assets/images/anatomy.jpg" width="450" height="150">
+
 ### Corner Cut Types
 
 There are 5 default corner cut types for parent and children corners\*.
