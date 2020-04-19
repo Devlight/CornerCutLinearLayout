@@ -417,11 +417,15 @@ When is necessary to compose `cutout` path with nested cutout pathes, use either
 
 The result would be as follow:
 
-<img src="/assets/images/corner_cut_provider_example_1.jpg" width="200" height="auto">
+<img src="/assets/images/corner_cut_provider_example_1.jpg" width="300" height="auto">
 
 **Example 2**.
 In some scenario you might need transform your cutout path (scale, rotate, skew, etc). For this purposes there is also optional function `getTransformationMatrix()` of `CornerCutProvider` interface.\
-Also, as you see from the image below, you could achieve animated effects by calling public function `invalidateCornerCutPath()` whenever it is necessary to update your view after changing your custom cutout relative values.
+In this example, there are 3 simple views with different background color below `CornerCutLinearLayout` with `CornerCutProvider`.
+
+Also, as you can see from the image below, you could achieve animated effects by calling public function `invalidateCornerCutPath()` whenever it is necessary to update your view after changing your custom cutout relative values.
+
+Aforementioned views become visible through cutout. Moreover shadow is also properly drawn around cutout. And this cutout exceeds its recommended by `rectF` bounds. For such purposes better use `CustomCutoutProvider`. 
 
 ```kotlin
 ccll_corner_cut_example_2.setCornerCutProvider(
@@ -453,7 +457,7 @@ ccll_corner_cut_example_2.setCornerCutProvider(
         )
 ```
 
-<img src="/assets/images/corner_cut_provider_example_2.gif" width="200" height="auto">
+<img src="/assets/images/corner_cut_provider_example_2.gif" width="300" height="auto">
 
 ### Child Corner Cut Provider
 
