@@ -100,23 +100,24 @@ class MainActivity : AppCompatActivity() {
         var isClockwise = true
         val rotationDuration = 2000L
         ccll_showcase_custom_lt_exceed_bounds.setCornerCutProvider(
-            { _: CornerCutLinearLayout, _: Path, _: Int, _: RectF ->
+            { view, _, _, _ ->
                 val matrix = Matrix()
-                val pb = ccll_showcase_custom_lt_exceed_bounds.paddedBounds
+                val pb = view.paddedBounds
                 matrix.postRotate(currentRotationAngle, pb.centerX(), pb.centerY())
                 matrix
             },
-            { _, cutout, cutEdge, rectF ->
+            { view, cutout, cutEdge, rectF ->
                 when (cutEdge) {
                     CornerCutLinearLayout.CornerCutFlag.START_TOP -> {
-                        val pb = ccll_showcase_custom_lt_exceed_bounds.paddedBounds
-                        cutout.addRect(
-                            pb.centerX() - rectF.width() / 2.0F,
-                            pb.centerY() - rectF.height() / 2.0F,
-                            pb.centerX() + rectF.width() / 2.0F,
-                            pb.centerY() + rectF.height() / 2.0F,
-                            Path.Direction.CW
-                        )
+                        with(view.paddedBounds) {
+                            cutout.addRect(
+                                centerX() - rectF.width() / 2.0F,
+                                centerY() - rectF.height() / 2.0F,
+                                centerX() + rectF.width() / 2.0F,
+                                centerY() + rectF.height() / 2.0F,
+                                Path.Direction.CW
+                            )
+                        }
                         true
                     }
 
@@ -381,26 +382,26 @@ class MainActivity : AppCompatActivity() {
 
         val waveLineCutWidth = resources.getDimension(R.dimen.offset_12)
         val waveLineHeight = resources.getDimension(R.dimen.offset_48)
-        val halfWaveLineHeight = waveLineHeight/2.0F
-        val halfWaveLineCutWidth = waveLineCutWidth/2.0F
+        val halfWaveLineHeight = waveLineHeight / 2.0F
+        val halfWaveLineCutWidth = waveLineCutWidth / 2.0F
         ccll_showcase_custom_view_area_provider_2.addCustomCutoutProvider { _, cutout, rectF ->
             cutout.moveTo(rectF.left, rectF.centerY() - halfWaveLineCutWidth)
             cutout.lineTo(
-                rectF.left + rectF.width()/4.0F,
+                rectF.left + rectF.width() / 4.0F,
                 rectF.centerY() - halfWaveLineCutWidth - halfWaveLineHeight
             )
             cutout.lineTo(
-                rectF.right - rectF.width()/4.0F,
+                rectF.right - rectF.width() / 4.0F,
                 rectF.centerY() - halfWaveLineCutWidth + halfWaveLineHeight
             )
             cutout.lineTo(rectF.right, rectF.centerY() - halfWaveLineCutWidth)
             cutout.lineTo(rectF.right, rectF.centerY() + halfWaveLineCutWidth)
             cutout.lineTo(
-                rectF.right - rectF.width()/4.0F,
+                rectF.right - rectF.width() / 4.0F,
                 rectF.centerY() + halfWaveLineCutWidth + halfWaveLineHeight
             )
             cutout.lineTo(
-                rectF.left + rectF.width()/4.0F,
+                rectF.left + rectF.width() / 4.0F,
                 rectF.centerY() + halfWaveLineCutWidth - halfWaveLineHeight
             )
             cutout.lineTo(rectF.left, rectF.centerY() + halfWaveLineCutWidth)
@@ -414,7 +415,7 @@ class MainActivity : AppCompatActivity() {
             val middleChild = it[1]
             val lastChildTravelX = it.width.toFloat() - lastChild.width.toFloat()
             val middleChildTravelY = it.height.toFloat()
-            middleChild.translationY = -(middleChild.top.toFloat() + middleChild.height/2.0F)
+            middleChild.translationY = -(middleChild.top.toFloat() + middleChild.height / 2.0F)
             lastChild.translationX = -lastChild.left.toFloat()
             fun animateFirstChild() {
                 firstChild
@@ -437,6 +438,7 @@ class MainActivity : AppCompatActivity() {
                             }
                     }
             }
+
             fun animateMiddleChild() {
                 middleChild
                     .animate()
@@ -445,6 +447,7 @@ class MainActivity : AppCompatActivity() {
                     .setInterpolator(CycleInterpolator(0.5F))
                     .withEndAction { animateMiddleChild() }
             }
+
             fun animateLastChild() {
                 lastChild
                     .animate()

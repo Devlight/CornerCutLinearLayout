@@ -3074,34 +3074,34 @@ class CornerCutLinearLayout : LinearLayout {
      * @see [CornerCutProvider]
      */
     inline fun setCornerCutProvider(
-        noinline getPathTransformationMatrix: ((view: CornerCutLinearLayout, cutout: Path, cutEdge: Int, rectF: RectF) -> Matrix?)? = null,
-        crossinline getCornerCut: (view: CornerCutLinearLayout, cutout: Path, cutEdge: Int, rectF: RectF) -> Boolean = { _, _, _, _ -> false }
+        noinline getPathTransformationMatrix: ((view: CornerCutLinearLayout, cutout: Path, cutCorner: Int, rectF: RectF) -> Matrix?)? = null,
+        crossinline getCornerCut: (view: CornerCutLinearLayout, cutout: Path, cutCorner: Int, rectF: RectF) -> Boolean = { _, _, _, _ -> false }
     ) {
         cornerCutProvider = object : CornerCutProvider {
             override fun getCornerCut(
                 view: CornerCutLinearLayout,
                 cutout: Path,
-                cutEdge: Int,
+                cutCorner: Int,
                 rectF: RectF
             ): Boolean {
-                return getCornerCut(view, cutout, cutEdge, rectF)
+                return getCornerCut(view, cutout, cutCorner, rectF)
             }
 
             override fun getPathTransformationMatrix(
                 view: CornerCutLinearLayout,
                 cutout: Path,
-                cutEdge: Int,
+                cutCorner: Int,
                 rectF: RectF
             ): Matrix? {
                 return getPathTransformationMatrix?.invoke(
                     this@CornerCutLinearLayout,
                     cutout,
-                    cutEdge,
+                    cutCorner,
                     rectF
                 ) ?: super.getPathTransformationMatrix(
                     this@CornerCutLinearLayout,
                     cutout,
-                    cutEdge,
+                    cutCorner,
                     rectF
                 )
             }
@@ -7398,19 +7398,19 @@ class CornerCutLinearLayout : LinearLayout {
          * @param view - [CornerCutLinearLayout] owner of this provider.
          * @param cutout - path that holds custom (user-defined) cutout data.
          * Note that path will be closed automatically afterwards.
-         * @param cutEdge - one of [CornerCutFlag]
+         * @param cutCorner - one of [CornerCutFlag]
          * @param rectF - rectangle with respective corner cut bounds.
          * This bounds (along with modifications) will be passed to [getPathTransformationMatrix] function.
          * Note that it is your responsibility to keep path data within that bound.
          * In other words, path could exceeds specified bounds and in this case rather serves as a hint of preferred bounds.
          *
          * @return true - if path cutout data should be accepted.
-         * Otherwise [cutEdge] will be handled by default corner cut logic.
+         * Otherwise [cutCorner] will be handled by default corner cut logic.
          */
         fun getCornerCut(
             view: CornerCutLinearLayout,
             cutout: Path,
-            cutEdge: Int,
+            cutCorner: Int,
             rectF: RectF
         ): Boolean
 
@@ -7420,7 +7420,7 @@ class CornerCutLinearLayout : LinearLayout {
          * @param view - [CornerCutLinearLayout] owner of this provider.
          * @param cutout - path that holds custom (user-defined) cutout data.
          * Note that path will be closed automatically afterwards.
-         * @param cutEdge - one of [CornerCutFlag]
+         * @param cutCorner - one of [CornerCutFlag]
          * @param rectF - rectangle with respective corner cut bounds.
          * May be previously modified in [getCornerCut] function.
          * Note that it is your responsibility to keep path data within that bound.
@@ -7432,7 +7432,7 @@ class CornerCutLinearLayout : LinearLayout {
         fun getPathTransformationMatrix(
             view: CornerCutLinearLayout,
             cutout: Path,
-            cutEdge: Int,
+            cutCorner: Int,
             rectF: RectF
         ): Matrix? {
             return null

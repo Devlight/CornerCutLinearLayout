@@ -54,7 +54,7 @@ dependencies {
 For simple quick usage that covers most user cases, see **Basics** section below.\
 For more complex usage section **Advanced** might be useful.
 
-## Basics
+# Basics
 
 #### Declaration in XML
 
@@ -335,6 +335,7 @@ Custom dividers have several advantages though:
 - seperate start an end padding
 - dashed line divider (width and gap)
 - gravity of dashed divider (`CustomDividerGravity`: `START`, `CENTER`, `END`)
+- custom divider provider (see **Advanced** section)
 
 **Show Flags** (`CustomDividerShowFlag`):
 - `container_beginning` - at view beginning
@@ -353,7 +354,7 @@ Custom Divider attributes:
     app:ccll_custom_divider_color="@color/divider"
     app:ccll_custom_divider_dash_gap="@dimen/divider_dash_gap"
     app:ccll_custom_divider_dash_width="@dimen/divider_dash_width"
-    app:ccll_custom_divider_height="@dimen/divider_dash_height"
+    app:ccll_custom_divider_height="@dimen/divider_height"
     app:ccll_custom_divider_line_cap="butt"
     app:ccll_custom_divider_show_flag="middle|container_end"
     app:ccll_custom_divider_gravity="center"
@@ -368,7 +369,97 @@ Examples:
 
 <img src="/assets/images/divider_example_1.jpg" width="300" height="auto"><img src="/assets/images/divider_example_2.jpg" width="300" height="auto"><img src="/assets/images/divider_example_3.jpg" width="300" height="auto">
 
-## Advanced
+# Advanced
+Sometimes you might want to have even more complex visible area, divider, cutouts, etc.
+For such purposes there are custom providers for aforementioned subjects. All of them could be specified programatically. For your convenience, there are also a Kotlin lambda-style functions for the most of the providers.
+
+### Corner Cut Provider
+`CornerCutProvider` allows to override each of 4 widget's corners.\
+Let's look at an examples.
+
+**Example 1**.
+
+1. As usual define our view at xml (this scenario) or create & setup it programatically.
+```xml
+<io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+    ...
+    android:id="@+id/ccll_corner_cut_provider"
+    app:ccll_corner_cut_depth="@dimen/corner_cut_depth"
+    app:ccll_corner_cut_length="@dimen/corner_cut_length"
+    app:ccll_corner_cut_type="bevel"/>
+```
+2. Set a `CornerCutProvider`. 
+```kotlin
+ccll_corner_cut_provider.setCornerCutProvider { view, cutout, cutCorner, rectF ->
+    when (cutCorner) {
+        CornerCutFlag.START_TOP -> {
+            rectF.inset(inset, inset) // inset - globally defined property
+            cutout.moveTo(rectF.left, rectF.top)
+            cutout.lineTo(rectF.right, rectF.top)
+            cutout.lineTo(rectF.left, rectF.bottom)
+            true // accept left top corner
+        }
+        
+        CornerCutFlag.END_BOTTOM -> {
+            // complex pacman path
+            ... 
+            true // accept right bottom corner
+        }
+        
+        else -> false // skip the rest of the corners and treat them by default settings
+    }
+}
+```
+
+Here, we simply override left top and right bottom corner cuts with the custom ones. They are accepted by returning `true` as a last statement, otherwise respective corner would be handled by its default settings (if any).
+
+When is necessary to compose `cutout` path with nested cutout pathes, use either `Path.addPath()` function (with different `fillType`) or `Path.op()` function with different `Path.Op` modes. 
+
+The result would be as follow:
+
+<img src="/assets/images/corner_cut_provider_example_1.jpg" width="200" height="auto">
+
+**Example 2**.
+In some scenario you might need transform your cutout path (scale, rotate, skew, etc). For this purposes there is also optional function `getTransformationMatrix()` of `CornerCutProvider` interface.\
+Also, as you see from the image below, you could achieve animated effects by calling public function `invalidateCornerCutPath()` whenever it is necessary to update your view after changing your custom cutout relative values.
+
+```kotlin
+ccll_corner_cut_example_2.setCornerCutProvider(
+            { view, _, _, _ ->
+                val matrix = Matrix()
+                val pb = view.paddedBounds
+                matrix.postRotate(currentRotationAngle, pb.centerX(), pb.centerY())
+                matrix // returns matrix that will be applied to cutout path. Null by default
+            },
+            
+            { view, cutout, cutCorner, rectF ->
+                when (cutCorner) {
+                    CornerCutLinearLayout.CornerCutFlag.START_TOP -> {
+                        with(view.paddedBounds) {
+                            cutout.addRect(
+                                centerX() - rectF.width() / 2.0F,
+                                centerY() - rectF.height() / 2.0F,
+                                centerX() + rectF.width() / 2.0F,
+                                centerY() + rectF.height() / 2.0F,
+                                Path.Direction.CW
+                            )
+                        }
+                        true
+                    }
+
+                    else -> false
+                }
+            }
+        )
+```
+
+<img src="/assets/images/corner_cut_provider_example_2.gif" width="200" height="auto">
+
+### Child Corner Cut Provider
+
+When you nest `CornerCutLinearLayout` in another `CornerCutLinearLayout` and work with `CustomViewAreaProvider` it might be necessary to get current visible view area path. The copy of it could be obtained via `CornerCutLinearLayout.viewAreaPath`\*. In similar manner widget's padded bounds could be obtained (`CornerCutLinearLayout.paddedBounds`).
+
+>\* - custom shadow are build upon `viewAreaPath`.
 
 ## License
 Please see [LICENSE](/LICENSE.txt)
