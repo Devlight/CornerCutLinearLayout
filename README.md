@@ -697,6 +697,143 @@ When you nest `CornerCutLinearLayout` in another `CornerCutLinearLayout` and wor
 
 >\* - custom shadow are build upon `viewAreaPath`.
 
+### Custom Divider Provider
+Sometimes you might want to have some not trivial different dividers at different positions mixed with default dividers. In a such scenario, `CustomDividerProvider` might come handy.
+
+**Example 1**.
+```xml
+<io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+    android:id="@+id/ccll_custom_divider_provider_example_1"
+    app:ccll_child_side_cut_flag="none"
+    app:ccll_corner_cut_flag="all"
+    app:ccll_corner_cut_type="oval"
+    app:ccll_custom_divider_show_flag="container_beginning|middle|container_end"
+    app:ccll_should_use_max_allowed_corner_cut_depth_or_length_to_be_equal="true"
+    app:ccll_should_use_max_allowed_corner_cut_size="true">
+    ...
+</io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+```
+
+Then we define globally divider paint:
+
+```kotlin
+ccll_custom_divider_provider_example_1.doOnNonNullSizeLayout {
+    val pb = it.paddedBounds
+    it.customDividerProviderPaint.shader = RadialGradient(
+        pb.centerX(), pb.centerY(),
+        hypot(pb.width() / 2.0F, pb.height() / 2.0F) * 0.8F,
+        Color.BLACK, Color.WHITE,
+        Shader.TileMode.CLAMP
+    )
+}
+```
+
+Lastly, we add `CustomDividerProvider`:
+
+```kotlin
+ccll_custom_divider_provider_example_1.setCustomDividerProvider { _, dividerPath, dividerPaint, showDividerFlag, dividerTypeIndex, rectF ->
+    when (showDividerFlag) {
+        CornerCutLinearLayout.CustomDividerShowFlag.CONTAINER_BEGINNING -> {
+            dividerPaint.style = Paint.Style.STROKE
+            dividerPaint.strokeWidth = triangleHeight
+            dividerPaint.pathEffect = PathDashPathEffect(topDividerTrianglePath, triangleBaseWidth, 0.0F, PathDashPathEffect.Style.TRANSLATE)
+            dividerPath.moveTo(rectF.left, rectF.top)
+            dividerPath.lineTo(rectF.right, rectF.top)
+        }
+
+        CornerCutLinearLayout.CustomDividerShowFlag.MIDDLE -> {
+            dividerPaint.style = Paint.Style.STROKE
+            if (dividerTypeIndex == 0) {
+                dividerPaint.strokeWidth = circleRadius
+                dividerPaint.pathEffect = PathDashPathEffect(circleDotDividerPath, triangleBaseWidth, 0.0F, PathDashPathEffect.Style.TRANSLATE)
+                dividerPath.moveTo(rectF.left, rectF.centerY())
+                dividerPath.lineTo(rectF.right + triangleBaseWidth, rectF.centerY())
+            } else {
+                dividerPaint.strokeWidth = circleRadius
+                dividerPaint.pathEffect = PathDashPathEffect(diamondDotDividerPath, triangleBaseWidth, 0.0F, PathDashPathEffect.Style.TRANSLATE)
+                dividerPath.moveTo(rectF.left, rectF.centerY())
+                dividerPath.lineTo(rectF.right + triangleBaseWidth, rectF.centerY())
+            }
+        }
+
+        CornerCutLinearLayout.CustomDividerShowFlag.CONTAINER_END -> {
+            dividerPaint.style = Paint.Style.STROKE
+            dividerPaint.strokeWidth = triangleHeight
+            dividerPaint.pathEffect = PathDashPathEffect(bottomDividerTrianglePath, triangleBaseWidth, 0.0F, PathDashPathEffect.Style.TRANSLATE)
+            dividerPath.moveTo(rectF.left, rectF.top)
+            dividerPath.lineTo(rectF.right, rectF.top)
+        }
+    }
+    true // accept divider path
+}
+```
+
+The result would be as follow:
+
+<img src="/assets/images/view_area_provider_example_1.jpg" width="300" height="auto">
+
+**Example 2**.
+This example shows the combination of custom and default's dividers. 
+
+```xml
+<io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+    android:id="@+id/ccll_custom_divider_provider_example_2"
+    app:ccll_child_corner_cut_type="oval_inverse"
+    app:ccll_corner_cut_flag="all"
+    app:ccll_custom_divider_color="@color/divider"
+    app:ccll_custom_divider_dash_gap="@dimen/divider_dash_gap"
+    app:ccll_custom_divider_dash_width="@dimen/divider_dash_width"
+    app:ccll_custom_divider_height="@dimen/divider_height"
+    app:ccll_custom_divider_line_cap="round"
+    app:ccll_custom_divider_show_flag="middle"
+    app:ccll_custom_shadow_color="@color/accent_secondary">
+    ...
+</io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+```
+```kotlin
+ccll_custom_divider_provider_example_2.setCustomDividerProvider { _, dividerPath, dividerPaint, showDividerFlag, dividerTypeIndex, rectF ->
+    when (showDividerFlag) {
+        CornerCutLinearLayout.CustomDividerShowFlag.MIDDLE -> {
+            dividerPaint.style = Paint.Style.STROKE
+            when (dividerTypeIndex) {
+                0 -> {
+                    dividerPaint.shader = RadialGradient(
+                        rectF.centerX(), rectF.centerY(),
+                        rectF.width() / 2.0F, Color.GREEN, Color.RED,
+                        Shader.TileMode.MIRROR
+                    )
+                    dividerPaint.strokeWidth = circleRadius
+                    dividerPaint.pathEffect = PathDashPathEffect(diamondDotDividerPath, triangleBaseWidth, 0.0F, PathDashPathEffect.Style.TRANSLATE)
+                    dividerPath.moveTo(rectF.left, rectF.centerY())
+                    dividerPath.lineTo(rectF.right + triangleBaseWidth, rectF.centerY())
+                    return@setCustomDividerProvider true // accept divider and draw it
+                }
+                
+                2 -> {
+                    dividerPaint.shader = LinearGradient(
+                        rectF.centerX(), rectF.centerY() - halfWaveHeight,
+                        rectF.centerX(), rectF.centerY() + halfWaveHeight,
+                        Color.BLUE, Color.YELLOW, Shader.TileMode.CLAMP
+                    )
+                    dividerPaint.strokeWidth = halfWaveHeight * 2.0F
+                    dividerPaint.pathEffect = PathDashPathEffect( wavePath, halfWaveWidth * 2.0F, 0.0F, PathDashPathEffect.Style.TRANSLATE)
+                    dividerPath.moveTo(rectF.left, rectF.centerY())
+                    dividerPath.lineTo(rectF.right, rectF.centerY())
+                    return@setCustomDividerProvider true // accept divider and draw it
+                }
+                
+                else -> return@setCustomDividerProvider false // skip divider and draw default
+            }
+        }
+    }
+    false // skip divider and draw default
+}
+```
+
+The result would be as follow:
+
+<img src="/assets/images/view_area_provider_example_2.jpg" width="300" height="auto">
+
 ## Sample App
 In order to take closer look over examples provided and library in general, please run the sample app.
 
