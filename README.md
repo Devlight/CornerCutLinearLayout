@@ -550,9 +550,155 @@ The result would be as follow:
 ### Custom Cutout Provider
 This type of provider (`CustomCutoutProvider`) is similar to previous cut providers. The only difference is that you could add many cutout providers and the `rectF` parameter in a both interface's functions return view's padded bounds.
 
+### Custom View Area Provider
+`CustomViewAreaProvider` might be useful in case you need to show custom area of view. Posibilities are only limited by your imagination and Android hardware. May require little knowledge of path composition, path op modes, fill types, etc.
+
+**Example 1**.
+```xml
+<io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+    ...
+    android:id="@+id/ccll_custom_view_area_provider_example_1"
+    app:ccll_child_side_cut_flag="none"
+    app:ccll_corner_cut_flag="none"
+    app:ccll_custom_shadow_color="@color/shadow_color"
+    app:ccll_custom_shadow_radius="@dimen/shadow_radius">
+
+    <TextView
+        ...
+        android:layout_marginEnd="@dimen/offset_48"
+        android:ellipsize="end"
+        android:padding="@dimen/offset_16"
+        android:text="Lorem ipsum dolor sit amet..." />
+</io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+```
+```kotlin
+ccll_custom_view_area_provider_example_1.setCustomViewAreaProvider { view, path, rectF ->
+    // properties
+    val offset = view[0].marginEnd
+    val cornerRadius = rectF.height() / 4.0F
+    val tailCircleRadius = cornerRadius / 2.0F
+    val innerTailCircleRadius = tailCircleRadius / 2.0F
+    val smallCornerRadius = cornerRadius / 4.0F
+    
+    // left part: round rect
+    path.addRoundRect(...)
+    
+    // right part: tail
+    path.moveTo(rectF.right - offset, rectF.top + cornerRadius)
+    path.arcTo(...)
+    path.lineTo(rectF.right - tailCircleRadius, rectF.centerY() - innerTailCircleRadius)
+    path.lineTo(rectF.right - offset + innerTailCircleRadius, rectF.centerY() - innerTailCircleRadius)
+    path.arcTo(...)
+    path.lineTo(rectF.right - tailCircleRadius, rectF.centerY() + innerTailCircleRadius)
+    path.arcTo(...)
+    path.lineTo(rectF.right - offset, rectF.top + cornerRadius)
+    path.addCircle(rectF.right - tailCircleRadius, rectF.centerY(), tailCircleRadius,  Path.Direction.CW)
+    path.addCircle(rectF.right - tailCircleRadius, rectF.centerY(), innerTailCircleRadius, Path.Direction.CCW)
+}
+```
+
+The result would be as follow:
+
+<img src="/assets/images/view_area_provider_example_1.gif" width="300" height="auto">
+
+**Example 2**.
+```xml
+<io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+    android:id="@+id/ccll_custom_view_area_provider_example_2"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:padding="@dimen/offset_16"
+    app:ccll_child_side_cut_flag="none"
+    app:ccll_corner_cut_flag="none"
+    app:ccll_could_draw_custom_shadow_over_user_defined_padding="true"
+    app:ccll_custom_shadow_color="@color/accent_secondary"
+    app:ccll_custom_shadow_radius="@dimen/elevation_16"
+    app:ccll_is_custom_shadow_auto_padding_enabled="false">
+
+    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+        ...
+        android:rotation="10"
+        android:rotationX="35"
+        android:translationX="24dp"
+        app:ccll_child_side_cut_flag="none"
+        app:ccll_corner_cut_type="oval_inverse"
+        app:ccll_corner_cut_size="@dimen/corner_cut_size">
+        ...
+    </io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+
+    <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+        ...
+        app:ccll_corner_cut_size="@dimen/corner_cut_size_2"
+        android:layout_marginStart="@dimen/offset_16"
+        android:layout_marginEnd="@dimen/offset_48"/>
+
+    <View
+        ...
+        android:background="#8010A7E8" />
+</io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+```
+
+In this example `CornerCutLinearLayout` has nested `CornerCutLinearLayout` (first two children) and simple view (3rd child).\
+**First child** is transformed (constantly running animation): rotated around x, y & z sequentially.\
+**Second child** is continuously animated (translation Y) as well. It also has its own `CustomCutoutProvider` in a form of a star.\
+**Third child** is a regular view with semi-transparent background.
+
+Also parent `CustomCutoutProvider` has `CustomCutoutProvider` set programatically (curved lines path). In this examples we want to build shadow upon only children visible area also modifying some of them (virtual corner cuts for 3rd child).
+
+```kotlin
+// 1. Add Custom Cutout Provider
+val waveLineCutWidth = resources.getDimension(R.dimen.offset_12)
+val waveLineHeight = resources.getDimension(R.dimen.offset_48)
+val halfWaveLineHeight = waveLineHeight / 2.0F
+val halfWaveLineCutWidth = waveLineCutWidth / 2.0F
+ccll_custom_view_area_provider_example_2.addCustomCutoutProvider { _, cutout, rectF ->
+    cutout.moveTo(rectF.left, rectF.centerY() - halfWaveLineCutWidth)
+    cutout.lineTo(rectF.left + rectF.width() / 4.0F, rectF.centerY() - halfWaveLineCutWidth - halfWaveLineHeight)
+    cutout.lineTo(rectF.right - rectF.width() / 4.0F, rectF.centerY() - halfWaveLineCutWidth + halfWaveLineHeight)
+    cutout.lineTo(rectF.right, rectF.centerY() - halfWaveLineCutWidth)
+    cutout.lineTo(rectF.right, rectF.centerY() + halfWaveLineCutWidth)
+    cutout.lineTo(rectF.right - rectF.width() / 4.0F, rectF.centerY() + halfWaveLineCutWidth + halfWaveLineHeight)
+    cutout.lineTo(rectF.left + rectF.width() / 4.0F, rectF.centerY() + halfWaveLineCutWidth - halfWaveLineHeight)
+    cutout.lineTo(rectF.left, rectF.centerY() + halfWaveLineCutWidth)
+    cutout.lineTo(rectF.left, rectF.centerY() - halfWaveLineCutWidth)
+}
+
+// 2. Set Custom View Area Provider
+ccll_showcase_custom_view_area_provider_example_2.setCustomViewAreaProvider { view, path, _ ->
+    view.forEach {
+        tempPath.rewind()
+        if (it is CornerCutLinearLayout) {
+            tempPath.offset(-it.left.toFloat(), -it.top.toFloat())
+            tempPath.addPath(it.viewAreaPath) // nested ccll visible area path
+            tempPath.transform(it.matrix)
+            tempPath.offset(it.left.toFloat(), it.top.toFloat())
+        } else {
+            tempRectF.set(it.left.toFloat(), it.top.toFloat(), it.right.toFloat(), it.bottom.toFloat())
+            val childCornerRadius = min(tempRectF.width(), tempRectF.height()) / 6.0F
+            tempPath.addRoundRect(tempRectF, childCornerRadius, childCornerRadius, Path.Direction.CW)
+            tempPath.offset(-it.left.toFloat(), -it.top.toFloat())
+            tempPath.transform(it.matrix)
+            tempPath.offset(it.left.toFloat(), it.top.toFloat())
+        }
+        path.op(tempPath, Path.Op.UNION)
+    }
+}
+```
+
+Note that 3rd child is clipped virtually. So when its bound overlay another visible area bounds corners of 3rd child become visible. 
+
+As you see custom shadow are build correctly upon custom visible view area (including children cutouts and transformations) & global custom cutouts.
+
+The result would be as follow:
+
+<img src="/assets/images/view_area_provider_example_2.gif" width="300" height="auto">
+
 When you nest `CornerCutLinearLayout` in another `CornerCutLinearLayout` and work with `CustomViewAreaProvider` it might be necessary to get current visible view area path. The copy of it could be obtained via `CornerCutLinearLayout.viewAreaPath`\*. In similar manner widget's padded bounds could be obtained (`CornerCutLinearLayout.paddedBounds`).
 
 >\* - custom shadow are build upon `viewAreaPath`.
+
+## Sample App
+In order to take closer look over examples provided and library in general, please run the sample app.
 
 ## License
 Please see [LICENSE](/LICENSE.txt)
