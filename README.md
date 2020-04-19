@@ -289,6 +289,7 @@ Each attribute has its corresponding `CornerCutLinearLayout`'s property and/or c
 
 ```xml
 <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+    ...
     app:ccll_child_corner_cut_type="oval"
     app:ccll_child_end_side_corner_cut_type="oval_inverse"
     app:ccll_child_end_side_corner_cut_rotation_degree="60"
@@ -298,6 +299,31 @@ Each attribute has its corresponding `CornerCutLinearLayout`'s property and/or c
 ```
 
 <img src="/assets/images/child_property_rotation.png" width="150" height="150">
+
+### Shadow 
+One of the main problem of [Android's shadow](https://developer.android.com/training/material/shadows-clipping) is that path must be [convex](https://developer.android.com/reference/android/graphics/Path#isConvex()). 
+
+>\* - A path is convex if it has a single contour, and only ever curves in a single direction.
+
+This widget allows bypass this limitation by automatically building complex shadow (event with cutouts). Of course, shadow is custom and has its pros and cons.
+
+**Pros**:
+- Shadow has custom properties, such as offset & color (ARGB).
+- Supports complex non convex path.
+
+**Cons**: 
+- Shadow is artificial compared to native elevation shadow's nature. Thus, you cannot rely on global source an light position and elevation parameter. 
+- Shadow uses view's area (padding), which you should keep in mind during layout process or dynamic change of shadow radius.
+- Shadow does NOT depend on view's or children's background and their transparencies, thus cannot be a composite shadow with the overlays of different levels of transparency (opacity). 
+
+By default shadow are build upon parent padded area combined with all cutouts data. It means that shadow does NOT depend on view's background, child presence or child's background. But this behavior could be changed by `CustomViewAreaProvider` (see **Advanced** section). 
+
+##### Shadow Padding
+You could also enable custom shadow auto padding (`ccll_is_custom_shadow_auto_padding_enabled`), allow or prevent custom shadow over user defined padding. (`ccll_could_draw_custom_shadow_over_user_defined_padding`). Last attribute works only in conjunction with enabled first attribute.
+
+Examples:
+
+<img src="/assets/images/shadow_no_children.jpg" width="150" height="auto"><img src="/assets/images/shadow_children.jpg" width="150" height="auto"><img src="/assets/images/shadow_no_children_semi_tranparent_bg.jpg" width="150" height="auto"><img src="/assets/images/shadow_children_single_bg.jpg" width="150" height="auto"><img src="/assets/images/shadow_view_transformation.jpg" width="150" height="auto"><img src="/assets/images/shadow_offset.jpg" width="150" height="auto">
 
 ## Advanced
 
