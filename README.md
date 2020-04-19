@@ -318,12 +318,36 @@ This widget allows bypass this limitation by automatically building complex shad
 
 By default shadow are build upon parent padded area combined with all cutouts data. It means that shadow does NOT depend on view's background, child presence or child's background. But this behavior could be changed by `CustomViewAreaProvider` (see **Advanced** section). 
 
-##### Shadow Padding
+**Shadow Padding**.\
 You could also enable custom shadow auto padding (`ccll_is_custom_shadow_auto_padding_enabled`), allow or prevent custom shadow over user defined padding. (`ccll_could_draw_custom_shadow_over_user_defined_padding`). Last attribute works only in conjunction with enabled first attribute.
 
 Examples:
 
 <img src="/assets/images/shadow_no_children.jpg" width="150" height="auto"><img src="/assets/images/shadow_children.jpg" width="150" height="auto"><img src="/assets/images/shadow_no_children_semi_tranparent_bg.jpg" width="150" height="auto"><img src="/assets/images/shadow_children_single_bg.jpg" width="150" height="auto"><img src="/assets/images/shadow_view_transformation.jpg" width="150" height="auto"><img src="/assets/images/shadow_offset.jpg" width="150" height="auto">
+
+### Custom Divider
+Custom Divider has similar anatomy and properties as default's LinearLayout divider.
+Custom dividers does not change view's dimension unlike  default's LinearLayout divider did (last adds space as specified by flag position equal to divider's width or height). Custom diviers are drown over view and default dividers. You can combine default and custom divider.
+
+Custom dividers have several advantages though:
+- additional show flags
+- line caps (ROUND, BUTT, SQUARE)
+- seperate start an end padding
+- dashed line divider (width and gap)
+- gravity of dashed divider (`CustomDividerGravity`: `START`, `CENTER`, `END`)
+
+**Show Flags** (`CustomDividerShowFlag`):
+- `container_beginning` - at view beginning
+- `beginning` - between contact of first view's margin and parent.
+- `middle` - between children contact margins
+- `end` - between contact of last view's margin and parent.
+- `container_end` - at view end
+
+>By default custom dividers are not taken into consideration when shadow are build. 
+
+Examples:
+
+<img src="/assets/images/divider_example_1.jpg" width="300" height="auto"><img src="/assets/images/divider_example_2.jpg" width="300" height="auto"><img src="/assets/images/divider_example_3.jpg" width="300" height="auto">
 
 ## Advanced
 

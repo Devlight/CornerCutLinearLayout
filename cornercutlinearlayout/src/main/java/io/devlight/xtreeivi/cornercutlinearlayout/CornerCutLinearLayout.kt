@@ -7704,7 +7704,7 @@ class CornerCutLinearLayout : LinearLayout {
 
 
     /**
-     * Gravity for custom divider.
+     * Gravity for custom divider. Works for only dashed line divider.
      * @see [customCustomDividerGravity]
      */
     enum class CustomDividerGravity {
