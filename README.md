@@ -327,7 +327,7 @@ Examples:
 
 ### Custom Divider
 Custom Divider has similar anatomy and properties as default's LinearLayout divider.
-Custom dividers does not change view's dimension unlike  default's LinearLayout divider did (last adds space as specified by flag position equal to divider's width or height). Custom diviers are drown over view and default dividers. You can combine default and custom divider.
+Custom dividers does not change view's dimension unlike  default's LinearLayout divider did (last adds space at specified by flag position equal to divider's width or height). Custom diviers are drown over view and default dividers. You can combine default and custom divider.
 
 Custom dividers have several advantages though:
 - additional show flags
@@ -344,6 +344,25 @@ Custom dividers have several advantages though:
 - `container_end` - at view end
 
 >By default custom dividers are not taken into consideration when shadow are build. 
+
+Custom Divider attributes:
+
+```xml
+<io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+    ...
+    app:ccll_custom_divider_color="@color/divider"
+    app:ccll_custom_divider_dash_gap="@dimen/divider_dash_gap"
+    app:ccll_custom_divider_dash_width="@dimen/divider_dash_width"
+    app:ccll_custom_divider_height="@dimen/divider_dash_height"
+    app:ccll_custom_divider_line_cap="butt"
+    app:ccll_custom_divider_show_flag="middle|container_end"
+    app:ccll_custom_divider_gravity="center"
+    app:ccll_custom_divider_padding="@dimen/divider_padding"
+    app:ccll_custom_divider_padding_start="@dimen/divider_padding_start"
+    app:ccll_custom_divider_padding_end="@dimen/divider_padding_end">
+    ...
+</io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+```
 
 Examples:
 

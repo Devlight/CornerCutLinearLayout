@@ -420,19 +420,18 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:background="@color/appointment_status_done" />
+                            android:background="@color/accent_tertiary" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:background="@color/appointment_status_agreed" />
+                            android:background="@color/accent_secondary" />
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:background="@color/white_transparent" />
+                            android:layout_weight="1" />
                     </LinearLayout>
 
                     <io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
@@ -518,7 +517,7 @@
                         app:ccll_child_corner_cut_type="oval"
                         app:ccll_corner_cut_flag="none"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
@@ -557,7 +556,7 @@
                         app:ccll_child_corner_cut_type="oval_inverse"
                         app:ccll_corner_cut_flag="none"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
@@ -629,7 +628,7 @@
                         app:ccll_child_corner_cut_type="rectangle"
                         app:ccll_corner_cut_flag="none"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
@@ -669,7 +668,7 @@
                         app:ccll_child_rectangle_type_corner_cut_radius="@dimen/offset_8"
                         app:ccll_corner_cut_flag="none"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
@@ -747,7 +746,7 @@
                         app:ccll_child_corner_cut_type="rectangle_inverse"
                         app:ccll_corner_cut_flag="none"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
@@ -787,7 +786,7 @@
                         app:ccll_child_rectangle_type_corner_cut_radius="@dimen/offset_8"
                         app:ccll_corner_cut_flag="none"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
@@ -863,7 +862,7 @@
                         app:ccll_child_corner_cut_type="bevel"
                         app:ccll_corner_cut_flag="none"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
@@ -905,7 +904,7 @@
                         app:ccll_child_start_side_corner_cut_type="oval_inverse"
                         app:ccll_corner_cut_flag="none"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
@@ -976,7 +975,7 @@
                         app:ccll_child_side_cut_flag="start"
                         app:ccll_corner_cut_flag="none"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
@@ -1016,7 +1015,7 @@
                         app:ccll_child_corner_cut_type="rectangle_inverse"
                         app:ccll_corner_cut_flag="none"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
@@ -1105,7 +1104,7 @@
                         app:ccll_child_corner_cut_type="oval_inverse"
                         app:ccll_corner_cut_flag="none"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
@@ -1152,7 +1151,7 @@
                         app:ccll_child_corner_cut_type="oval_inverse"
                         app:ccll_corner_cut_flag="none"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
@@ -1278,7 +1277,7 @@
                         app:ccll_corner_cut_flag="all"
                         app:ccll_corner_cut_size="@dimen/offset_24"
                         app:ccll_corner_cut_type="oval_inverse"
-                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
@@ -1375,7 +1374,7 @@
                         app:ccll_child_end_side_corner_cut_depth="120dp"
                         app:ccll_child_end_side_corner_cut_length="@dimen/offset_24"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16"
                         app:ccll_end_corners_cut_depth="@dimen/offset_72"
                         app:ccll_end_corners_cut_length="@dimen/offset_32"
@@ -1601,7 +1600,7 @@
                         app:ccll_child_start_side_corner_cut_rotation_degree="45"
                         app:ccll_child_start_side_corner_cut_size="@dimen/offset_48"
                         app:ccll_corner_cut_size="@dimen/offset_24"
-                        app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                        app:ccll_custom_shadow_color="@color/accent_secondary"
                         app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                         <View
@@ -1797,7 +1796,7 @@
                     android:background="@color/background"
                     app:ccll_child_side_cut_flag="none"
                     app:ccll_corner_cut_flag="none"
-                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_color="@color/accent_secondary"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <TextView
@@ -1834,7 +1833,7 @@
                 app:ccll_child_side_cut_flag="none"
                 app:ccll_corner_cut_flag="none"
                 app:ccll_could_draw_custom_shadow_over_user_defined_padding="true"
-                app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                app:ccll_custom_shadow_color="@color/accent_secondary"
                 app:ccll_custom_shadow_radius="@dimen/elevation_16"
                 app:ccll_is_custom_shadow_auto_padding_enabled="false">
 
@@ -2055,7 +2054,7 @@
                     app:ccll_child_corner_cut_type="oval"
                     app:ccll_corner_cut_size="@dimen/offset_16"
                     app:ccll_corner_cut_type="oval"
-                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_color="@color/accent_secondary"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <View
@@ -2086,7 +2085,7 @@
                     app:ccll_child_end_side_corner_cut_depth_offset="@dimen/offset_24"
                     app:ccll_corner_cut_size="@dimen/offset_16"
                     app:ccll_corner_cut_type="oval_inverse"
-                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_color="@color/accent_secondary"
                     app:ccll_custom_shadow_offset_dx="@dimen/offset_24"
                     app:ccll_custom_shadow_offset_dy="@dimen/offset_24"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16"
@@ -2167,7 +2166,7 @@
                     app:ccll_child_corner_cut_type="oval"
                     app:ccll_corner_cut_flag="none"
                     app:ccll_corner_cut_size="@dimen/offset_24"
-                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_color="@color/accent_secondary"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <View
@@ -2199,7 +2198,7 @@
                     app:ccll_custom_divider_color="@color/error"
                     app:ccll_custom_divider_height="@dimen/offset_4"
                     app:ccll_custom_divider_show_flag="all"
-                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_color="@color/accent_secondary"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <View
@@ -2266,7 +2265,7 @@
                     app:ccll_custom_divider_color="@color/accent"
                     app:ccll_custom_divider_height="@dimen/offset_2"
                     app:ccll_custom_divider_show_flag="all"
-                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_color="@color/accent_secondary"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <View
@@ -2300,7 +2299,7 @@
                     app:ccll_custom_divider_padding_end="@dimen/offset_56"
                     app:ccll_custom_divider_padding_start="@dimen/offset_32"
                     app:ccll_custom_divider_show_flag="middle"
-                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_color="@color/accent_secondary"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <View
@@ -2371,7 +2370,7 @@
                     app:ccll_custom_divider_line_cap="round"
                     app:ccll_custom_divider_padding="@dimen/offset_16"
                     app:ccll_custom_divider_show_flag="middle"
-                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_color="@color/accent_secondary"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <TextView
@@ -2399,7 +2398,7 @@
                     app:ccll_corner_cut_flag="all"
                     app:ccll_corner_cut_size="@dimen/offset_16"
                     app:ccll_corner_cut_type="bevel"
-                    app:ccll_custom_divider_color="@color/appointment_status_agreed"
+                    app:ccll_custom_divider_color="@color/accent_secondary"
                     app:ccll_custom_divider_dash_gap="@dimen/offset_8"
                     app:ccll_custom_divider_dash_width="@dimen/offset_8"
                     app:ccll_custom_divider_height="@dimen/offset_4"
@@ -2407,7 +2406,7 @@
                     app:ccll_custom_divider_padding_end="@dimen/offset_56"
                     app:ccll_custom_divider_padding_start="@dimen/offset_24"
                     app:ccll_custom_divider_show_flag="beginning|middle|end"
-                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_color="@color/accent_secondary"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <View
@@ -2506,7 +2505,7 @@
                     app:ccll_custom_divider_height="@dimen/offset_2"
                     app:ccll_custom_divider_line_cap="round"
                     app:ccll_custom_divider_show_flag="middle"
-                    app:ccll_custom_shadow_color="@color/appointment_status_agreed"
+                    app:ccll_custom_shadow_color="@color/accent_secondary"
                     app:ccll_custom_shadow_radius="@dimen/elevation_16">
 
                     <View

@@ -3,7 +3,7 @@
     android:shape="rectangle">
     <gradient
         android:angle="0"
-        android:startColor="@color/appointment_status_agreed" android:endColor="@color/error"/>
+        android:startColor="@color/accent_secondary" android:endColor="@color/error"/>
     <size
         android:width="4dp"
         android:height="4dp" />
