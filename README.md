@@ -1,7 +1,7 @@
 # CornerCutLinearLayout
 
 `CornerCutLinearLayout` extends [`LinearLayout`]
- (https://developer.android.com/reference/android/widget/LinearLayout). It allows cutting parent corners with different shapes.\
+ (https://developer.android.com/reference/android/widget/LinearLayout). It allows cutting parent corners with different shapes and build proper shadow to complex shapes.\
 It also allows cutting each child's corners.\
 Additionally, using available properties and custom providers, those cuts may be turned into cutouts of different shapes, sizes, etc.\
 Widget's sole purpose is to use with children with no transformations (like rotation, scale, matrix transformations).
@@ -176,7 +176,7 @@ In the examples below, parent `CornerCutLinearLayout` has `ccll_child_corner_cut
 
 <img src="/assets/images/child_override_corner_cut_type.jpg" width="300" height="150">
 
-#### Edge Child.
+#### Edge Child
 There also special layout params for the first and last child. For example in a vertical orientation, when the top and bottom children are not aligned to parent top and bottom respectively they can override **contact cut\*** with the parent.
 
 ```xml
@@ -221,6 +221,83 @@ In case edge child is aligned to the respective side, they could optionally over
 
 >\* - By default specified `ccll_child_corner_cut_type` is used for child-parent contact if not overridden by edge child.\
 \*\* - Note that only type of parent corner type is overridden, while parent properties (depth, length, etc.) are stay preserved.
+
+### Extra Child Corner Cut Properties
+
+There are next extra child corner cut properties:
+- Depth & Length Offset
+- Corner Cut Rotation
+
+#### Depth & Length Offset
+
+Each side of child corner cuts could have different depth and length offset (see anatomy above).
+
+**Example 1 - Depth Offset**
+
+```xml
+<io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+    ...
+    app:ccll_child_corner_cut_depth_offset="@dimen/offset_24"
+    app:ccll_child_corner_cut_type="oval_inverse">
+    ...
+    <View
+        ...
+        app:layout_ccll_end_bottom_corner_cut_type="oval"
+        app:layout_ccll_end_top_corner_cut_type="rectangle_inverse"
+        app:layout_ccll_start_bottom_corner_cut_type="bevel"
+        app:layout_ccll_start_top_corner_cut_type="rectangle" />
+    ...
+</io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+```
+<img src="/assets/images/child_property_offset.png" width="150" height="150">
+
+**Example 2 - Depth & Length Offset**
+```xml
+<io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+    ...
+    app:ccll_child_corner_cut_type="bevel"
+    app:ccll_child_end_side_corner_cut_depth_offset="@dimen/depth_offset"
+    app:ccll_child_start_side_corner_cut_length_offset="@dimen/length_offset"
+    app:ccll_corner_cut_type="bevel">
+    <View
+        ...
+        android:layout_marginTop="@dimen/offset_8"
+        android:layout_marginBottom="@dimen/offset_8"/>
+    <View
+        ...
+        android:layout_marginTop="@dimen/offset_8"
+        android:layout_marginBottom="@dimen/offset_8"/>
+
+    <View
+        ...
+        android:layout_marginTop="@dimen/offset_8"
+        android:layout_marginBottom="@dimen/offset_8"/>
+</io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+```
+
+<img src="/assets/images/child_property_offset_depth_and_length.png" width="150" height="auto">
+
+#### Rotation
+Each side could have its corner cuts rotated be specified degree.
+Corresponding attributes are:
+- `ccll_child_start_side_corner_cut_rotation_degree`
+- `ccll_child_end_side_corner_cut_rotation_degree`
+
+Also, it might be necessary to keep the same mirrored corner cut angle for the both sides. For such purposes attribute `ccll_is_child_corner_cut_end_rotation_mirrored_from_start_rotation` might be helpful.
+
+Each attribute has its corresponding `CornerCutLinearLayout`'s property and/or convenience function.
+
+```xml
+<io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+    app:ccll_child_corner_cut_type="oval"
+    app:ccll_child_end_side_corner_cut_type="oval_inverse"
+    app:ccll_child_end_side_corner_cut_rotation_degree="60"
+    app:ccll_child_start_side_corner_cut_rotation_degree="45">
+    ...
+</io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+```
+
+<img src="/assets/images/child_property_rotation.png" width="150" height="150">
 
 ## Advanced
 
