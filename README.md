@@ -460,6 +460,95 @@ ccll_corner_cut_example_2.setCornerCutProvider(
 <img src="/assets/images/corner_cut_provider_example_2.gif" width="300" height="auto">
 
 ### Child Corner Cut Provider
+`ChildCornerCutProvider` is almost the same as `CornerCutProvider`. Instead of `cutCorner` it has `cutEdge` and additionally possible contact children - `relativeCutTopChild` & `relativeCutBottomChild`.
+
+**Example 1**.
+
+```xml
+<io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+    ...
+    android:id="@+id/ccll_child_cut_provider_example_1"
+    app:ccll_child_side_cut_flag="start"
+    app:ccll_corner_cut_flag="none">
+    ...
+</io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+```
+
+```kotlin
+ccll_child_cut_provider_example_1.setChildCornerCutProvider { view, cutout, _, rectF, _, _ ->
+    with(cutout) {
+        moveTo(rectF.centerX(), rectF.top)
+        arcTo(...)
+        lineTo(rectF.centerX() + rectF.width(), rectF.bottom)
+        arcTo(...)
+        lineTo(rectF.centerX(), rectF.top)
+        val halfChordWidth = rectF.height() / 2.0F
+        addCircle(...)
+        moveTo(rectF.centerX() + rectF.width(), rectF.top)
+        lineTo(view.paddedBounds.right - rectF.width() / 2.0F, rectF.centerY())
+        lineTo(rectF.centerX() + rectF.width(), rectF.bottom)
+        lineTo(rectF.centerX() + rectF.width(), rectF.top)
+    }
+    true // accept custom cutout
+}
+```
+
+The result would be as follow:
+
+<img src="/assets/images/child_corner_cut_provider_example_1.jpg" width="300" height="auto">
+
+> Note that in this example only left side corner cuts are build with custom cutout provider. This is because providers is only called for `cutSide`'s & `cutCorner`'s specified by `ccll_child_side_cut_flag` & `ccll_corner_cut_flag`, respectively.
+
+**Example 2**.
+```xml
+<io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout
+    ...
+    android:id="@+id/ccll_child_cut_provider_example_2"
+    app:ccll_child_corner_cut_type="rectangle_inverse"
+    app:ccll_corner_cut_flag="none">
+    ...
+</io.devlight.xtreeivi.cornercutlinearlayout.CornerCutLinearLayout>
+```
+```kotlin
+ccll_showcase_custom_child_cut_provider_mixed.setChildCornerCutProvider(
+    { _, _, cutSide, rectF, _, _ ->
+        val matrix = Matrix()
+        when (cutSide) {
+            CornerCutLinearLayout.ChildSideCutFlag.START -> {
+                matrix.postSkew(-0.25F, 0.0F, rectF.centerX(), rectF.centerY())
+            }
+            CornerCutLinearLayout.ChildSideCutFlag.END -> {
+                matrix.postRotate(-10.0F, rectF.centerX(), rectF.centerY())
+                matrix.postTranslate(-rectF.width() / 2.0F, 0.0F)
+            }
+        }
+        matrix // return transformation matrix that will be applied over previously defined cutouts
+    },
+    
+    { view, cutout, cutSide, rectF, relativeCutTopChild, _ ->
+        when (cutSide) {
+            CornerCutLinearLayout.ChildSideCutFlag.START -> {
+                if (view.indexOfChild(relativeCutTopChild ?: return@setChildCornerCutProvider false) != 1) return@setChildCornerCutProvider false
+                // cutout star path
+                true // accept path for only 2 (index 1) start side cutout
+            }
+            CornerCutLinearLayout.ChildSideCutFlag.END -> {
+                if (view.indexOfChild(relativeCutTopChild ?: return@setChildCornerCutProvider false) != 0) return@setChildCornerCutProvider false
+                // cutout star path
+                true // accept path for only 1 (index 0) end side cutout
+            }
+            else -> false
+        }
+    }
+)
+```
+
+The result would be as follow:
+
+<img src="/assets/images/child_corner_cut_provider_example_2.jpg" width="300" height="auto">
+
+### Custom Cutout Provider
+This type of provider (`CustomCutoutProvider`) is similar to previous cut providers. The only difference is that you could add many cutout providers and the `rectF` parameter in a both interface's functions return view's padded bounds.
 
 When you nest `CornerCutLinearLayout` in another `CornerCutLinearLayout` and work with `CustomViewAreaProvider` it might be necessary to get current visible view area path. The copy of it could be obtained via `CornerCutLinearLayout.viewAreaPath`\*. In similar manner widget's padded bounds could be obtained (`CornerCutLinearLayout.paddedBounds`).
 

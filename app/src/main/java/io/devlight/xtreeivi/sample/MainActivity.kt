@@ -147,19 +147,6 @@ class MainActivity : AppCompatActivity() {
                 handler.postDelayed(this, 32L)
             }
         }
-
-        ccll_showcase_custom_divider_provider.doOnNonNullSizeLayout {
-            val pb = ccll_showcase_custom_divider_provider.paddedBounds
-            ccll_showcase_custom_divider_provider.customDividerProviderPaint.shader =
-                RadialGradient(
-                    pb.centerX(),
-                    pb.centerY(),
-                    hypot(pb.width() / 2.0F, pb.height() / 2.0F) * 0.8F,
-                    Color.BLACK,
-                    Color.WHITE,
-                    Shader.TileMode.CLAMP
-                )
-        }
         //endregion
 
         //region Custom Child Corner Cut
@@ -560,6 +547,19 @@ class MainActivity : AppCompatActivity() {
         diamondDotDividerPath.lineTo(triangleBaseWidth / 2.0F, triangleBaseWidth / 2.0F)
         diamondDotDividerPath.close()
         diamondDotDividerPath.offset(-triangleBaseWidth / 2.0F, 0.0F)
+
+        ccll_showcase_custom_divider_provider.doOnNonNullSizeLayout {
+            val pb = ccll_showcase_custom_divider_provider.paddedBounds
+            ccll_showcase_custom_divider_provider.customDividerProviderPaint.shader =
+                RadialGradient(
+                    pb.centerX(),
+                    pb.centerY(),
+                    hypot(pb.width() / 2.0F, pb.height() / 2.0F) * 0.8F,
+                    Color.BLACK,
+                    Color.WHITE,
+                    Shader.TileMode.CLAMP
+                )
+        }
 
         ccll_showcase_custom_divider_provider.setCustomDividerProvider { _, dividerPath, dividerPaint, showDividerFlag, dividerTypeIndex, rectF ->
             when (showDividerFlag) {
