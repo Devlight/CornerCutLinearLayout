@@ -693,7 +693,7 @@ As you see custom shadow are build correctly upon custom visible view area (incl
 
 The result would be as follow:
 
-<img src="/assets/images/view_area_provider_example_2.gif" width="300" height="auto">
+<img src="/assets/images/view_area_provider_example_2.gif" width="500" height="auto">
 
 When you nest `CornerCutLinearLayout` in another `CornerCutLinearLayout` and work with `CustomViewAreaProvider` it might be necessary to get current visible view area path. The copy of it could be obtained via `CornerCutLinearLayout.viewAreaPath`\*. In similar manner widget's padded bounds could be obtained (`CornerCutLinearLayout.paddedBounds`).
 
