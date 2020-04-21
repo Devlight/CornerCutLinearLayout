@@ -55,7 +55,7 @@ dependencies {
 
 # Usage
 
-For simple quick usage that covers most user cases, see **Basics** section below.\
+For simple quick usage that covers most use cases, see **Basics** section below.\
 For more complex usage section **Advanced** might be useful.
 
 # Basics
