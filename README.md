@@ -3,9 +3,11 @@
 [![](https://jitpack.io/v/XtreeIvI/CornerCutLinearLayout.svg)](https://jitpack.io/#XtreeIvI/CornerCutLinearLayout)
 
 `CornerCutLinearLayout` extends [`LinearLayout`](https://developer.android.com/reference/android/widget/LinearLayout). It allows cutting parent corners with different shapes and build proper shadow for complex shapes.\
-It also allows cutting each child's corners. Developed by [Devlight](https://www.devlight.io/) company.  
+It also allows cutting each child's corners.
 
-<p align="center"><img src="/assets/images/logo.png" width="200" height="auto"><img src="/assets/images/devlight_logo.png" height="200" width="auto"></p>
+Developed by [Devlight](https://www.devlight.io/) company.  
+
+<p align="center"><img src="/assets/images/logo.png" width="200" height="auto"><img src="/assets/images/devlight_logo.png" height="100" width="auto"></p>
 
 Additionally, using available properties and custom providers, those cuts may be turned into cutouts of different shapes, sizes, etc.\
 Widget's sole purpose is to use with children with no transformations (like rotation, scale, matrix transformations).
