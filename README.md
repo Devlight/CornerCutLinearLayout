@@ -601,7 +601,7 @@ ccll_custom_view_area_provider_example_1.setCustomViewAreaProvider { view, path,
 
 The result would be as follow:
 
-<img src="/assets/images/view_area_provider_example_1.gif" width="300" height="auto">
+<img src="/assets/images/view_area_provider_example_1.gif" width="500" height="auto">
 
 **Example 2**.
 ```xml
