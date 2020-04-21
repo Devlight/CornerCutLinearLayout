@@ -1,7 +1,6 @@
 # CornerCutLinearLayout
 
-`CornerCutLinearLayout` extends [`LinearLayout`]
- (https://developer.android.com/reference/android/widget/LinearLayout). It allows cutting parent corners with different shapes and build proper shadow to complex shapes.\
+`CornerCutLinearLayout` extends [`LinearLayout`](https://developer.android.com/reference/android/widget/LinearLayout). It allows cutting parent corners with different shapes and build proper shadow to complex shapes.\
 It also allows cutting each child's corners.
 
 <p align="center"><img src="/assets/images/logo.png" width="200" height="auto"></p>
