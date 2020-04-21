@@ -2,7 +2,10 @@
 
 `CornerCutLinearLayout` extends [`LinearLayout`]
  (https://developer.android.com/reference/android/widget/LinearLayout). It allows cutting parent corners with different shapes and build proper shadow to complex shapes.\
-It also allows cutting each child's corners.\
+It also allows cutting each child's corners.
+
+<p align="center"><img src="/assets/images/logo.png" width="200" height="auto"></p>
+
 Additionally, using available properties and custom providers, those cuts may be turned into cutouts of different shapes, sizes, etc.\
 Widget's sole purpose is to use with children with no transformations (like rotation, scale, matrix transformations).
 
