@@ -224,7 +224,7 @@ In case edge child is aligned to the respective side, they could optionally over
 
 
 >\* - By default specified `ccll_child_corner_cut_type` is used for child-parent contact if not overridden by edge child.\
-\*\* - Note that only type of parent corner type is overridden, while parent properties (depth, length, etc.) are stay preserved.
+\*\* - Note that only type of parent corner cut type is overridden, while other properties (depth, length, etc.) are stay preserved.
 
 ### Extra Child Corner Cut Properties
 
