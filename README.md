@@ -839,5 +839,9 @@ The result would be as follow:
 ## Sample App
 In order to take closer look over examples provided and library in general, please run the sample app.
 
+## Donation
+I would appreciate if you "toss the coin to your faithful servant". 
+Details: **5432 5912 5316 4615** (MasterCard)
+
 ## License
 Please see [LICENSE](/LICENSE.txt)
