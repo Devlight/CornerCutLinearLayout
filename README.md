@@ -7,7 +7,7 @@ It also allows cutting each child's corners.
 
 Developed by [Devlight](https://www.devlight.io/) company.  
 
-<p align="center"><img src="/assets/images/logo.png" width="200" height="auto"><img src="/assets/images/devlight_logo.png" height="100" width="auto"></p>
+<p align="center"><img src="/assets/images/logo.png" width="200" height="auto" align="center"><img src="/assets/images/devlight_logo.png" height="100" width="auto" align="center" border="10"></p>
 
 Additionally, using available properties and custom providers, those cuts may be turned into cutouts of different shapes, sizes, etc.\
 Widget's sole purpose is to use with children with no transformations (like rotation, scale, matrix transformations).
