@@ -776,7 +776,7 @@ ccll_custom_divider_provider_example_1.setCustomDividerProvider { _, dividerPath
 
 The result would be as follow:
 
-<img src="/assets/images/divider_provider_example_1.jpg" width="300" height="auto">
+<img src="/assets/images/divider_provider_example_1.jpg" width="200" height="auto">
 
 **Example 2**.
 This example shows the combination of custom and default's dividers. 
@@ -838,7 +838,7 @@ ccll_custom_divider_provider_example_2.setCustomDividerProvider { _, dividerPath
 
 The result would be as follow:
 
-<img src="/assets/images/divider_provider_example_2.jpg" width="300" height="auto">
+<img src="/assets/images/divider_provider_example_2.jpg" width="200" height="auto">
 
 ## Sample App
 In order to take closer look over examples provided and library in general, please run the sample app.
