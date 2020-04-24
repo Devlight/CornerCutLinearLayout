@@ -51,7 +51,7 @@ subprojects {
 
 ```groovy
 dependencies {
-    implementation 'com.github.XtreeIvI:CornerCutLinearLayout:1.0.0'
+    implementation 'com.github.Devlight:CornerCutLinearLayout:1.0.0'
 }
 ```
 
@@ -843,9 +843,29 @@ The result would be as follow:
 ## Sample App
 In order to take closer look over examples provided and library in general, please run the sample app.
 
-## Donation
-I would appreciate if you "toss the coin to your faithful servant". 
+##Author
+Created by [Mykola Melnyk](https://github.com/XtreeIvI) - [@xtreeivi](mailto:xtreeivi@gmail.com)
+
+### Donation
+I would appreciate if you "toss the coin to your faithful servant".\
 Details: **5432 5912 5316 4615** (MasterCard)
+
+##Company
+[![Facebook](https://drive.google.com/uc?export=download&id=0BxPO_UeS7wScaGhGVFNKU0VxMnc)](https://www.facebook.com/devlightagency)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Twitter](https://drive.google.com/uc?export=download&id=0BxPO_UeS7wScZ1ExQWh5cHF5cVE)](https://twitter.com/DevLightIO)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![LinkedIn](https://drive.google.com/uc?export=download&id=0BxPO_UeS7wSccGZINzEycE1nVFE)](https://www.linkedin.com/company/devlight)
+
+##Created by [Mykola Melnyk](https://github.com/XtreeIvI) - [@xtreeivi](mailto:xtreeivi@gmail.com)
+[Here](https://github.com/DevLight) you can see open source works developed by Devlight LLC.  
+This and another works is an exclusive property of Devlight LLC. 
+
+If you want to use this library in applications which will be available on Google Play, please report us or author of the library about it.
+
+Whether you're searching for a new partner or trusted team for creating your new great product we are always ready to start work with you. 
+
+You can contact us: info@devlight.io or opensource@devlight.io.  
+Thanks in advance.
+
+Devlight LLC, 2020 
+[devlight.io](http://devlight.io)
 
 ## License
 Please see [LICENSE](/LICENSE.txt)
