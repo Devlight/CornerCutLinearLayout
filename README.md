@@ -36,7 +36,7 @@ allprojects {
 or
 
 ```groovy
-subprojects {
+subprojects { 
     repositories {
         ...
         maven {
