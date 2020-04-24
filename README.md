@@ -1,6 +1,6 @@
 # CornerCutLinearLayout
 
-[![](https://jitpack.io/v/XtreeIvI/CornerCutLinearLayout.svg)](https://jitpack.io/#XtreeIvI/CornerCutLinearLayout)
+[![](https://jitpack.io/v/Devlight/CornerCutLinearLayout.svg)](https://jitpack.io/#Devlight/CornerCutLinearLayout)
 
 `CornerCutLinearLayout` extends [`LinearLayout`](https://developer.android.com/reference/android/widget/LinearLayout). It allows cutting parent corners with different shapes and build proper shadow for complex shapes.\
 It also allows cutting each child's corners.
