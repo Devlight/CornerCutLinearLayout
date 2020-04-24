@@ -843,17 +843,17 @@ The result would be as follow:
 ## Sample App
 In order to take closer look over examples provided and library in general, please run the sample app.
 
-##Author
+## Author
 Created by [Mykola Melnyk](https://github.com/XtreeIvI) - [@xtreeivi](mailto:xtreeivi@gmail.com)
 
 ### Donation
 I would appreciate if you "toss the coin to your faithful servant".\
 Details: **5432 5912 5316 4615** (MasterCard)
 
-##Company
+## Company
 [![Facebook](https://drive.google.com/uc?export=download&id=0BxPO_UeS7wScaGhGVFNKU0VxMnc)](https://www.facebook.com/devlightagency)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Twitter](https://drive.google.com/uc?export=download&id=0BxPO_UeS7wScZ1ExQWh5cHF5cVE)](https://twitter.com/DevLightIO)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![LinkedIn](https://drive.google.com/uc?export=download&id=0BxPO_UeS7wSccGZINzEycE1nVFE)](https://www.linkedin.com/company/devlight)
 
-##Created by [Mykola Melnyk](https://github.com/XtreeIvI) - [@xtreeivi](mailto:xtreeivi@gmail.com)
+## Created by [Mykola Melnyk](https://github.com/XtreeIvI) - [@xtreeivi](mailto:xtreeivi@gmail.com)
 [Here](https://github.com/DevLight) you can see open source works developed by Devlight LLC.  
 This and another works is an exclusive property of Devlight LLC. 
 
