@@ -1057,7 +1057,7 @@ class CornerCutLinearLayout : LinearLayout {
      * Attributes:
      * [R.styleable.CornerCutLinearLayout_ccll_custom_divider_show_flag]
      */
-    private var customDividerShowFlag by SimpleNonNullDelegate(
+    var customDividerShowFlag by SimpleNonNullDelegate(
         initialValue = CustomDividerShowFlag.NONE,
         afterSetPredicate = { invalidateCustomDividerIfNeeded() }
     )

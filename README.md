@@ -51,7 +51,7 @@ subprojects {
 
 ```groovy
 dependencies {
-    implementation 'com.github.Devlight:CornerCutLinearLayout:1.0.4'
+    implementation 'com.github.Devlight:CornerCutLinearLayout:1.0.5'
 }
 ```
 
